@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>自我改造所｜登入</title>
+  <meta name="theme-color" content="#0b0f14" />
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1720;
+      --card2:#0c141c;
+      --text:#e9f0ff;
+      --muted:#9bb0c9;
+      --line:rgba(255,255,255,.08);
+      --accent:#8bd2ff;
+      --accent2:#a8ffcf;
+      --danger:#ff6b6b;
+      --ok:#35d07f;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+      background:
+        radial-gradient(900px 600px at 10% -10%, rgba(139,210,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 90% 0%, rgba(168,255,207,.12), transparent 55%),
+        radial-gradient(900px 600px at 50% 120%, rgba(139,210,255,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+    }
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px 16px 34px;
+    }
+    .shell{
+      width:min(460px, 100%);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:10px 4px;
+    }
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      background:
+        linear-gradient(135deg, rgba(139,210,255,.9), rgba(168,255,207,.75));
+      box-shadow: 0 10px 30px rgba(139,210,255,.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 60%);
+      transform: rotate(20deg);
+    }
+    .brand h1{
+      font-size:18px;
+      margin:0;
+      letter-spacing:.6px;
+    }
+    .brand p{
+      margin:2px 0 0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.4;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 40%), var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      padding:18px 18px 10px;
+      border-bottom:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(139,210,255,.06), transparent 55%);
+    }
+    .hero .title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .hero h2{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.4px;
+    }
+    .chip{
+      font-size:12px;
+      color:rgba(233,240,255,.9);
+      border:1px solid rgba(139,210,255,.22);
+      background: rgba(139,210,255,.08);
+      padding:6px 10px;
+      border-radius: 999px;
+      white-space:nowrap;
+    }
+    .hero .quote{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.65;
+    }
+    .bullets{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:12.5px;
+      line-height:1.65;
+    }
+    .bullets li{margin:4px 0}
+
+    .tabs{
+      display:flex;
+      gap:8px;
+      padding:12px 12px 0;
+    }
+    .tab{
+      flex:1;
+      border:1px solid var(--line);
+      background: var(--card2);
+      color: rgba(233,240,255,.85);
+      padding:10px 12px;
+      border-radius: 14px;
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .05s ease, border-color .18s ease, background .18s ease;
+      user-select:none;
+    }
+    .tab:active{transform: scale(.99)}
+    .tab.active{
+      border-color: rgba(139,210,255,.25);
+      background: rgba(139,210,255,.08);
+      color: var(--text);
+    }
+
+    form{
+      padding:14px 14px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .row{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    label{
+      font-size:12.5px;
+      color: rgba(233,240,255,.88);
+    }
+    input{
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      padding:12px 12px;
+      font-size:15px;
+      outline:none;
+    }
+    input::placeholder{color: rgba(155,176,201,.55)}
+    input:focus{
+      border-color: rgba(139,210,255,.35);
+      box-shadow: 0 0 0 4px rgba(139,210,255,.10);
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      margin-top:4px;
+    }
+    .btn{
+      flex:1;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      padding:12px 12px;
+      font-size:15px;
+      cursor:pointer;
+      transition: transform .05s ease, background .18s ease, border-color .18s ease;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+    .btn.primary{
+      border-color: rgba(139,210,255,.22);
+      background: linear-gradient(135deg, rgba(139,210,255,.22), rgba(168,255,207,.14));
+    }
+    .btn:active{transform: scale(.99)}
+    .btn[disabled]{opacity:.55; cursor:not-allowed}
+
+    .hint{
+      font-size:12px;
+      color: var(--muted);
+      line-height:1.6;
+      padding:0 14px 14px;
+    }
+    .hint code{
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      padding:2px 6px;
+      border-radius: 10px;
+      font-size: 12px;
+    }
+
+    .toast{
+      margin:0 14px 14px;
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: rgba(233,240,255,.92);
+      font-size:13px;
+      line-height:1.5;
+      display:none;
+      white-space:pre-wrap;
+    }
+    .toast.show{display:block}
+    .toast.ok{
+      border-color: rgba(53,208,127,.25);
+      background: rgba(53,208,127,.10);
+    }
+    .toast.bad{
+      border-color: rgba(255,107,107,.25);
+      background: rgba(255,107,107,.10);
+    }
+
+    .footer{
+      padding:10px 4px 0;
+      color: rgba(155,176,201,.7);
+      font-size:12px;
+      text-align:center;
+      line-height:1.5;
+    }
+
+    .mini{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:0 14px 14px;
+      color: rgba(155,176,201,.8);
+      font-size:12px;
+    }
+    .mini a{
+      color: rgba(139,210,255,.9);
+      text-decoration:none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="shell">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>自我改造所</h1>
+          <p>不是來被評價，是來升級自己。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="hero">
+          <div class="title">
+            <h2>試煉入口</h2>
+            <div class="chip">可視化的進化</div>
+          </div>
+          <div class="quote">
+            自學最痛苦的不是難，是不知道自己到底在第幾階段。<br/>
+            在這裡，你既是實驗體，也是改造師。
+          </div>
+          <ul class="bullets">
+            <li>🔍 掃描能力結構</li>
+            <li>🧩 找出短板與潛力</li>
+            <li>⚔️ 用關卡取代枯燥測驗</li>
+            <li>📈 看見能力曲線，而不是只有分數</li>
+            <li>🏷️ 建立你的能力標籤與稱號</li>
+          </ul>
+        </div>
+
+        <div class="tabs">
+          <button id="tabLogin" class="tab active" type="button">登入</button>
+          <button id="tabRegister" class="tab" type="button">新用戶註冊</button>
+        </div>
+
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+        <!-- Login Form -->
+        <form id="loginForm" autocomplete="on">
+          <div class="row">
+            <label for="loginEmail">帳號（Email）</label>
+            <input id="loginEmail" type="email" inputmode="email" placeholder="yourname@email.com" required />
+          </div>
+          <div class="row">
+            <label for="loginPassword">密碼</label>
+            <input id="loginPassword" type="password" placeholder="至少 6 個字元" minlength="6" required />
+          </div>
+
+          <div class="actions">
+            <button id="loginBtn" class="btn primary" type="submit">登入</button>
+          </div>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" style="display:none" autocomplete="on">
+          <div class="row">
+            <label for="regEmail">帳號（Email）</label>
+            <input id="regEmail" type="email" inputmode="email" placeholder="yourname@email.com" required />
+          </div>
+          <div class="row">
+            <label for="regPassword">密碼</label>
+            <input id="regPassword" type="password" placeholder="至少 6 個字元" minlength="6" required />
+          </div>
+          <div class="row">
+            <label for="regName">用戶名稱（可中文）</label>
+            <input id="regName" type="text" placeholder="例如：念念" maxlength="20" required />
+          </div>
+
+          <div class="actions">
+            <button id="registerBtn" class="btn primary" type="submit">註冊並進入試煉</button>
+          </div>
+        </form>
+
+        <div class="mini">
+          <span>提示：建議開啟瀏覽器「記住密碼」</span>
+          <a href="#" id="demoFill">一鍵填入測試</a>
+        </div>
+
+        <div class="hint">
+          後端儲存位置：<code>Realtime Database /users/&lt;uid&gt;</code><br/>
+          註冊成功會同步寫入：<code>email</code>、<code>username</code>、<code>createdAt</code>。<br/>
+          用戶名稱唯一性：<code>Realtime Database /usernames/&lt;nameKey&gt;</code>
+        </div>
+      </div>
+
+      <div class="footer">
+        © 自我改造所 · 你不是升級，你是在重構。
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    // Firebase SDK (Web v9 modular)
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      updateProfile
+    } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+    import {
+      getDatabase,
+      ref,
+      set,
+      get,
+      runTransaction,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+
+    // Your Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDXesKYLI2T_DGR9uxqdbvoqpEMBY43cT8",
+      authDomain: "my-awesome-project-id-1c490.firebaseapp.com",
+      databaseURL: "https://my-awesome-project-id-1c490-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "my-awesome-project-id-1c490",
+      storageBucket: "my-awesome-project-id-1c490.firebasestorage.app",
+      messagingSenderId: "32958547583",
+      appId: "1:32958547583:web:a02b77fff42c9ab70b614a"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getDatabase(app);
+
+    // UI helpers
+    const tabLogin = document.getElementById("tabLogin");
+    const tabRegister = document.getElementById("tabRegister");
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+    const toast = document.getElementById("toast");
+
+    const loginBtn = document.getElementById("loginBtn");
+    const registerBtn = document.getElementById("registerBtn");
+
+    function showToast(message, type="ok"){
+      toast.textContent = message;
+      toast.className = "toast show " + (type === "bad" ? "bad" : "ok");
+    }
+    function clearToast(){
+      toast.className = "toast";
+      toast.textContent = "";
+    }
+    function setLoading(btn, loading){
+      btn.disabled = loading;
+      btn.textContent = loading ? "處理中…" : btn.dataset.label;
+    }
+
+    // Preserve button labels
+    loginBtn.dataset.label = loginBtn.textContent;
+    registerBtn.dataset.label = registerBtn.textContent;
+
+    function switchMode(mode){
+      clearToast();
+      if(mode === "login"){
+        tabLogin.classList.add("active");
+        tabRegister.classList.remove("active");
+        loginForm.style.display = "";
+        registerForm.style.display = "none";
+      }else{
+        tabRegister.classList.add("active");
+        tabLogin.classList.remove("active");
+        loginForm.style.display = "none";
+        registerForm.style.display = "";
+      }
+    }
+
+    tabLogin.addEventListener("click", () => switchMode("login"));
+    tabRegister.addEventListener("click", () => switchMode("register"));
+
+    // Demo fill
+    document.getElementById("demoFill").addEventListener("click", (e)=>{
+      e.preventDefault();
+      document.getElementById("regEmail").value = "test+" + Math.floor(Math.random()*10000) + "@example.com";
+      document.getElementById("regPassword").value = "123456";
+      document.getElementById("regName").value = "測試改造師";
+      switchMode("register");
+      showToast("已填入測試資料（記得改成你自己的帳號喔）", "ok");
+    });
+
+    // ===== 名稱唯一：把使用者輸入的名字轉成可當 key 的 nameKey =====
+    function normalizeUsernameKey(name){
+      let n = String(name || "").trim();
+      // 全形空白 → 半形空白，並合併多個空白
+      n = n.replace(/\u3000/g, " ").replace(/\s+/g, " ");
+      // 英文大小寫視為同名（避免 A / a 兩個人鑽漏洞）
+      n = n.toLowerCase();
+      // Firebase key 禁止字元：. # $ [ ] /
+      n = n.replace(/[.#$\[\]\/]/g, "_");
+      return encodeURIComponent(n);
+    }
+
+    async function isUsernameTaken(username){
+      const key = normalizeUsernameKey(username);
+      if(!key) return true;
+      const snap = await get(ref(db, "usernames/" + key));
+      return snap.exists();
+    }
+
+    // Register
+    registerForm.addEventListener("submit", async (e)=>{
+      e.preventDefault();
+      clearToast();
+
+      const email = document.getElementById("regEmail").value.trim();
+      const password = document.getElementById("regPassword").value;
+      const username = document.getElementById("regName").value.trim();
+
+      if(!username){
+        showToast("請輸入用戶名稱（可中文）。", "bad");
+        return;
+      }
+      if(password.length < 6){
+        showToast("密碼至少 6 個字元，否則改造所會覺得你太隨便 😏", "bad");
+        return;
+      }
+
+      try{
+        setLoading(registerBtn, true);
+
+        // 0) 先檢查同名（同名不給註冊）
+        const taken = await isUsernameTaken(username);
+        if(taken){
+          showToast("這名子有人使用過請從新輸入", "bad");
+          return;
+        }
+
+        // 1) Create Auth user
+        const cred = await createUserWithEmailAndPassword(auth, email, password);
+        const uid = cred.user.uid;
+
+        // 2) 用 transaction 佔用名字（避免同時搶名）
+        const nameKey = normalizeUsernameKey(username);
+        const nameRef = ref(db, "usernames/" + nameKey);
+
+        const tx = await runTransaction(nameRef, (current) => {
+          if(current !== null){
+            return; // 已存在 → 不 commit
+          }
+          return {
+            uid,
+            username,
+            createdAt: Date.now()
+          };
+        });
+
+        if(!tx.committed){
+          // 名字被別人搶先用了：刪掉剛剛建立的帳號（避免幽靈帳號）
+          try{ await cred.user.delete(); }catch(_){}
+          showToast("這名子有人使用過請從新輸入", "bad");
+          return;
+        }
+
+        // 3) Update displayName (Auth profile)
+        await updateProfile(cred.user, { displayName: username });
+
+        // 4) Save profile to Realtime Database
+        await set(ref(db, "users/" + uid), {
+          uid,
+          email,
+          username,
+          usernameKey: nameKey,
+          createdAt: serverTimestamp()
+        });
+
+        showToast("註冊成功 ✅ 進入試煉大廳！", "ok");
+        window.location.href = "./exam.html"; // ✅ 直接跳轉
+
+      }catch(err){
+        console.error(err);
+        showToast(prettyFirebaseError(err), "bad");
+      }finally{
+        setLoading(registerBtn, false);
+      }
+    });
+
+    // Login
+    loginForm.addEventListener("submit", async (e)=>{
+      e.preventDefault();
+      clearToast();
+
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value;
+
+      try{
+        setLoading(loginBtn, true);
+
+        await signInWithEmailAndPassword(auth, email, password);
+        showToast("登入成功 ✅ 進入試煉大廳…", "ok");
+        window.location.href = "./exam.html"; // ✅ 直接跳轉
+
+      }catch(err){
+        console.error(err);
+        showToast(prettyFirebaseError(err), "bad");
+      }finally{
+        setLoading(loginBtn, false);
+      }
+    });
+
+    // Firebase error mapping (讓訊息比較人話)
+    function prettyFirebaseError(err){
+      const code = (err && err.code) ? err.code : "";
+      switch(code){
+        case "auth/invalid-email": return "帳號格式不對：請輸入 Email（例如 name@gmail.com）。";
+        case "auth/email-already-in-use": return "這個帳號已經註冊過了，請直接登入。";
+        case "auth/weak-password": return "密碼太弱了…至少 6 個字元起跳。";
+        case "auth/user-not-found": return "找不到這個帳號，可能你還沒註冊。";
+        case "auth/wrong-password": return "密碼不對喔，再想一下（不要瞪我😅）。";
+        case "auth/too-many-requests": return "嘗試太多次了，先休息一下再試。";
+        default:
+          return "發生錯誤：" + (err?.message || "未知錯誤");
+      }
+    }
+  </script>
+</body>
+</html>

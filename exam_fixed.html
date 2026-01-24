@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>自我改造所｜考試系統</title>
+  <meta name="theme-color" content="#0b0f14" />
+  <style>
+    :root{
+      --bg:#0b0f14; --card:#0f1720; --card2:#0c141c;
+      --text:#e9f0ff; --muted:#9bb0c9; --line:rgba(255,255,255,.08);
+      --accent:#8bd2ff; --ok:#35d07f; --danger:#ff6b6b;
+      --shadow: 0 18px 60px rgba(0,0,0,.45); --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+      background:
+        radial-gradient(900px 600px at 10% -10%, rgba(139,210,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 90% 0%, rgba(168,255,207,.12), transparent 55%),
+        radial-gradient(900px 600px at 50% 120%, rgba(139,210,255,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      padding: 20px 14px 28px;
+      display:flex; justify-content:center;
+    }
+    .wrap{ width:min(520px, 100%); display:flex; flex-direction:column; gap:12px; }
+    .top{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding: 10px 6px;
+    }
+    .brand{display:flex; align-items:center; gap:10px;}
+    .logo{
+      width:40px;height:40px;border-radius:14px;
+      background: linear-gradient(135deg, rgba(139,210,255,.9), rgba(168,255,207,.75));
+      box-shadow: 0 10px 30px rgba(139,210,255,.18);
+    }
+    .brand h1{margin:0; font-size:16px; letter-spacing:.6px;}
+    .brand p{margin:2px 0 0; font-size:12px; color:var(--muted);}
+
+    .btn{
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      padding:10px 12px;
+      font-size:14px;
+      cursor:pointer;
+    }
+    .btn.primary{
+      border-color: rgba(139,210,255,.22);
+      background: linear-gradient(135deg, rgba(139,210,255,.22), rgba(168,255,207,.14));
+      font-weight:800;
+      letter-spacing:.06em;
+    }
+    .btn:disabled{opacity:.55; cursor:not-allowed}
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 40%), var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero{
+      padding: 14px 14px 12px;
+      border-bottom:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(139,210,255,.06), transparent 55%);
+    }
+    .hero .row{display:flex; justify-content:space-between; align-items:center; gap:10px;}
+    .chip{
+      font-size:12px;
+      border:1px solid rgba(139,210,255,.22);
+      background: rgba(139,210,255,.08);
+      padding:6px 10px; border-radius:999px;
+      color: rgba(233,240,255,.92);
+      white-space:nowrap;
+    }
+    .userbar{
+      margin-top:10px;
+      display:flex; align-items:center; gap:10px;
+      padding:8px 10px;
+      border-radius: 14px;
+      border:1px solid rgba(53,208,127,.18);
+      background: rgba(53,208,127,.10);
+      color: rgba(233,240,255,.92);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .avatar{
+      width:36px; height:36px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      object-fit:cover;
+      flex:0 0 auto;
+    }
+    .usertext{display:flex; flex-direction:column; gap:2px;}
+    .panel{ padding: 12px 14px 14px; display:flex; flex-direction:column; gap:10px; }
+    label{ font-size:12.5px; color: rgba(233,240,255,.88); }
+    select{
+      width:100%;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      padding:12px 12px;
+      font-size:15px;
+      outline:none;
+    }
+    .hint{font-size:12px; color:var(--muted); line-height:1.6;}
+    .toast{
+      margin: 10px 14px 0;
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: rgba(233,240,255,.92);
+      font-size:13px;
+      line-height:1.5;
+      display:none;
+      white-space:pre-wrap;
+    }
+    .toast.show{display:block}
+    .toast.ok{ border-color: rgba(53,208,127,.25); background: rgba(53,208,127,.10); }
+    .toast.bad{ border-color: rgba(255,107,107,.25); background: rgba(255,107,107,.10); }
+
+    /* ===== Modal Exam ===== */
+    .modal{
+      position:fixed; inset:0;
+      background: rgba(0,0,0,.55);
+      display:none; align-items:center; justify-content:center;
+      padding: 18px 12px;
+      z-index: 999;
+    }
+    .modal.show{display:flex}
+    .modal-card{
+      width:min(520px, 100%);
+      max-height: 86vh;
+      background: #0f1720;
+      border:1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex; flex-direction:column;
+    }
+    .modal-head{
+      padding: 12px 12px 10px;
+      border-bottom:1px solid var(--line);
+      display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
+      background: linear-gradient(180deg, rgba(139,210,255,.06), transparent 55%);
+    }
+    .modal-title{font-weight:900; letter-spacing:.06em}
+    .modal-sub{font-size:12px; color:var(--muted); margin-top:4px; line-height:1.4;}
+    .close{
+      border:none; background:transparent; color:rgba(233,240,255,.85);
+      font-size:18px; cursor:pointer;
+    }
+    .modal-body{ padding: 12px; overflow:auto; }
+    .qbox{
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.12);
+      border-radius: 16px;
+      padding: 10px;
+    }
+    .qmeta{display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted); margin-bottom:6px;}
+    .badge{padding:2px 10px; border-radius:999px; background: rgba(139,210,255,.14); border:1px solid rgba(139,210,255,.22); color:rgba(233,240,255,.92); font-size:11px;}
+    .qtext{font-size:14px; line-height:1.6; margin: 2px 0 8px; color:rgba(233,240,255,.95);}
+    .qimg{border-radius: 14px; overflow:hidden; border:1px solid rgba(255,255,255,.08); background:#111; margin-bottom:8px; display:none;}
+    .qimg img{width:100%; height:auto; display:block;}
+    .opts{display:flex; flex-direction:column; gap:8px; margin-top:8px;}
+    .opt{
+      border:none;
+      border-radius: 14px;
+      padding: 10px 10px;
+      font-size:14px;
+      text-align:left;
+      background: rgba(139,210,255,.10);
+      border:1px solid rgba(139,210,255,.12);
+      color: rgba(233,240,255,.95);
+      cursor:pointer;
+      position:relative;
+    }
+    .opt:active{transform: scale(.99)}
+    .opt.correct{ background: rgba(53,208,127,.12); border-color: rgba(53,208,127,.28); }
+    .opt.wrong{ background: rgba(255,107,107,.12); border-color: rgba(255,107,107,.28); }
+    .opt.correct::after{content:"✔"; position:absolute; right:10px; top:50%; transform:translateY(-50%); color: var(--ok); font-weight:900;}
+    .opt.wrong::after{content:"✘"; position:absolute; right:10px; top:50%; transform:translateY(-50%); color: var(--danger); font-weight:900;}
+
+    .modal-foot{
+      border-top:1px solid var(--line);
+      padding: 10px 12px 12px;
+      display:flex; gap:10px;
+    }
+    .grow{flex:1}
+    .report{
+      margin-top:10px;
+      padding:10px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.12);
+      display:none;
+    }
+    .report h3{margin:0 0 8px; font-size:14px; letter-spacing:.06em;}
+    .rline{font-size:12.5px; color:rgba(233,240,255,.9); line-height:1.5; padding:6px 0; border-bottom:1px dashed rgba(255,255,255,.10);}
+    .rline:last-child{border-bottom:none}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>自我改造所｜考試系統</h1>
+          <p>選一個題庫，抽 20 題，把自己升級。</p>
+        </div>
+      </div>
+      <button id="logoutBtn" class="btn">登出</button>
+    </div>
+
+    <div class="card">
+      <div class="hero">
+        <div class="row">
+          <div>
+            <div class="modal-title">試煉大廳</div>
+            <div class="modal-sub">你不是來被評價，你是來重構自己。</div>
+          </div>
+          <div class="chip">20 題｜100 分</div>
+        </div>
+
+        <div id="userBar" class="userbar">目前登入：載入中…</div>
+      </div>
+
+      <div id="toast" class="toast"></div>
+
+      <div class="panel">
+        <div>
+          <label for="mainSelect">主分類（第一層）</label>
+          <select id="mainSelect">
+            <option value="">請選擇…</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="bankSelect">題庫 / 子領域</label>
+          <select id="bankSelect" disabled>
+            <option value="">請先選主分類…</option>
+          </select>
+        </div>
+
+        
+
+        <div>
+          <label for="subBankSelect">次分類（第三層，選這個才開考）</label>
+          <select id="subBankSelect" disabled>
+            <option value="">請先選子分類…</option>
+          </select>
+        </div>
+
+        <button id="leaderBtn" class="btn" style="display:none;">🏆 查看排行榜</button>
+<div class="hint">
+          作答規則：每次從該題庫隨機抽 20 題；作答立刻顯示對/錯；完成後提供答題比對報告。<br/>
+          題庫格式沿用 <span class="muted">window.QUESTION_BANK[bankKey] = [{text, options, answer, image?}]</span>。
+        </div>
+
+        <button id="startBtn" class="btn primary" disabled>開始考試</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exam Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div id="modalTitle" class="modal-title">題目</div>
+          <div id="modalSub" class="modal-sub">—</div>
+        </div>
+        <button id="closeBtn" class="close" title="關閉">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="qbox">
+          <div class="qmeta">
+            <div id="qIndex">第 1 / 20 題</div>
+            <div class="badge" id="scoreBadge">0 分</div>
+          </div>
+          <div id="qText" class="qtext"></div>
+          <div class="qtools" style="margin:6px 0 10px;">
+            <button id="playBtn" class="btn" type="button" style="display:none;">🔊 播放</button>
+          </div>
+          <div id="qImg" class="qimg"><img alt="question" /></div>
+          <div id="opts" class="opts"></div>
+        </div>
+
+        <div id="report" class="report">
+          <h3>答題比對報告</h3>
+          <div id="reportList"></div>
+        </div>
+      </div>
+
+      <div class="modal-foot">
+        <button id="nextBtn" class="btn primary grow" disabled>下一題</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Leaderboard Modal -->
+  <div id="lbModal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div id="lbTitle" class="modal-title">排行榜</div>
+          <div id="lbSub" class="modal-sub">—</div>
+        </div>
+        <button id="lbCloseBtn" class="close" title="關閉">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="qbox">
+          <div class="qmeta">
+            <div class="muted">公開排行榜｜同一題庫取最高分</div>
+            <div class="badge" id="lbCount">0 人</div>
+          </div>
+          <div id="lbList" class="opts"></div>
+          <div class="hint" style="margin-top:10px;">
+            小提示：分數會在你考完後自動上榜；若你刷出更高分，會自動更新成最高分。
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button id="lbRefreshBtn" class="btn primary grow">更新排行榜</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 題庫（先用你現有的範例，之後你可以換成更多檔） -->
+<!-- ↑ 你提供的題庫範例就是這種格式-->
+
+    <script src="./語言.js"></script>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+    import { getDatabase, ref, get, set, update, query, orderByChild, limitToLast } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDXesKYLI2T_DGR9uxqdbvoqpEMBY43cT8",
+      authDomain: "my-awesome-project-id-1c490.firebaseapp.com",
+      databaseURL: "https://my-awesome-project-id-1c490-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "my-awesome-project-id-1c490",
+      storageBucket: "my-awesome-project-id-1c490.firebasestorage.app",
+      messagingSenderId: "32958547583",
+      appId: "1:32958547583:web:a02b77fff42c9ab70b614a"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getDatabase(app);
+
+    // ===== UI =====
+    const userBar = document.getElementById("userBar");
+    const toast = document.getElementById("toast");
+    const mainSelect = document.getElementById("mainSelect");
+    const bankSelect = document.getElementById("bankSelect");
+    const subBankSelect = document.getElementById("subBankSelect");
+    const startBtn = document.getElementById("startBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const leaderBtn = document.getElementById("leaderBtn");
+
+    const modal = document.getElementById("modal");
+    const closeBtn = document.getElementById("closeBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const qIndex = document.getElementById("qIndex");
+    const scoreBadge = document.getElementById("scoreBadge");
+    const qText = document.getElementById("qText");
+    const qImg = document.getElementById("qImg");
+    const qImgTag = qImg.querySelector("img");
+    const opts = document.getElementById("opts");
+    const report = document.getElementById("report");
+    const reportList = document.getElementById("reportList");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalSub = document.getElementById("modalSub");
+    const playBtn = document.getElementById("playBtn");
+
+    // ===== 排行榜 UI =====
+    const lbModal = document.getElementById("lbModal");
+    const lbCloseBtn = document.getElementById("lbCloseBtn");
+    const lbRefreshBtn = document.getElementById("lbRefreshBtn");
+    const lbTitle = document.getElementById("lbTitle");
+    const lbSub = document.getElementById("lbSub");
+    const lbList = document.getElementById("lbList");
+    const lbCount = document.getElementById("lbCount");
+
+    let audioPlayer = null;
+    function stopAudio(){
+      try{
+        if(audioPlayer){
+          audioPlayer.pause();
+          audioPlayer.currentTime = 0;
+        }
+      }catch(e){}
+    }
+
+    function 題庫足夠(bankKey){
+      const bank = window.QUESTION_BANK?.[bankKey];
+      return Array.isArray(bank) && bank.length >= 題數門檻;
+    }
+
+    function showToast(message, type="ok"){
+      toast.textContent = message;
+      toast.className = "toast show " + (type === "bad" ? "bad" : "ok");
+    }
+    function clearToast(){ toast.className = "toast"; toast.textContent = ""; }
+
+    if(location.protocol === "file:"){
+      showToast("⚠️ 你目前用 file:// 開啟，瀏覽器會封鎖 Firebase（排行榜寫入會失敗）。\n\n請用本機伺服器開啟：\n- VSCode → Live Server\n- 或終端機： npx http-server .\n\n用 http://localhost 進入。", "bad");
+    }
+
+    // 題庫至少要有這個題數，才會出現在第三層（次分類）列表
+    const 題數門檻 = 20;
+
+    // ===== 分類（第一層）→ 你可以隨時擴充 =====
+    // bankKey 要對得上 window.QUESTION_BANK 的 key
+    // 分類資料改為從 window.分類樹 讀取（由各題庫 JS 提供）
+
+    // 把 分類樹 填入主分類下拉
+    function initTreeUI(){
+      const tree = window.分類樹 || {};
+      mainSelect.innerHTML = "";
+      mainSelect.appendChild(new Option("請選擇…", ""));
+
+      const mains = Object.keys(tree);
+      for(const m of mains){
+        mainSelect.appendChild(new Option(m, m));
+      }
+
+      bankSelect.disabled = true;
+      bankSelect.innerHTML = '<option value="">請先選主分類…</option>';
+
+      subBankSelect.disabled = true;
+      subBankSelect.innerHTML = '<option value="">請先選子分類…</option>';
+
+      startBtn.disabled = true;
+    }
+
+    mainSelect.addEventListener("change", () => {
+      clearToast();
+      const 主分類 = mainSelect.value;
+
+      // reset
+      startBtn.disabled = true;
+
+      bankSelect.innerHTML = "";
+      subBankSelect.innerHTML = "";
+
+      subBankSelect.disabled = true;
+      subBankSelect.innerHTML = '<option value="">請先選子分類…</option>';
+
+      if(!主分類){
+        bankSelect.disabled = true;
+        bankSelect.innerHTML = '<option value="">請先選主分類…</option>';
+        return;
+      }
+
+      const 子列表 = Object.keys(window.分類樹?.[主分類] || {});
+      bankSelect.disabled = false;
+      bankSelect.appendChild(new Option("請選子分類…", ""));
+      for(const 子分類 of 子列表){
+        bankSelect.appendChild(new Option(子分類, 子分類));
+      }
+    });
+
+    bankSelect.addEventListener("change", () => {
+      clearToast();
+      const 主分類 = mainSelect.value;
+      const 子分類 = bankSelect.value;
+
+      startBtn.disabled = true;
+      subBankSelect.innerHTML = "";
+
+      if(!主分類 || !子分類){
+        subBankSelect.disabled = true;
+        subBankSelect.innerHTML = '<option value="">請先選子分類…</option>';
+        return;
+      }
+
+      const 次列表 = Object.keys(window.分類樹?.[主分類]?.[子分類] || {});
+      subBankSelect.disabled = false;
+      subBankSelect.appendChild(new Option("請選次分類…", ""));
+      let 有任何可考的 = false;
+      for(const 次分類 of 次列表){
+        const bankKey = window.分類樹?.[主分類]?.[子分類]?.[次分類] || "";
+        if(!bankKey) continue;
+        if(題庫足夠(bankKey)){
+          subBankSelect.appendChild(new Option(次分類, 次分類));
+          有任何可考的 = true;
+        }
+      }
+      if(!有任何可考的){
+        subBankSelect.disabled = true;
+        subBankSelect.innerHTML = '<option value="">（此子分類沒有達 20 題的題庫）</option>';
+        startBtn.disabled = true;
+      }
+    });
+
+    subBankSelect.addEventListener("change", () => {
+      clearToast();
+      const 主分類 = mainSelect.value;
+      const 子分類 = bankSelect.value;
+      const 次分類 = subBankSelect.value;
+      currentBankKey = window.分類樹?.[主分類]?.[子分類]?.[次分類] || "";
+      currentBankName = (主分類 && 子分類 && 次分類) ? `${主分類}｜${子分類}｜${次分類}` : "";
+
+      startBtn.disabled = !次分類;
+
+      // ✅ 選到次分類就顯示排行榜按鈕
+      if(次分類 && currentBankKey){
+        leaderBtn.style.display = "inline-flex";
+      }else{
+        leaderBtn.style.display = "none";
+      }
+    });
+
+    leaderBtn.addEventListener("click", async () => {
+      clearToast();
+      if(!currentBankKey){ showToast("請先選擇次分類（第三層）。", "bad"); return; }
+      await loadLeaderboard(currentBankKey, currentBankName);
+      openLbModal();
+    });
+
+    logoutBtn.addEventListener("click", async () => {
+      await signOut(auth);
+      window.location.href = "./index.html";
+    });
+
+    closeBtn.addEventListener("click", () => closeModal());
+    modal.addEventListener("click", (e) => { if(e.target === modal) closeModal(); });
+
+    // 排行榜 modal
+    lbCloseBtn.addEventListener("click", () => closeLbModal());
+    lbModal.addEventListener("click", (e) => { if(e.target === lbModal) closeLbModal(); });
+    lbRefreshBtn.addEventListener("click", () => loadLeaderboard(currentBankKey, currentBankName));
+
+    function openModal(){
+      modal.classList.add("show");
+      modal.setAttribute("aria-hidden", "false");
+    }
+    function closeModal(){
+      stopAudio();
+      if(autoNextTimer){ clearTimeout(autoNextTimer); autoNextTimer = null; }
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden", "true");
+    }
+
+    function openLbModal(){
+      lbModal.classList.add("show");
+      lbModal.setAttribute("aria-hidden", "false");
+    }
+    function closeLbModal(){
+      lbModal.classList.remove("show");
+      lbModal.setAttribute("aria-hidden", "true");
+    }
+
+    // RTDB key 不能含 . # $ [ ] /
+    function safeKey(key){
+      return String(key).replace(/[.#$\[\]\/]/g, "_");
+    }
+
+    // ===== 考試引擎 =====
+    const TOTAL_Q = 題數門檻;
+    let exam = null;
+    let currentUser = null; // { uid, name, email, avatar }
+    let currentBankKey = "";
+    let currentBankName = "";
+    let autoNextTimer = null;
+
+    function shuffle(arr){
+      const a = arr.slice();
+      for(let i=a.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function pickQuestions(bankKey){
+      const bank = window.QUESTION_BANK?.[bankKey];
+      if(!Array.isArray(bank) || bank.length === 0) return null;
+      const picked = shuffle(bank).slice(0, Math.min(TOTAL_Q, bank.length));
+
+      // ✅ 每題選項也洗牌（並同步修正正確答案索引）
+      return picked.map((q) => {
+        const qq = { ...q };
+        const opts = Array.isArray(qq.options) ? qq.options.slice() : [];
+        const correct = Number.isInteger(qq.answer) ? qq.answer : -1;
+
+        if(opts.length > 1 && correct >= 0 && correct < opts.length){
+          const idxs = Array.from({length: opts.length}, (_, i) => i);
+          const shuffledIdxs = shuffle(idxs);
+          qq.options = shuffledIdxs.map(i => opts[i]);
+          qq.answer = shuffledIdxs.indexOf(correct);
+        }else{
+          qq.options = opts;
+        }
+        return qq;
+      });
+    }
+
+    function renderQuestion(){
+      const i = exam.index;
+      const q = exam.questions[i];
+
+      modalTitle.textContent = "作答中";
+      modalSub.textContent = `題庫：${exam.bankName}｜抽題：${exam.questions.length} 題｜每題 5 分`;
+
+      qIndex.textContent = `第 ${i+1} / ${exam.questions.length} 題`;
+      scoreBadge.textContent = `${exam.score} 分`;
+
+      qText.textContent = q.text || "(無題目文字)";
+      opts.innerHTML = "";
+      nextBtn.disabled = true;
+
+      if(q.image){
+        qImg.style.display = "block";
+        qImgTag.src = q.image;
+      }else{
+        qImg.style.display = "none";
+        qImgTag.removeAttribute("src");
+      }
+
+      // ✅ 音檔播放（題庫可提供 q.audio）
+      stopAudio();
+      if(q.audio){
+        playBtn.style.display = "inline-flex";
+        playBtn.onclick = () => {
+          try{
+            stopAudio();
+            audioPlayer = new Audio(q.audio);
+            audioPlayer.play();
+          }catch(e){
+            showToast("音訊播放失敗（檔案路徑或瀏覽器限制）", "bad");
+          }
+        };
+      }else{
+        playBtn.style.display = "none";
+        playBtn.onclick = null;
+      }
+
+      // 選項
+      (q.options || []).forEach((label, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "opt";
+        btn.type = "button";
+        // 支援你題庫可能會放 img html 字串
+        btn.innerHTML = label;
+        btn.addEventListener("click", () => choose(idx, btn));
+        opts.appendChild(btn);
+      });
+
+      report.style.display = "none";
+    }
+
+    function choose(choiceIndex, clickedBtn){
+      if(exam.answered[exam.index]) return; // prevent double
+
+      const q = exam.questions[exam.index];
+      const correct = q.answer;
+      const isRight = (choiceIndex === correct);
+
+      exam.answered[exam.index] = true;
+      exam.userAnswers[exam.index] = choiceIndex;
+
+      // 標示對錯
+      const buttons = Array.from(opts.querySelectorAll(".opt"));
+      buttons.forEach((b, idx) => {
+        if(idx === correct) b.classList.add("correct");
+        if(idx === choiceIndex && !isRight) b.classList.add("wrong");
+        b.disabled = true;
+      });
+
+      if(isRight) exam.score += exam.perPoint;
+
+      scoreBadge.textContent = `${exam.score} 分`;
+      nextBtn.disabled = false;
+
+      // 最後一題，把 nextBtn 變成「完成並看報告」
+      if(exam.index === exam.questions.length - 1){
+        nextBtn.textContent = "完成並查看報告";
+      }
+
+      // ✅ 2 秒後自動進入下一題（最後一題自動完成並查看報告）
+      if(autoNextTimer){ clearTimeout(autoNextTimer); }
+      autoNextTimer = setTimeout(() => {
+        autoNextTimer = null;
+        if(!exam) return;
+        if(exam.index < exam.questions.length - 1){
+          exam.index++;
+          renderQuestion();
+        }else{
+          showReport();
+        }
+      }, 2000);
+    }
+
+    function showReport(){
+      modalTitle.textContent = "完成 ✅";
+      modalSub.textContent = `總分：${exam.score} / 100｜題庫：${exam.bankName}`;
+
+      reportList.innerHTML = "";
+      exam.questions.forEach((q, i) => {
+        const ua = exam.userAnswers[i];
+        const ca = q.answer;
+        const uaText = ua == null ? "未作答" : stripHtml(q.options[ua]);
+        const caText = stripHtml(q.options[ca]);
+
+        const line = document.createElement("div");
+        line.className = "rline";
+        line.innerHTML = `
+          <div><b>第 ${i+1} 題</b> <span class="muted">${escapeHtml(q.text || "")}</span></div>
+          <div>你的答案：${escapeHtml(uaText)} ${ua===ca ? "✅" : "❌"}</div>
+          <div>正確答案：${escapeHtml(caText)}</div>
+        `;
+        reportList.appendChild(line);
+      });
+
+      report.style.display = "block";
+      nextBtn.disabled = true;
+      nextBtn.textContent = "已完成";
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if(autoNextTimer){ clearTimeout(autoNextTimer); autoNextTimer = null; }
+      if(!exam) return;
+      if(exam.index < exam.questions.length - 1){
+        exam.index++;
+        renderQuestion();
+      }else{
+        showReport();
+      }
+    });
+
+    function stripHtml(s){
+      const div = document.createElement("div");
+      div.innerHTML = s ?? "";
+      return (div.textContent || div.innerText || "").trim();
+    }
+    
+    async function loadLeaderboard(bankKey, bankName){
+      if(!bankKey) return;
+      const k = safeKey(bankKey);
+      lbTitle.textContent = "排行榜";
+      lbSub.textContent = `題庫：${bankName || bankKey}`;
+      lbList.innerHTML = "<div class=\"hint\">載入中…</div>";
+      lbCount.textContent = "—";
+
+      try{
+        const qRef = query(ref(db, "leaderboards/" + k), orderByChild("bestScore"), limitToLast(50));
+        const snap = await get(qRef);
+        const rows = [];
+        if(snap.exists()){
+          snap.forEach(child => {
+            const v = child.val() || {};
+            rows.push({
+              uid: child.key,
+              name: v.name || "匿名改造師",
+              avatar: v.avatar || "",
+              bestScore: typeof v.bestScore === "number" ? v.bestScore : Number(v.bestScore || 0),
+              updatedAt: v.updatedAt || 0,
+              attempts: v.attempts || 0
+            });
+          });
+        }
+
+        // limitToLast 會回傳由小到大；我們要由大到小
+        rows.sort((a,b) => (b.bestScore - a.bestScore) || (b.updatedAt - a.updatedAt));
+
+        lbCount.textContent = `${rows.length} 人`;
+
+        if(rows.length === 0){
+          lbList.innerHTML = "<div class=\"hint\">目前還沒有人上榜～快去搶第一名 😼</div>";
+          return;
+        }
+
+        // render
+        lbList.innerHTML = "";
+        rows.slice(0, 20).forEach((r, idx) => {
+          const item = document.createElement("div");
+          item.className = "opt";
+          const medal = idx===0 ? "🥇" : idx===1 ? "🥈" : idx===2 ? "🥉" : `#${idx+1}`;
+          const avatar = r.avatar ? `<img class="avatar" src="${escapeHtml(r.avatar)}" alt="avatar" />` : "";
+          const me = currentUser && r.uid === currentUser.uid ? "（你）" : "";
+          item.innerHTML = `
+            <div style="display:flex; align-items:center; gap:10px;">
+              ${avatar}
+              <div style="flex:1; min-width:0;">
+                <div style="display:flex; justify-content:space-between; gap:8px;">
+                  <div style="font-weight:800; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                    ${medal} ${escapeHtml(r.name)} ${me}
+                  </div>
+                  <div style="font-weight:900;">${r.bestScore} 分</div>
+                </div>
+                <div class="muted" style="font-size:12px; margin-top:4px;">
+                  嘗試次數：${r.attempts || 0}
+                </div>
+              </div>
+            </div>
+          `;
+          lbList.appendChild(item);
+        });
+      }catch(e){
+        lbList.innerHTML = "<div class=\"hint\">排行榜載入失敗，請稍後再試。</div>";
+      }
+    }
+
+    async function saveScoreToLeaderboard(bankKey, bankName, score){
+      if(!currentUser || !bankKey) return;
+      const k = safeKey(bankKey);
+      const userRef = ref(db, "leaderboards/" + k + "/" + currentUser.uid);
+
+      try{
+        const snap = await get(userRef);
+        const now = Date.now();
+        const existing = snap.exists() ? (snap.val() || {}) : {};
+        const prevBest = typeof existing.bestScore === "number" ? existing.bestScore : Number(existing.bestScore || 0);
+        const attempts = Number(existing.attempts || 0) + 1;
+        const bestScore = Math.max(prevBest, score);
+
+        await update(userRef, {
+          bankKey,
+          bankName: bankName || "",
+          uid: currentUser.uid,
+          name: currentUser.name || "改造師",
+          avatar: currentUser.avatar || "",
+          bestScore,
+          lastScore: score,
+          attempts,
+          updatedAt: now
+        });
+      }catch(e){
+        // 靜默失敗，不影響使用者體驗
+      }
+    }
+
+
+    function escapeHtml(str){
+      return String(str).replace(/[&<>"']/g, m => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+      }[m]));
+    }
+
+    startBtn.addEventListener("click", () => {
+      clearToast();
+      const 主分類 = mainSelect.value;
+      const 子分類 = bankSelect.value;
+      const 次分類 = subBankSelect.value;
+      const bankKey = window.分類樹?.[主分類]?.[子分類]?.[次分類] || "";
+      if(!bankKey) return;
+      currentBankKey = bankKey;
+      currentBankName = `${主分類}｜${子分類}｜${次分類}`;
+
+      if(!題庫足夠(bankKey)){
+        showToast("此題庫未滿 20 題，暫不開放考試。", "bad");
+        return;
+      }
+
+      const picked = pickQuestions(bankKey);
+      if(!picked){
+        showToast("這個題庫目前沒有題目（或還沒載入題庫 JS）。", "bad");
+        return;
+      }
+
+      const bankName = `${主分類}｜${子分類}｜${次分類}`;
+
+      exam = {
+        bankKey,
+        bankName,
+        questions: picked,
+        index: 0,
+        score: 0,
+        perPoint: 5, // 20 題 → 每題 5 分 → 100
+        answered: Array(picked.length).fill(false),
+        userAnswers: Array(picked.length).fill(null)
+      };
+
+      nextBtn.textContent = "下一題";
+      openModal();
+      renderQuestion();
+    });
+
+    // ===== Auth 檢查：沒登入就回登入頁 =====
+    onAuthStateChanged(auth, async (user) => {
+      if(!user){
+        window.location.href = "./index.html";
+        return;
+      }
+
+      // 顯示中文名：讀 RTDB users/<uid>
+      try{
+        const snap = await get(ref(db, "users/" + user.uid));
+        const profile = snap.exists() ? snap.val() : null;
+        const name = profile?.username || user.displayName || "改造師";
+        const avatar = profile?.avatar || `https://picsum.photos/seed/${user.uid}/80/80`;
+        currentUser = { uid: user.uid, name, email: user.email, avatar };
+        userBar.innerHTML = `
+          <img class="avatar" src="${escapeHtml(avatar)}" alt="avatar"/>
+          <div class="usertext">
+            <div>目前登入：<b>${escapeHtml(name)}</b></div>
+            <div class="muted" style="font-size:12px;">${escapeHtml(user.email || "")}</div>
+          </div>
+        `;
+}catch(e){
+        const name = user.displayName || "改造師";
+        const avatar = `https://picsum.photos/seed/${user.uid}/80/80`;
+        currentUser = { uid: user.uid, name, email: user.email, avatar };
+        userBar.innerHTML = `
+          <img class="avatar" src="${escapeHtml(avatar)}" alt="avatar"/>
+          <div class="usertext">
+            <div>目前登入：<b>${escapeHtml(name)}</b></div>
+            <div class="muted" style="font-size:12px;">${escapeHtml(user.email || "")}</div>
+          </div>
+        `;
+      }
+    });
+
+    // init
+    initTreeUI();
+
+    // 你現在的題庫 key 範例：work-pre / work-review / work-flow / work-rule// 之後你只要把 分類樹 裡的 banks key 換成你新增題庫的 key 就行。
+  </script>
+</body>
+</html>
