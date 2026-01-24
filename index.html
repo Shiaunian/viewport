@@ -532,7 +532,7 @@
         });
 
         showToast("註冊成功 ✅ 進入試煉大廳！", "ok");
-        window.location.href = "./exam.html"; // ✅ 直接跳轉
+        window.location.href = "./exam_fixed.html"; // ✅ 直接跳轉
 
       }catch(err){
         console.error(err);
@@ -555,7 +555,7 @@
 
         await signInWithEmailAndPassword(auth, email, password);
         showToast("登入成功 ✅ 進入試煉大廳…", "ok");
-        window.location.href = "./exam.html"; // ✅ 直接跳轉
+        window.location.href = "./exam_fixed.html"; // ✅ 直接跳轉
 
       }catch(err){
         console.error(err);

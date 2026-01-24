@@ -706,6 +706,9 @@
     }
 
     function showReport(){
+      // ✅ 考完自動寫入排行榜
+      try{ saveScoreToLeaderboard(exam.bankKey, exam.bankName, exam.score); }catch(e){}
+
       modalTitle.textContent = "完成 ✅";
       modalSub.textContent = `總分：${exam.score} / 100｜題庫：${exam.bankName}`;
 
@@ -840,7 +843,11 @@
           updatedAt: now
         });
       }catch(e){
-        // 靜默失敗，不影響使用者體驗
+        console.error("saveScoreToLeaderboard failed:", e);
+        if(!saveScoreToLeaderboard._warned){
+          saveScoreToLeaderboard._warned = true;
+          showToast("分數寫入排行榜失敗（多半是 Firebase Rules 或 Pages 網域未授權）", "bad");
+        }
       }
     }
 

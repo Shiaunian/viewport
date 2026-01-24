@@ -39,12 +39,36 @@
 
   // --- 英文：動物類單字 ---
   window.QUESTION_BANK["語言/英文/動物類單字"] = [
-    題("『貓』的英文是？", ["cat", "dog", "bird", "fish"], 0),
-    題("『狗』的英文是？", ["duck", "dog", "frog", "cow"], 1),
-    題("tiger 是什麼？", ["老虎", "獅子", "豹", "狼"], 0),
-    題("zebra 是什麼？", ["斑馬", "河馬", "水牛", "馴鹿"], 0),
-    題("『熊』的英文是？", ["bear", "beer", "dear", "boar"], 0),
-    題("『狐狸』的英文是？", ["fox", "box", "fix", "fax"], 0)
+    題("『貓』的英文是？", ["cat", "cap", "cut", "car"], 0),
+    題("『狗』的英文是？", ["dig", "dog", "dot", "dug"], 1),
+    題("『鳥』的英文是？", ["born", "bird", "board", "beard"], 1),
+    題("『魚』的英文是？", ["dish", "finish", "fish", "fist"], 2),
+    題("『老虎』的英文是？", ["tiger", "tighter", "trigger", "tinker"], 0),
+    題("『獅子』的英文是？", ["listen", "lion", "linen", "lions"], 1),
+    題("『大象』的英文是？", ["elegant", "element", "elephant", "elevator"], 2),
+    題("『長頸鹿』的英文是？", ["giraffe", "graph", "guitar", "girlfriend"], 0),
+    題("『熊』的英文是？", ["bear", "beer", "beard", "bare"], 0),
+    題("『狼』的英文是？", ["wall", "wolf", "wool", "well"], 1),
+    題("『狐狸』的英文是？", ["fox", "box", "fix", "fax"], 0),
+    題("『鹿』的英文是？", ["deer", "dear", "door", "dare"], 0),
+    題("『兔子』的英文是？", ["rabbit", "habit", "robot", "ribbon"], 0),
+    題("『老鼠』的英文是？", ["mouth", "mouse", "mousse", "moose"], 1),
+    題("『馬』的英文是？", ["hose", "horse", "house", "horde"], 1),
+    題("『牛』的英文是？", ["cow", "crow", "crown", "clown"], 0),
+    題("『羊』的英文是？", ["ship", "sheep", "shape", "shop"], 1),
+    題("『山羊』的英文是？", ["goat", "goal", "gold", "goes"], 0),
+    題("『豬』的英文是？", ["pig", "big", "pin", "pit"], 0),
+    題("『雞』的英文是？", ["chick", "check", "chicken", "kitchen"], 2),
+    題("『鴨子』的英文是？", ["duck", "dock", "deck", "dusk"], 0),
+    題("『青蛙』的英文是？", ["frog", "flag", "frag", "free"], 0),
+    題("『蛇』的英文是？", ["shake", "snack", "snake", "stake"], 2),
+    題("『烏龜』的英文是？", ["turtle", "tunnel", "turnip", "tuple"], 0),
+    題("『猴子』的英文是？", ["money", "monkey", "donkey", "honey"], 1),
+    題("『猩猩』的英文是？", ["gorilla", "guerrilla", "gorgeous", "gloria"], 0),
+    題("『斑馬』的英文是？", ["zebra", "zebras", "zero", "zither"], 0),
+    題("『海豚』的英文是？", ["dolphin", "dollar", "domain", "darling"], 0),
+    題("『鯊魚』的英文是？", ["shark", "share", "sharp", "shard"], 0),
+    題("『鯨魚』的英文是？", ["while", "whale", "wheel", "whole"], 1),
   ];
 
   // --- 英文：基礎文法 ---
