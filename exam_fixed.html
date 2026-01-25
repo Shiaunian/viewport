@@ -369,6 +369,7 @@
     const startBtn = document.getElementById("startBtn");
     const logoutBtn = document.getElementById("logoutBtn");
     const leaderBtn = document.getElementById("leaderBtn");
+    const leaderboards = document.getElementById("")
 
     const modal = document.getElementById("modal");
     const closeBtn = document.getElementById("closeBtn");
@@ -813,9 +814,15 @@
           `;
           lbList.appendChild(item);
         });
+        
       }catch(e){
-        lbList.innerHTML = "<div class=\"hint\">排行榜載入失敗，請稍後再試。</div>";
+        console.error("loadLeaderboard failed:", e);
+        const code = e?.code ? `（${e.code}）` : "";
+        const msg  = e?.message ? e.message : String(e);
+        lbList.innerHTML = `<div class="hint">排行榜載入失敗 ${code}<br/>${msg}</div>`;
+        lbCount.textContent = "—";
       }
+
     }
 
     async function saveScoreToLeaderboard(bankKey, bankName, score){
