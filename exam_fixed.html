@@ -596,14 +596,15 @@
       // ✅ 每題選項也洗牌（並同步修正正確答案索引）
       return picked.map((q) => {
         const qq = { ...q };
+
         const opts = Array.isArray(qq.options) ? qq.options.slice() : [];
         const correct = Number.isInteger(qq.answer) ? qq.answer : -1;
 
         if(opts.length > 1 && correct >= 0 && correct < opts.length){
           const idxs = Array.from({length: opts.length}, (_, i) => i);
           const shuffledIdxs = shuffle(idxs);
-          qq.options = shuffledIdxs.map(i => opts[i]);
-          qq.answer = shuffledIdxs.indexOf(correct);
+          qq.options = shuffledIdxs.map(i => opts[i]);     // ✅ 直接搬整個 item（字串或物件都行）
+          qq.answer  = shuffledIdxs.indexOf(correct);
         }else{
           qq.options = opts;
         }
@@ -652,13 +653,45 @@
       }
 
       // 選項
-      (q.options || []).forEach((label, idx) => {
+      (q.options || []).forEach((optItem, idx) => {
         const btn = document.createElement("button");
         btn.className = "opt";
         btn.type = "button";
-        // 支援你題庫可能會放 img html 字串
-        btn.innerHTML = label;
-        btn.addEventListener("click", () => choose(idx, btn));
+
+        const label = (typeof optItem === "object" && optItem) ? (optItem.label ?? "") : String(optItem ?? "");
+        const audio = (typeof optItem === "object" && optItem) ? (optItem.audio ?? "") : "";
+
+        // 左邊文字、右邊語音鈕
+        btn.innerHTML = `
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+            <div style="flex:1; min-width:0;">${label}</div>
+            ${audio ? `<button class="btn" type="button" data-audio="${escapeHtml(audio)}" style="padding:6px 10px;">🔊</button>` : ""}
+          </div>
+        `;
+
+        // 點整個選項 = 作答
+        btn.addEventListener("click", (e) => {
+          // 如果點到語音按鈕，別觸發作答
+          const audioBtn = e.target.closest?.("button[data-audio]");
+          if(audioBtn) return;
+          choose(idx, btn);
+        });
+
+        // 語音按鈕事件
+        const audioBtn = btn.querySelector("button[data-audio]");
+        if(audioBtn){
+          audioBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            try{
+              stopAudio();
+              audioPlayer = new Audio(audioBtn.dataset.audio);
+              audioPlayer.play();
+            }catch(err){
+              showToast("選項語音播放失敗（檔案路徑或瀏覽器限制）", "bad");
+            }
+          });
+        }
+
         opts.appendChild(btn);
       });
 
@@ -718,8 +751,13 @@
       exam.questions.forEach((q, i) => {
         const ua = exam.userAnswers[i];
         const ca = q.answer;
-        const uaText = ua == null ? "未作答" : stripHtml(q.options[ua]);
-        const caText = stripHtml(q.options[ca]);
+
+      function optLabel(x){
+          if(typeof x === "object" && x) return String(x.label ?? "");
+          return stripHtml(String(x ?? ""));
+        }
+        const uaText = ua == null ? "未作答" : optLabel(q.options[ua]);
+        const caText = optLabel(q.options[ca]);
 
         const line = document.createElement("div");
         line.className = "rline";

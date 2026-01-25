@@ -39,7 +39,12 @@
 
   // --- 英文：動物類單字 ---
   window.QUESTION_BANK["語言/英文/動物類單字"] = [
-    題("『貓』的英文是？", ["cat", "cap", "cut", "car"], 0),
+    題("『貓』的英文是？", [
+        { label:"cat", audio:"./audio/en/animals/cat.mp3" },
+        { label:"cap", audio:"./audio/en/animals/cap.mp3" },
+        { label:"cut", audio:"./audio/en/animals/cut.mp3" },
+        { label:"car", audio:"./audio/en/animals/car.mp3" },
+      ], 0),
     題("『狗』的英文是？", ["dig", "dog", "dot", "dug"], 1),
     題("『鳥』的英文是？", ["born", "bird", "board", "beard"], 1),
     題("『魚』的英文是？", ["dish", "finish", "fish", "fist"], 2),
