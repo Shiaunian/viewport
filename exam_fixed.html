@@ -341,6 +341,7 @@
 <!-- ↑ 你提供的題庫範例就是這種格式-->
 
     <script src="./語言.js"></script>
+    <script src="./工程.js"></script>
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
@@ -814,7 +815,7 @@
           `;
           lbList.appendChild(item);
         });
-        
+
       }catch(e){
         console.error("loadLeaderboard failed:", e);
         const code = e?.code ? `（${e.code}）` : "";
