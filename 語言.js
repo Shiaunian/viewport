@@ -45,12 +45,6 @@
         { label:"請聆聽", audio:"./audio/en/animals/cut.mp3" },
         { label:"請聆聽", audio:"./audio/en/animals/car.mp3" },
       ], 0),
-    題("『狗』的英文是？", [
-        { label:"請聆聽", audio:"./audio/en/animals/cat.mp3" },
-        { label:"請聆聽", audio:"./audio/en/animals/cap.mp3" },
-        { label:"請聆聽", audio:"./audio/en/animals/cut.mp3" },
-        { label:"請聆聽", audio:"./audio/en/animals/car.mp3" },
-      ], 1),
     題("『鳥』的英文是？", [
         { label:"請聆聽", audio:"./audio/en/animals/born.mp3" },
         { label:"請聆聽", audio:"./audio/en/animals/bird.mp3" },
