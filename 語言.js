@@ -40,42 +40,42 @@
   // --- 英文：動物類單字 ---
   window.QUESTION_BANK["語言/英文/動物類單字"] = [
     題("『貓』的英文是？", [
-        { label:"cat", audio:"./audio/en/animals/cat.mp3" },
-        { label:"cap", audio:"./audio/en/animals/cap.mp3" },
-        { label:"cut", audio:"./audio/en/animals/cut.mp3" },
-        { label:"car", audio:"./audio/en/animals/car.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/cat.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/cap.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/cut.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/car.mp3" },
       ], 0),
     題("『狗』的英文是？", [
-        { label:"dig", audio:"./audio/en/animals/cat.mp3" },
-        { label:"dog", audio:"./audio/en/animals/cap.mp3" },
-        { label:"dot", audio:"./audio/en/animals/cut.mp3" },
-        { label:"dug", audio:"./audio/en/animals/car.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/cat.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/cap.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/cut.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/car.mp3" },
       ], 1),
     題("『鳥』的英文是？", [
-        { label:"born", audio:"./audio/en/animals/born.mp3" },
-        { label:"bird", audio:"./audio/en/animals/bird.mp3" },
-        { label:"board", audio:"./audio/en/animals/board.mp3" },
-        { label:"beard", audio:"./audio/en/animals/beard.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/born.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/bird.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/board.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/beard.mp3" },
       ], 1),
     題("『魚』的英文是？", [
-        { label:"dish", audio:"./audio/en/animals/dish.mp3" },
-        { label:"finish", audio:"./audio/en/animals/finish.mp3" },
-        { label:"fish", audio:"./audio/en/animals/fish.mp3" },
-        { label:"fist", audio:"./audio/en/animals/fist.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/dish.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/finish.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/fish.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/fist.mp3" },
       ], 2),
 
     題("『老虎』的英文是？", [
-        { label:"tiger", audio:"./audio/en/animals/tiger.mp3" },
-        { label:"tighter", audio:"./audio/en/animals/tighter.mp3" },
-        { label:"trigger", audio:"./audio/en/animals/trigger.mp3" },
-        { label:"tinker", audio:"./audio/en/animals/tinker.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/tiger.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/tighter.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/trigger.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/tinker.mp3" },
       ], 0),
 
     題("『獅子』的英文是？", [
-        { label:"listen", audio:"./audio/en/animals/listen.mp3" },
-        { label:"lion", audio:"./audio/en/animals/lion.mp3" },
-        { label:"linen", audio:"./audio/en/animals/linen.mp3" },
-        { label:"lions", audio:"./audio/en/animals/lions.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/listen.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/lion.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/linen.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/lions.mp3" },
       ], 1),
     題("『大象』的英文是？", ["elegant", "element", "elephant", "elevator"], 2),
     題("『長頸鹿』的英文是？", ["giraffe", "graph", "guitar", "girlfriend"], 0),
@@ -146,4 +146,218 @@
     題("「얼마예요?」意思是？", ["在哪裡？", "多少錢？", "要不要？", "可以嗎？"], 1),
     題("「맛있어요」意思是？", ["很好吃", "很漂亮", "很累", "很冷"], 0)
   ];
+  
+  window.QUESTION_BANK["語言/韓文/動物類"] = [
+    題("『貓』的韓文是？", [
+      { label:"고양이", audio:"./audio/韓文/動物類/고양이.mp3" },
+      { label:"개", audio:"./audio/韓文/動物類/개.mp3" },
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+      { label:"말", audio:"./audio/韓文/動物類/말.mp3" },
+    ], 0),
+
+    題("『狗』的韓文是？", [
+      { label:"새", audio:"./audio/韓文/動物類/새.mp3" },
+      { label:"소", audio:"./audio/韓文/動物類/소.mp3" },
+      { label:"쥐", audio:"./audio/韓文/動物類/쥐.mp3" },
+      { label:"개", audio:"./audio/韓文/動物類/개.mp3" },
+    ], 3),
+
+    題("『鳥』的韓文是？", [
+      { label:"물고기", audio:"./audio/韓文/動物類/물고기.mp3" },
+      { label:"새", audio:"./audio/韓文/動物類/새.mp3" },
+      { label:"말", audio:"./audio/韓文/動物類/말.mp3" },
+      { label:"토끼", audio:"./audio/韓文/動物類/토끼.mp3" },
+    ], 1),
+
+    題("『魚』的韓文是？", [
+      { label:"물고기", audio:"./audio/韓文/動物類/물고기.mp3" },
+      { label:"새", audio:"./audio/韓文/動物類/새.mp3" },
+      { label:"토끼", audio:"./audio/韓文/動物類/토끼.mp3" },
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+    ], 0),
+
+    題("『老虎』的韓文是？", [
+      { label:"사자", audio:"./audio/韓文/動物類/사자.mp3" },
+      { label:"호랑이", audio:"./audio/韓文/動物類/호랑이.mp3" },
+      { label:"늑대", audio:"./audio/韓文/動物類/늑대.mp3" },
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+    ], 1),
+
+    題("『獅子』的韓文是？", [
+      { label:"사자", audio:"./audio/韓文/動物類/사자.mp3" },
+      { label:"호랑이", audio:"./audio/韓文/動物類/호랑이.mp3" },
+      { label:"여우", audio:"./audio/韓文/動物類/여우.mp3" },
+      { label:"말", audio:"./audio/韓文/動物類/말.mp3" },
+    ], 0),
+
+    題("『大象』的韓文是？", [
+      { label:"기린", audio:"./audio/韓文/動物類/기린.mp3" },
+      { label:"코끼리", audio:"./audio/韓文/動物類/코끼리.mp3" },
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+      { label:"염소", audio:"./audio/韓文/動物類/염소.mp3" },
+    ], 1),
+
+    題("『長頸鹿』的韓文是？", [
+      { label:"기린", audio:"./audio/韓文/動物類/기린.mp3" },
+      { label:"코끼리", audio:"./audio/韓文/動物類/코끼리.mp3" },
+      { label:"사슴", audio:"./audio/韓文/動物類/사슴.mp3" },
+      { label:"말", audio:"./audio/韓文/動物類/말.mp3" },
+    ], 0),
+
+    題("『熊』的韓文是？", [
+      { label:"호랑이", audio:"./audio/韓文/動物類/호랑이.mp3" },
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+      { label:"늑대", audio:"./audio/韓文/動物類/늑대.mp3" },
+      { label:"여우", audio:"./audio/韓文/動物類/여우.mp3" },
+    ], 1),
+
+    題("『狼』的韓文是？", [
+      { label:"개", audio:"./audio/韓文/動物類/개.mp3" },
+      { label:"늑대", audio:"./audio/韓文/動物類/늑대.mp3" },
+      { label:"여우", audio:"./audio/韓文/動物類/여우.mp3" },
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+    ], 1),
+
+    題("『狐狸』的韓文是？", [
+      { label:"여우", audio:"./audio/韓文/動物類/여우.mp3" },
+      { label:"늑대", audio:"./audio/韓文/動物類/늑대.mp3" },
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+      { label:"사슴", audio:"./audio/韓文/動物類/사슴.mp3" },
+    ], 0),
+
+    題("『鹿』的韓文是？", [
+      { label:"말", audio:"./audio/韓文/動物類/말.mp3" },
+      { label:"염소", audio:"./audio/韓文/動物類/염소.mp3" },
+      { label:"사슴", audio:"./audio/韓文/動物類/사슴.mp3" },
+      { label:"소", audio:"./audio/韓文/動物類/소.mp3" },
+    ], 2),
+
+    題("『兔子』的韓文是？", [
+      { label:"토끼", audio:"./audio/韓文/動物類/토끼.mp3" },
+      { label:"쥐", audio:"./audio/韓文/動物類/쥐.mp3" },
+      { label:"고양이", audio:"./audio/韓文/動物類/고양이.mp3" },
+      { label:"개", audio:"./audio/韓文/動物類/개.mp3" },
+    ], 0),
+
+    題("『老鼠』的韓文是？", [
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+      { label:"쥐", audio:"./audio/韓文/動物類/쥐.mp3" },
+      { label:"토끼", audio:"./audio/韓文/動物類/토끼.mp3" },
+      { label:"여우", audio:"./audio/韓文/動物類/여우.mp3" },
+    ], 1),
+
+    題("『馬』的韓文是？", [
+      { label:"말", audio:"./audio/韓文/動物類/말.mp3" },
+      { label:"소", audio:"./audio/韓文/動物類/소.mp3" },
+      { label:"양", audio:"./audio/韓文/動物類/양.mp3" },
+      { label:"염소", audio:"./audio/韓文/動物類/염소.mp3" },
+    ], 0),
+
+    題("『牛』的韓文是？", [
+      { label:"말", audio:"./audio/韓文/動物類/말.mp3" },
+      { label:"소", audio:"./audio/韓文/動物類/소.mp3" },
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+      { label:"양", audio:"./audio/韓文/動物類/양.mp3" },
+    ], 1),
+
+    題("『羊』的韓文是？", [
+      { label:"염소", audio:"./audio/韓文/動物類/염소.mp3" },
+      { label:"양", audio:"./audio/韓文/動物類/양.mp3" },
+      { label:"소", audio:"./audio/韓文/動物類/소.mp3" },
+      { label:"말", audio:"./audio/韓文/動物類/말.mp3" },
+    ], 1),
+
+    題("『豬』的韓文是？", [
+      { label:"쥐", audio:"./audio/韓文/動物類/쥐.mp3" },
+      { label:"돼지", audio:"./audio/韓文/動物類/돼지.mp3" },
+      { label:"개", audio:"./audio/韓文/動物類/개.mp3" },
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+    ], 1),
+
+    題("『山羊』的韓文是？", [
+      { label:"사슴", audio:"./audio/韓文/動物類/사슴.mp3" },
+      { label:"양", audio:"./audio/韓文/動物類/양.mp3" },
+      { label:"염소", audio:"./audio/韓文/動物類/염소.mp3" },
+      { label:"소", audio:"./audio/韓文/動物類/소.mp3" },
+    ], 2),
+
+    題("『雞』的韓文是？", [
+      { label:"토끼", audio:"./audio/韓文/動物類/토끼.mp3" },
+      { label:"닭", audio:"./audio/韓文/動物類/닭.mp3" },
+      { label:"쥐", audio:"./audio/韓文/動物類/쥐.mp3" },
+      { label:"사슴", audio:"./audio/韓文/動物類/사슴.mp3" },
+    ], 1),
+
+    題("『鴨子』的韓文是？", [
+      { label:"닭", audio:"./audio/韓文/動物類/닭.mp3" },
+      { label:"오리", audio:"./audio/韓文/動物類/오리.mp3" },
+      { label:"새", audio:"./audio/韓文/動物類/새.mp3" },
+      { label:"물고기", audio:"./audio/韓文/動物類/물고기.mp3" },
+    ], 1),
+
+    題("『青蛙』的韓文是？", [
+      { label:"뱀", audio:"./audio/韓文/動物類/뱀.mp3" },
+      { label:"개구리", audio:"./audio/韓文/動物類/개구리.mp3" },
+      { label:"쥐", audio:"./audio/韓文/動物類/쥐.mp3" },
+      { label:"토끼", audio:"./audio/韓文/動物類/토끼.mp3" },
+    ], 1),
+
+    題("『蛇』的韓文是？", [
+      { label:"늑대", audio:"./audio/韓文/動物類/늑대.mp3" },
+      { label:"뱀", audio:"./audio/韓文/動物類/뱀.mp3" },
+      { label:"여우", audio:"./audio/韓文/動物類/여우.mp3" },
+      { label:"쥐", audio:"./audio/韓文/動物類/쥐.mp3" },
+    ], 1),
+
+    題("『烏龜』的韓文是？", [
+      { label:"거북이", audio:"./audio/韓文/動物類/거북이.mp3" },
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+      { label:"돼지", audio:"./audio/韓文/動物類/돼지.mp3" },
+      { label:"개", audio:"./audio/韓文/動物類/개.mp3" },
+    ], 0),
+
+    題("『猴子』的韓文是？", [
+      { label:"원숭이", audio:"./audio/韓文/動物類/원숭이.mp3" },
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+      { label:"사자", audio:"./audio/韓文/動物類/사자.mp3" },
+      { label:"개", audio:"./audio/韓文/動物類/개.mp3" },
+    ], 0),
+
+    題("『猩猩』的韓文是？", [
+      { label:"고릴라", audio:"./audio/韓文/動物類/고릴라.mp3" },
+      { label:"원숭이", audio:"./audio/韓文/動物類/원숭이.mp3" },
+      { label:"곰", audio:"./audio/韓文/動物類/곰.mp3" },
+      { label:"돼지", audio:"./audio/韓文/動物類/돼지.mp3" },
+    ], 0),
+
+    題("『斑馬』的韓文是？", [
+      { label:"말", audio:"./audio/韓文/動物類/말.mp3" },
+      { label:"얼룩말", audio:"./audio/韓文/動物類/얼룩말.mp3" },
+      { label:"소", audio:"./audio/韓文/動物類/소.mp3" },
+      { label:"사슴", audio:"./audio/韓文/動物類/사슴.mp3" },
+    ], 1),
+
+    題("『海豚』的韓文是？", [
+      { label:"물고기", audio:"./audio/韓文/動物類/물고기.mp3" },
+      { label:"돌고래", audio:"./audio/韓文/動物類/돌고래.mp3" },
+      { label:"고래", audio:"./audio/韓文/動物類/고래.mp3" },
+      { label:"상어", audio:"./audio/韓文/動物類/상어.mp3" },
+    ], 1),
+
+    題("『鯊魚』的韓文是？", [
+      { label:"돌고래", audio:"./audio/韓文/動物類/돌고래.mp3" },
+      { label:"상어", audio:"./audio/韓文/動物類/상어.mp3" },
+      { label:"고래", audio:"./audio/韓文/動物類/고래.mp3" },
+      { label:"물고기", audio:"./audio/韓文/動物類/물고기.mp3" },
+    ], 1),
+
+    題("『鯨魚』的韓文是？", [
+      { label:"돌고래", audio:"./audio/韓文/動物類/돌고래.mp3" },
+      { label:"상어", audio:"./audio/韓文/動物類/상어.mp3" },
+      { label:"고래", audio:"./audio/韓文/動物類/고래.mp3" },
+      { label:"물고기", audio:"./audio/韓文/動物類/물고기.mp3" },
+    ], 2),
+  ];
+
+
 })();
