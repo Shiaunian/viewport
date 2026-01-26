@@ -26,7 +26,8 @@
     },
     "韓文": {
       "單字入門": "語言/韓文/單字入門",
-      "日常會話": "語言/韓文/日常會話"
+      "日常會話": "語言/韓文/日常會話",
+      "動物類": "語言/韓文/動物類"
     }
   };
 
@@ -45,6 +46,12 @@
         { label:"請聆聽", audio:"./audio/en/animals/cut.mp3" },
         { label:"請聆聽", audio:"./audio/en/animals/car.mp3" },
       ], 0),
+    題("『狗』的英文是？", [
+        { label:"請聆聽", audio:"./audio/en/animals/cat.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/cap.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/cut.mp3" },
+        { label:"請聆聽", audio:"./audio/en/animals/car.mp3" },
+      ], 1),
     題("『鳥』的英文是？", [
         { label:"請聆聽", audio:"./audio/en/animals/born.mp3" },
         { label:"請聆聽", audio:"./audio/en/animals/bird.mp3" },
@@ -140,7 +147,7 @@
     題("「얼마예요?」意思是？", ["在哪裡？", "多少錢？", "要不要？", "可以嗎？"], 1),
     題("「맛있어요」意思是？", ["很好吃", "很漂亮", "很累", "很冷"], 0)
   ];
-  
+
   window.QUESTION_BANK["語言/韓文/動物類"] = [
     題("『貓』的韓文是？", [
       { label:"고양이", audio:"./audio/韓文/動物類/고양이.mp3" },
