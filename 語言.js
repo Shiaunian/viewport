@@ -45,11 +45,38 @@
         { label:"cut", audio:"./audio/en/animals/cut.mp3" },
         { label:"car", audio:"./audio/en/animals/car.mp3" },
       ], 0),
-    題("『狗』的英文是？", ["dig", "dog", "dot", "dug"], 1),
-    題("『鳥』的英文是？", ["born", "bird", "board", "beard"], 1),
-    題("『魚』的英文是？", ["dish", "finish", "fish", "fist"], 2),
-    題("『老虎』的英文是？", ["tiger", "tighter", "trigger", "tinker"], 0),
-    題("『獅子』的英文是？", ["listen", "lion", "linen", "lions"], 1),
+    題("『狗』的英文是？", [
+        { label:"dig", audio:"./audio/en/animals/cat.mp3" },
+        { label:"dog", audio:"./audio/en/animals/cap.mp3" },
+        { label:"dot", audio:"./audio/en/animals/cut.mp3" },
+        { label:"dug", audio:"./audio/en/animals/car.mp3" },
+      ], 1),
+    題("『鳥』的英文是？", [
+        { label:"born", audio:"./audio/en/animals/born.mp3" },
+        { label:"bird", audio:"./audio/en/animals/bird.mp3" },
+        { label:"board", audio:"./audio/en/animals/board.mp3" },
+        { label:"beard", audio:"./audio/en/animals/beard.mp3" },
+      ], 1),
+    題("『魚』的英文是？", [
+        { label:"dish", audio:"./audio/en/animals/dish.mp3" },
+        { label:"finish", audio:"./audio/en/animals/finish.mp3" },
+        { label:"fish", audio:"./audio/en/animals/fish.mp3" },
+        { label:"fist", audio:"./audio/en/animals/fist.mp3" },
+      ], 2),
+
+    題("『老虎』的英文是？", [
+        { label:"tiger", audio:"./audio/en/animals/tiger.mp3" },
+        { label:"tighter", audio:"./audio/en/animals/tighter.mp3" },
+        { label:"trigger", audio:"./audio/en/animals/trigger.mp3" },
+        { label:"tinker", audio:"./audio/en/animals/tinker.mp3" },
+      ], 0),
+
+    題("『獅子』的英文是？", [
+        { label:"listen", audio:"./audio/en/animals/listen.mp3" },
+        { label:"lion", audio:"./audio/en/animals/lion.mp3" },
+        { label:"linen", audio:"./audio/en/animals/linen.mp3" },
+        { label:"lions", audio:"./audio/en/animals/lions.mp3" },
+      ], 1),
     題("『大象』的英文是？", ["elegant", "element", "elephant", "elevator"], 2),
     題("『長頸鹿』的英文是？", ["giraffe", "graph", "guitar", "girlfriend"], 0),
     題("『熊』的英文是？", ["bear", "beer", "beard", "bare"], 0),
