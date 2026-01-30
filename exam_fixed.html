@@ -224,8 +224,8 @@
       <div class="hero">
         <div class="row">
           <div>
-            <div class="modal-title">試煉大廳</div>
-            <div class="modal-sub">你不是來被評價，你是來重構自己。</div>
+            <div id="hallTitle" class="modal-title">試煉大廳</div>
+            <div id="hallSub" class="modal-sub">你不是來被評價，你是來重構自己。</div>
           </div>
           <div class="chip">20 題｜100 分</div>
         </div>
@@ -236,6 +236,11 @@
       <div id="toast" class="toast"></div>
 
       <div class="panel">
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button id="modeExamBtn" class="btn primary" type="button" style="flex:1; min-width:150px;">試煉大廳</button>
+          <button id="modeReviewBtn" class="btn" type="button" style="flex:1; min-width:150px;">複習大廳</button>
+        </div>
+
         <div>
           <label for="mainSelect">主分類（第一層）</label>
           <select id="mainSelect">
@@ -337,6 +342,33 @@
   </div>
 
 
+
+  <!-- Review Modal -->
+  <div id="rvModal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div id="rvTitle" class="modal-title">複習</div>
+          <div id="rvSub" class="modal-sub">—</div>
+        </div>
+        <button id="rvCloseBtn" class="close" title="關閉">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="qbox">
+          <div class="qmeta">
+            <div class="muted">點 🔊 播放｜點整行可複製文字</div>
+            <div class="badge" id="rvCount">0 筆</div>
+          </div>
+          <div id="rvList" class="opts"></div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button id="rvCloseBtn2" class="btn primary grow">關閉</button>
+      </div>
+    </div>
+  </div>
+
+
   <!-- 題庫（先用你現有的範例，之後你可以換成更多檔） -->
 <!-- ↑ 你提供的題庫範例就是這種格式-->
 
@@ -370,7 +402,21 @@
     const startBtn = document.getElementById("startBtn");
     const logoutBtn = document.getElementById("logoutBtn");
     const leaderBtn = document.getElementById("leaderBtn");
-    const leaderboards = document.getElementById("")
+
+    // ===== 大廳模式（試煉 / 複習）=====
+    const hallTitle = document.getElementById("hallTitle");
+    const hallSub = document.getElementById("hallSub");
+    const modeExamBtn = document.getElementById("modeExamBtn");
+    const modeReviewBtn = document.getElementById("modeReviewBtn");
+
+    // ===== 複習 Modal UI =====
+    const rvModal = document.getElementById("rvModal");
+    const rvTitle = document.getElementById("rvTitle");
+    const rvSub = document.getElementById("rvSub");
+    const rvList = document.getElementById("rvList");
+    const rvCount = document.getElementById("rvCount");
+    const rvCloseBtn = document.getElementById("rvCloseBtn");
+    const rvCloseBtn2 = document.getElementById("rvCloseBtn2");
 
     const modal = document.getElementById("modal");
     const closeBtn = document.getElementById("closeBtn");
@@ -397,6 +443,8 @@
     const lbCount = document.getElementById("lbCount");
 
     let audioPlayer = null;
+    let hallMode = "exam"; // "exam" | "review"
+
     function stopAudio(){
       try{
         if(audioPlayer){
@@ -446,7 +494,35 @@
       subBankSelect.innerHTML = '<option value="">請先選子分類…</option>';
 
       startBtn.disabled = true;
+      setHallMode(hallMode);
     }
+
+
+    function setHallMode(mode){
+      hallMode = (mode === "review") ? "review" : "exam";
+
+      if(hallMode === "exam"){
+        hallTitle.textContent = "試煉大廳";
+        hallSub.textContent = "你不是來被評價，你是來重構自己。";
+        modeExamBtn.classList.add("primary");
+        modeReviewBtn.classList.remove("primary");
+        startBtn.textContent = "開始考試";
+        // 排行榜：只有試煉大廳會用到
+        if(subBankSelect.value && currentBankKey){
+          leaderBtn.style.display = "inline-flex";
+        }
+      }else{
+        hallTitle.textContent = "複習大廳";
+        hallSub.textContent = "不考試，不排行；把句子/單字練到刻進肌肉記憶。";
+        modeReviewBtn.classList.add("primary");
+        modeExamBtn.classList.remove("primary");
+        startBtn.textContent = "開始複習";
+        leaderBtn.style.display = "none";
+      }
+    }
+
+    modeExamBtn.addEventListener("click", () => setHallMode("exam"));
+    modeReviewBtn.addEventListener("click", () => setHallMode("review"));
 
     mainSelect.addEventListener("change", () => {
       clearToast();
@@ -518,8 +594,8 @@
 
       startBtn.disabled = !次分類;
 
-      // ✅ 選到次分類就顯示排行榜按鈕
-      if(次分類 && currentBankKey){
+      // ✅ 選到次分類：試煉大廳才顯示排行榜
+      if(hallMode === "exam" && 次分類 && currentBankKey){
         leaderBtn.style.display = "inline-flex";
       }else{
         leaderBtn.style.display = "none";
@@ -540,6 +616,20 @@
 
     closeBtn.addEventListener("click", () => closeModal());
     modal.addEventListener("click", (e) => { if(e.target === modal) closeModal(); });
+
+    // 複習 modal
+    function openRvModal(){
+      rvModal.classList.add("show");
+      rvModal.setAttribute("aria-hidden", "false");
+    }
+    function closeRvModal(){
+      stopAudio();
+      rvModal.classList.remove("show");
+      rvModal.setAttribute("aria-hidden", "true");
+    }
+    rvCloseBtn.addEventListener("click", closeRvModal);
+    rvCloseBtn2.addEventListener("click", closeRvModal);
+    rvModal.addEventListener("click", (e) => { if(e.target === rvModal) closeRvModal(); });
 
     // 排行榜 modal
     lbCloseBtn.addEventListener("click", () => closeLbModal());
@@ -904,6 +994,82 @@
       }[m]));
     }
 
+
+    function getReviewItems(bankKey){
+      const bank = window.QUESTION_BANK?.[bankKey];
+      if(!Array.isArray(bank)) return [];
+      return bank.map((q, idx) => {
+        const ansIdx = Number.isInteger(q.answer) ? q.answer : -1;
+        const opt = (Array.isArray(q.options) && ansIdx >= 0) ? q.options[ansIdx] : null;
+
+        const label = (typeof opt === "object" && opt) ? (opt.label ?? "") : (opt != null ? String(opt) : "");
+        const audio = (typeof opt === "object" && opt) ? (opt.audio ?? "") : (q.audio ?? "");
+
+        return {
+          idx: idx + 1,
+          prompt: q.text || "",
+          text: label || "",
+          audio: audio || ""
+        };
+      }).filter(x => x.text || x.prompt);
+    }
+
+    async function openReview(bankKey, bankName){
+      rvTitle.textContent = "複習";
+      rvSub.textContent = `題庫：${bankName || bankKey}`;
+      rvList.innerHTML = "";
+      const items = getReviewItems(bankKey);
+      rvCount.textContent = `${items.length} 筆`;
+
+      if(items.length === 0){
+        rvList.innerHTML = '<div class="hint">這個題庫沒有可顯示的複習內容。</div>';
+        openRvModal();
+        return;
+      }
+
+      items.forEach((it) => {
+        const row = document.createElement("div");
+        row.className = "opt";
+        row.innerHTML = `
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+            <div style="flex:1; min-width:0;">
+              <div style="font-weight:900; font-size:16px; line-height:1.35; overflow-wrap:anywhere;">${escapeHtml(it.text)}</div>
+              ${it.prompt ? `<div class="muted" style="font-size:12px; margin-top:6px; line-height:1.4;">${escapeHtml(it.prompt)}</div>` : ``}
+            </div>
+            ${it.audio ? `<button class="btn" type="button" data-audio="${escapeHtml(it.audio)}" style="padding:6px 10px;">🔊</button>` : ``}
+          </div>
+        `;
+
+        // 點整行：複製文字（方便丟給 AI 翻譯）
+        row.addEventListener("click", (e) => {
+          const audioBtn = e.target.closest?.("button[data-audio]");
+          if(audioBtn) return;
+          const t = it.text || "";
+          if(!t) return;
+          navigator.clipboard?.writeText(t);
+          showToast(`已複製：${t}`, "ok");
+        });
+
+        const audioBtn = row.querySelector("button[data-audio]");
+        if(audioBtn){
+          audioBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            try{
+              stopAudio();
+              audioPlayer = new Audio(audioBtn.dataset.audio);
+              audioPlayer.play();
+            }catch(err){
+              showToast("語音播放失敗（檔案路徑或瀏覽器限制）", "bad");
+            }
+          });
+        }
+
+        rvList.appendChild(row);
+      });
+
+      openRvModal();
+    }
+
     startBtn.addEventListener("click", () => {
       clearToast();
       const 主分類 = mainSelect.value;
@@ -911,9 +1077,22 @@
       const 次分類 = subBankSelect.value;
       const bankKey = window.分類樹?.[主分類]?.[子分類]?.[次分類] || "";
       if(!bankKey) return;
+
       currentBankKey = bankKey;
       currentBankName = `${主分類}｜${子分類}｜${次分類}`;
 
+      if(hallMode === "review"){
+        // 複習大廳：不需要滿 20 題（但仍須有題庫）
+        const bank = window.QUESTION_BANK?.[bankKey];
+        if(!Array.isArray(bank) || bank.length === 0){
+          showToast("此題庫沒有內容，無法複習。", "bad");
+          return;
+        }
+        openReview(bankKey, currentBankName);
+        return;
+      }
+
+      // ===== 試煉大廳（原本考試）=====
       if(!題庫足夠(bankKey)){
         showToast("此題庫未滿 20 題，暫不開放考試。", "bad");
         return;
