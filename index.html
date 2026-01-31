@@ -528,7 +528,12 @@
           email,
           username,
           usernameKey: nameKey,
-          createdAt: serverTimestamp()
+          createdAt: serverTimestamp(),
+
+          // 等級 / 經驗：總經驗值 = 各考試項目最新分數總和
+          xpTotal: 0,
+          level: 1,
+          examScores: {}
         });
 
         showToast("註冊成功 ✅ 進入試煉大廳！", "ok");

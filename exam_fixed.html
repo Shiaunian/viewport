@@ -242,14 +242,14 @@
         </div>
 
         <div>
-          <label for="mainSelect">主分類（第一層）</label>
+          <label for="mainSelect">主分類</label>
           <select id="mainSelect">
             <option value="">請選擇…</option>
           </select>
         </div>
 
         <div>
-          <label for="bankSelect">題庫 / 子領域</label>
+          <label for="bankSelect">主題</label>
           <select id="bankSelect" disabled>
             <option value="">請先選主分類…</option>
           </select>
@@ -258,17 +258,13 @@
         
 
         <div>
-          <label for="subBankSelect">次分類（第三層，選這個才開考）</label>
+          <label for="subBankSelect">考試項目</label>
           <select id="subBankSelect" disabled>
-            <option value="">請先選子分類…</option>
+            <option value="">請先選主題…</option>
           </select>
         </div>
 
         <button id="leaderBtn" class="btn" style="display:none;">🏆 查看排行榜</button>
-<div class="hint">
-          作答規則：每次從該題庫隨機抽 20 題；作答立刻顯示對/錯；完成後提供答題比對報告。<br/>
-          題庫格式沿用 <span class="muted">window.QUESTION_BANK[bankKey] = [{text, options, answer, image?}]</span>。
-        </div>
 
         <button id="startBtn" class="btn primary" disabled>開始考試</button>
       </div>
@@ -326,13 +322,11 @@
       <div class="modal-body">
         <div class="qbox">
           <div class="qmeta">
-            <div class="muted">公開排行榜｜同一題庫取最高分</div>
+            <div class="muted">公開排行榜｜只會計算最新分數</div>
             <div class="badge" id="lbCount">0 人</div>
           </div>
           <div id="lbList" class="opts"></div>
-          <div class="hint" style="margin-top:10px;">
-            小提示：分數會在你考完後自動上榜；若你刷出更高分，會自動更新成最高分。
-          </div>
+          
         </div>
       </div>
       <div class="modal-foot">
@@ -377,7 +371,7 @@
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
-    import { getDatabase, ref, get, set, update, query, orderByChild, limitToLast } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+    import { getDatabase, ref, get, set, update, query, orderByChild, limitToLast, runTransaction } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyDXesKYLI2T_DGR9uxqdbvoqpEMBY43cT8",
@@ -454,6 +448,14 @@
       }catch(e){}
     }
 
+    // ===== 等級 / 經驗 =====
+    // 規則：每個「考試項目」只計算一次（最新分數覆蓋舊分數），總經驗值 = 各考試項目最新分數總和。
+    // 你可以之後再微調門檻（例如改成 100、300、600...）。
+    function calcLevel(xp){
+      const v = Number(xp || 0);
+      return 1 + Math.floor(Math.max(0, v) / 200);
+    }
+
     function 題庫足夠(bankKey){
       const bank = window.QUESTION_BANK?.[bankKey];
       return Array.isArray(bank) && bank.length >= 題數門檻;
@@ -491,7 +493,7 @@
       bankSelect.innerHTML = '<option value="">請先選主分類…</option>';
 
       subBankSelect.disabled = true;
-      subBankSelect.innerHTML = '<option value="">請先選子分類…</option>';
+      subBankSelect.innerHTML = '<option value="">請先選主題…</option>';
 
       startBtn.disabled = true;
       setHallMode(hallMode);
@@ -535,7 +537,7 @@
       subBankSelect.innerHTML = "";
 
       subBankSelect.disabled = true;
-      subBankSelect.innerHTML = '<option value="">請先選子分類…</option>';
+      subBankSelect.innerHTML = '<option value="">請先選主題…</option>';
 
       if(!主分類){
         bankSelect.disabled = true;
@@ -545,7 +547,7 @@
 
       const 子列表 = Object.keys(window.分類樹?.[主分類] || {});
       bankSelect.disabled = false;
-      bankSelect.appendChild(new Option("請選子分類…", ""));
+      bankSelect.appendChild(new Option("請選主題…", ""));
       for(const 子分類 of 子列表){
         bankSelect.appendChild(new Option(子分類, 子分類));
       }
@@ -561,13 +563,13 @@
 
       if(!主分類 || !子分類){
         subBankSelect.disabled = true;
-        subBankSelect.innerHTML = '<option value="">請先選子分類…</option>';
+        subBankSelect.innerHTML = '<option value="">請先選主題…</option>';
         return;
       }
 
       const 次列表 = Object.keys(window.分類樹?.[主分類]?.[子分類] || {});
       subBankSelect.disabled = false;
-      subBankSelect.appendChild(new Option("請選次分類…", ""));
+      subBankSelect.appendChild(new Option("請選考試項目…", ""));
       let 有任何可考的 = false;
       for(const 次分類 of 次列表){
         const bankKey = window.分類樹?.[主分類]?.[子分類]?.[次分類] || "";
@@ -880,6 +882,59 @@
       div.innerHTML = s ?? "";
       return (div.textContent || div.innerText || "").trim();
     }
+
+    async function updateUserProgress(bankKey, bankName, score){
+      if(!currentUser || !bankKey) return;
+      const k = safeKey(bankKey);
+      const now = Date.now();
+      const userRef = ref(db, "users/" + currentUser.uid);
+
+      try{
+        const result = await runTransaction(userRef, (cur) => {
+          cur = cur || {};
+          const scores = cur.examScores || {};
+          const prev = Number(scores?.[k]?.score || 0);
+
+          // 覆蓋最新分數（同一考試項目只記一次）
+          scores[k] = {
+            bankKey,
+            bankName: bankName || "",
+            score: Number(score || 0),
+            updatedAt: now
+          };
+
+          const xpBefore = Number(cur.xpTotal || 0);
+          const delta = Number(score || 0) - prev;
+          const xpAfter = xpBefore + delta;
+
+          cur.examScores = scores;
+          cur.xpTotal = xpAfter;
+          cur.level = calcLevel(xpAfter);
+          return cur;
+        });
+
+        const v = result?.snapshot?.val() || null;
+        if(v){
+          currentUser.xpTotal = Number(v.xpTotal || 0);
+          currentUser.level = Number(v.level || calcLevel(currentUser.xpTotal));
+          // 同步更新 UI（不重新抓 profile）
+          try{
+            const email = currentUser.email || "";
+            const name = currentUser.name || "改造師";
+            const avatar = currentUser.avatar || "";
+            userBar.innerHTML = `
+              <img class="avatar" src="${escapeHtml(avatar)}" alt="avatar"/>
+              <div class="usertext">
+                <div>目前登入：<b>${escapeHtml(name)}</b></div>
+                <div class="muted" style="font-size:12px;">Lv.${currentUser.level}｜經驗 ${currentUser.xpTotal}｜${escapeHtml(email)}</div>
+              </div>
+            `;
+          }catch(e){}
+        }
+      }catch(e){
+        console.error("updateUserProgress failed:", e);
+      }
+    }
     
     async function loadLeaderboard(bankKey, bankName){
       if(!bankKey) return;
@@ -890,7 +945,7 @@
       lbCount.textContent = "—";
 
       try{
-        const qRef = query(ref(db, "leaderboards/" + k), orderByChild("bestScore"), limitToLast(50));
+        const qRef = query(ref(db, "leaderboards/" + k), orderByChild("latestScore"), limitToLast(50));
         const snap = await get(qRef);
         const rows = [];
         if(snap.exists()){
@@ -900,7 +955,7 @@
               uid: child.key,
               name: v.name || "匿名改造師",
               avatar: v.avatar || "",
-              bestScore: typeof v.bestScore === "number" ? v.bestScore : Number(v.bestScore || 0),
+              latestScore: typeof v.latestScore === "number" ? v.latestScore : Number(v.latestScore || 0),
               updatedAt: v.updatedAt || 0,
               attempts: v.attempts || 0
             });
@@ -908,7 +963,7 @@
         }
 
         // limitToLast 會回傳由小到大；我們要由大到小
-        rows.sort((a,b) => (b.bestScore - a.bestScore) || (b.updatedAt - a.updatedAt));
+        rows.sort((a,b) => (b.latestScore - a.latestScore) || (b.updatedAt - a.updatedAt));
 
         lbCount.textContent = `${rows.length} 人`;
 
@@ -933,7 +988,7 @@
                   <div style="font-weight:800; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
                     ${medal} ${escapeHtml(r.name)} ${me}
                   </div>
-                  <div style="font-weight:900;">${r.bestScore} 分</div>
+                  <div style="font-weight:900;">${r.latestScore} 分</div>
                 </div>
                 <div class="muted" style="font-size:12px; margin-top:4px;">
                   嘗試次數：${r.attempts || 0}
@@ -963,9 +1018,10 @@
         const snap = await get(userRef);
         const now = Date.now();
         const existing = snap.exists() ? (snap.val() || {}) : {};
-        const prevBest = typeof existing.bestScore === "number" ? existing.bestScore : Number(existing.bestScore || 0);
         const attempts = Number(existing.attempts || 0) + 1;
-        const bestScore = Math.max(prevBest, score);
+
+        // 規則：排行榜只記錄「最新分數」（不保留最高分）
+        const latestScore = Number(score || 0);
 
         await update(userRef, {
           bankKey,
@@ -973,11 +1029,13 @@
           uid: currentUser.uid,
           name: currentUser.name || "改造師",
           avatar: currentUser.avatar || "",
-          bestScore,
-          lastScore: score,
+          latestScore,
           attempts,
           updatedAt: now
         });
+
+        // 同步寫入用戶經驗 / 等級
+        try{ await updateUserProgress(bankKey, bankName, latestScore); }catch(e){}
       }catch(e){
         console.error("saveScoreToLeaderboard failed:", e);
         if(!saveScoreToLeaderboard._warned){
@@ -1135,23 +1193,25 @@
         const profile = snap.exists() ? snap.val() : null;
         const name = profile?.username || user.displayName || "改造師";
         const avatar = profile?.avatar || `https://picsum.photos/seed/${user.uid}/80/80`;
-        currentUser = { uid: user.uid, name, email: user.email, avatar };
+        const xpTotal = Number(profile?.xpTotal || 0);
+        const level = Number(profile?.level || calcLevel(xpTotal));
+        currentUser = { uid: user.uid, name, email: user.email, avatar, xpTotal, level };
         userBar.innerHTML = `
           <img class="avatar" src="${escapeHtml(avatar)}" alt="avatar"/>
           <div class="usertext">
             <div>目前登入：<b>${escapeHtml(name)}</b></div>
-            <div class="muted" style="font-size:12px;">${escapeHtml(user.email || "")}</div>
+            <div class="muted" style="font-size:12px;">Lv.${level}｜經驗 ${xpTotal}｜${escapeHtml(user.email || "")}</div>
           </div>
         `;
 }catch(e){
         const name = user.displayName || "改造師";
         const avatar = `https://picsum.photos/seed/${user.uid}/80/80`;
-        currentUser = { uid: user.uid, name, email: user.email, avatar };
+        currentUser = { uid: user.uid, name, email: user.email, avatar, xpTotal:0, level:1 };
         userBar.innerHTML = `
           <img class="avatar" src="${escapeHtml(avatar)}" alt="avatar"/>
           <div class="usertext">
             <div>目前登入：<b>${escapeHtml(name)}</b></div>
-            <div class="muted" style="font-size:12px;">${escapeHtml(user.email || "")}</div>
+            <div class="muted" style="font-size:12px;">Lv.1｜經驗 0｜${escapeHtml(user.email || "")}</div>
           </div>
         `;
       }
