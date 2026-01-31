@@ -20,6 +20,7 @@
       "基礎文法": "語言/英文/基礎文法",
       "日常會話": "語言/英文/日常會話",
       "心情與狀態表達": "語言/英文/心情與狀態表達"
+      "✈️機場與搭機英語": "語言/英文/✈️機場與搭機英語"
     },
     "日文": {
       "五十音": "語言/日文/五十音",
@@ -112,6 +113,374 @@
     題("She ___ coffee every day.", ["drink", "drinks", "drank", "drinking"], 1),
     題("They ___ to school yesterday.", ["go", "goes", "went", "gone"], 2),
     題("We ___ happy now.", ["is", "am", "are", "be"], 2)
+  ];
+
+  // --- 英文：基礎文法 ---
+  window.QUESTION_BANK["語言/英文/✈️機場與搭機英語"] = [
+
+    題("『我想訂一張機票。』的英文是？", [
+      { label:"I want to change my flight time.", audio:"./audio/en/機場與搭機英語/I want to change my flight time.mp3" },
+      { label:"I want to cancel my flight.", audio:"./audio/en/機場與搭機英語/I want to cancel my flight.mp3" },
+      { label:"I want to book a flight.", audio:"./audio/en/機場與搭機英語/I want to book a flight.mp3" },
+      { label:"I would like to confirm my reservation.", audio:"./audio/en/機場與搭機英語/I would like to confirm my reservation.mp3" },
+    ], 2),
+
+    題("『我想改機票時間。』的英文是？", [
+      { label:"I want to change my flight time.", audio:"./audio/en/機場與搭機英語/I want to change my flight time.mp3" },
+      { label:"I want to cancel my flight.", audio:"./audio/en/機場與搭機英語/I want to cancel my flight.mp3" },
+      { label:"I would like to confirm my reservation.", audio:"./audio/en/機場與搭機英語/I would like to confirm my reservation.mp3" },
+      { label:"I want to book a flight.", audio:"./audio/en/機場與搭機英語/I want to book a flight.mp3" },
+    ], 0),
+
+    題("『我想取消我的班機。』的英文是？", [
+      { label:"I want to change my flight time.", audio:"./audio/en/機場與搭機英語/I want to change my flight time.mp3" },
+      { label:"I want to cancel my flight.", audio:"./audio/en/機場與搭機英語/I want to cancel my flight.mp3" },
+      { label:"I want to book a flight.", audio:"./audio/en/機場與搭機英語/I want to book a flight.mp3" },
+      { label:"I would like to confirm my reservation.", audio:"./audio/en/機場與搭機英語/I would like to confirm my reservation.mp3" },
+    ], 1),
+
+    題("『我想確認我的訂位。』的英文是？", [
+      { label:"I would like to confirm my reservation.", audio:"./audio/en/機場與搭機英語/I would like to confirm my reservation.mp3" },
+      { label:"I want to book a flight.", audio:"./audio/en/機場與搭機英語/I want to book a flight.mp3" },
+      { label:"I want to change my flight time.", audio:"./audio/en/機場與搭機英語/I want to change my flight time.mp3" },
+      { label:"I want to cancel my flight.", audio:"./audio/en/機場與搭機英語/I want to cancel my flight.mp3" },
+    ], 0),
+
+    題("『我想辦理登機。』的英文是？", [
+      { label:"Can I check in online?", audio:"./audio/en/機場與搭機英語/Can I check in online.mp3" },
+      { label:"I want to check in.", audio:"./audio/en/機場與搭機英語/I want to check in.mp3" },
+      { label:"Can I choose my seat?", audio:"./audio/en/機場與搭機英語/Can I choose my seat.mp3" },
+      { label:"Could you give me an aisle seat?", audio:"./audio/en/機場與搭機英語/Could you give me an aisle seat.mp3" },
+    ], 1),
+
+    題("『我可以線上報到了嗎？』的英文是？", [
+      { label:"Can I check in online?", audio:"./audio/en/機場與搭機英語/Can I check in online.mp3" },
+      { label:"I want to check in.", audio:"./audio/en/機場與搭機英語/I want to check in.mp3" },
+      { label:"Could you give me an aisle seat?", audio:"./audio/en/機場與搭機英語/Could you give me an aisle seat.mp3" },
+      { label:"Can I choose my seat?", audio:"./audio/en/機場與搭機英語/Can I choose my seat.mp3" },
+    ], 0),
+
+    題("『我可以選座位嗎？』的英文是？", [
+      { label:"Can I choose my seat?", audio:"./audio/en/機場與搭機英語/Can I choose my seat.mp3" },
+      { label:"Could you give me an aisle seat?", audio:"./audio/en/機場與搭機英語/Could you give me an aisle seat.mp3" },
+      { label:"I want to check in.", audio:"./audio/en/機場與搭機英語/I want to check in.mp3" },
+      { label:"Can I check in online?", audio:"./audio/en/機場與搭機英語/Can I check in online.mp3" },
+    ], 0),
+
+    題("『可以幫我安排靠走道嗎？』的英文是？", [
+      { label:"Can I choose my seat?", audio:"./audio/en/機場與搭機英語/Can I choose my seat.mp3" },
+      { label:"Could you give me an aisle seat?", audio:"./audio/en/機場與搭機英語/Could you give me an aisle seat.mp3" },
+      { label:"Can I check in online?", audio:"./audio/en/機場與搭機英語/Can I check in online.mp3" },
+      { label:"I want to check in.", audio:"./audio/en/機場與搭機英語/I want to check in.mp3" },
+    ], 1),
+
+    題("『可以幫我安排靠窗嗎？』的英文是？", [
+      { label:"Here is my passport.", audio:"./audio/en/機場與搭機英語/Here is my passport.mp3" },
+      { label:"Here is my e-ticket.", audio:"./audio/en/機場與搭機英語/Here is my e-ticket.mp3" },
+      { label:"Here is my boarding pass.", audio:"./audio/en/機場與搭機英語/Here is my boarding pass.mp3" },
+      { label:"Could you give me a window seat?", audio:"./audio/en/機場與搭機英語/Could you give me a window seat.mp3" },
+    ], 3),
+
+    題("『我的護照在這裡。』的英文是？", [
+      { label:"Here is my passport.", audio:"./audio/en/機場與搭機英語/Here is my passport.mp3" },
+      { label:"Here is my boarding pass.", audio:"./audio/en/機場與搭機英語/Here is my boarding pass.mp3" },
+      { label:"Here is my e-ticket.", audio:"./audio/en/機場與搭機英語/Here is my e-ticket.mp3" },
+      { label:"Could you give me a window seat?", audio:"./audio/en/機場與搭機英語/Could you give me a window seat.mp3" },
+    ], 0),
+
+    題("『這是我的電子機票。』的英文是？", [
+      { label:"Here is my boarding pass.", audio:"./audio/en/機場與搭機英語/Here is my boarding pass.mp3" },
+      { label:"Here is my e-ticket.", audio:"./audio/en/機場與搭機英語/Here is my e-ticket.mp3" },
+      { label:"Here is my passport.", audio:"./audio/en/機場與搭機英語/Here is my passport.mp3" },
+      { label:"Could you give me a window seat?", audio:"./audio/en/機場與搭機英語/Could you give me a window seat.mp3" },
+    ], 1),
+
+    題("『這是我的登機證。』的英文是？", [
+      { label:"Here is my boarding pass.", audio:"./audio/en/機場與搭機英語/Here is my boarding pass.mp3" },
+      { label:"Here is my passport.", audio:"./audio/en/機場與搭機英語/Here is my passport.mp3" },
+      { label:"Could you give me a window seat?", audio:"./audio/en/機場與搭機英語/Could you give me a window seat.mp3" },
+      { label:"Here is my e-ticket.", audio:"./audio/en/機場與搭機英語/Here is my e-ticket.mp3" },
+    ], 0),
+
+    題("『我要托運行李。』的英文是？", [
+      { label:"I have two bags to check.", audio:"./audio/en/機場與搭機英語/I have two bags to check.mp3" },
+      { label:"I want to check this bag.", audio:"./audio/en/機場與搭機英語/I want to check this bag.mp3" },
+      { label:"What is the baggage allowance?", audio:"./audio/en/機場與搭機英語/What is the baggage allowance.mp3" },
+      { label:"This is my carry-on bag.", audio:"./audio/en/機場與搭機英語/This is my carry-on bag.mp3" },
+    ], 1),
+
+    題("『我有兩件行李要托運。』的英文是？", [
+      { label:"I want to check this bag.", audio:"./audio/en/機場與搭機英語/I want to check this bag.mp3" },
+      { label:"I have two bags to check.", audio:"./audio/en/機場與搭機英語/I have two bags to check.mp3" },
+      { label:"This is my carry-on bag.", audio:"./audio/en/機場與搭機英語/This is my carry-on bag.mp3" },
+      { label:"What is the baggage allowance?", audio:"./audio/en/機場與搭機英語/What is the baggage allowance.mp3" },
+    ], 1),
+
+    題("『這是隨身行李。』的英文是？", [
+      { label:"What is the baggage allowance?", audio:"./audio/en/機場與搭機英語/What is the baggage allowance.mp3" },
+      { label:"This is my carry-on bag.", audio:"./audio/en/機場與搭機英語/This is my carry-on bag.mp3" },
+      { label:"I have two bags to check.", audio:"./audio/en/機場與搭機英語/I have two bags to check.mp3" },
+      { label:"I want to check this bag.", audio:"./audio/en/機場與搭機英語/I want to check this bag.mp3" },
+    ], 1),
+
+    題("『行李限重是多少？』的英文是？", [
+      { label:"What is the baggage allowance?", audio:"./audio/en/機場與搭機英語/What is the baggage allowance.mp3" },
+      { label:"This is my carry-on bag.", audio:"./audio/en/機場與搭機英語/This is my carry-on bag.mp3" },
+      { label:"I want to check this bag.", audio:"./audio/en/機場與搭機英語/I want to check this bag.mp3" },
+      { label:"I have two bags to check.", audio:"./audio/en/機場與搭機英語/I have two bags to check.mp3" },
+    ], 0),
+
+    題("『行李超重了嗎？』的英文是？", [
+      { label:"Do I need to pay extra?", audio:"./audio/en/機場與搭機英語/Do I need to pay extra.mp3" },
+      { label:"Is my bag overweight?", audio:"./audio/en/機場與搭機英語/Is my bag overweight.mp3" },
+      { label:"Will my luggage go through to my destination?", audio:"./audio/en/機場與搭機英語/Will my luggage go through to my destination.mp3" },
+      { label:"My luggage is missing.", audio:"./audio/en/機場與搭機英語/My luggage is missing.mp3" },
+    ], 1),
+
+    題("『需要額外付費嗎？』的英文是？", [
+      { label:"Is my bag overweight?", audio:"./audio/en/機場與搭機英語/Is my bag overweight.mp3" },
+      { label:"Do I need to pay extra?", audio:"./audio/en/機場與搭機英語/Do I need to pay extra.mp3" },
+      { label:"My luggage is missing.", audio:"./audio/en/機場與搭機英語/My luggage is missing.mp3" },
+      { label:"Will my luggage go through to my destination?", audio:"./audio/en/機場與搭機英語/Will my luggage go through to my destination.mp3" },
+    ], 1),
+
+    題("『行李會直掛到目的地嗎？』的英文是？", [
+      { label:"Will my luggage go through to my destination?", audio:"./audio/en/機場與搭機英語/Will my luggage go through to my destination.mp3" },
+      { label:"My luggage is missing.", audio:"./audio/en/機場與搭機英語/My luggage is missing.mp3" },
+      { label:"Do I need to pay extra?", audio:"./audio/en/機場與搭機英語/Do I need to pay extra.mp3" },
+      { label:"Is my bag overweight?", audio:"./audio/en/機場與搭機英語/Is my bag overweight.mp3" },
+    ], 0),
+
+    題("『我的行李遺失了。』的英文是？", [
+      { label:"Will my luggage go through to my destination?", audio:"./audio/en/機場與搭機英語/Will my luggage go through to my destination.mp3" },
+      { label:"My luggage is missing.", audio:"./audio/en/機場與搭機英語/My luggage is missing.mp3" },
+      { label:"Is my bag overweight?", audio:"./audio/en/機場與搭機英語/Is my bag overweight.mp3" },
+      { label:"Do I need to pay extra?", audio:"./audio/en/機場與搭機英語/Do I need to pay extra.mp3" },
+    ], 1),
+
+    題("『我可以在哪裡領行李？』的英文是？", [
+      { label:"Where is the baggage carousel?", audio:"./audio/en/機場與搭機英語/Where is the baggage carousel.mp3" },
+      { label:"Where can I pick up my luggage?", audio:"./audio/en/機場與搭機英語/Where can I pick up my luggage.mp3" },
+      { label:"Where is the security check?", audio:"./audio/en/機場與搭機英語/Where is the security check.mp3" },
+      { label:"Do I need to take off my shoes?", audio:"./audio/en/機場與搭機英語/Do I need to take off my shoes.mp3" },
+    ], 1),
+
+    題("『行李轉盤在哪裡？』的英文是？", [
+      { label:"Where is the baggage carousel?", audio:"./audio/en/機場與搭機英語/Where is the baggage carousel.mp3" },
+      { label:"Where can I pick up my luggage?", audio:"./audio/en/機場與搭機英語/Where can I pick up my luggage.mp3" },
+      { label:"Do I need to take off my shoes?", audio:"./audio/en/機場與搭機英語/Do I need to take off my shoes.mp3" },
+      { label:"Where is the security check?", audio:"./audio/en/機場與搭機英語/Where is the security check.mp3" },
+    ], 0),
+
+    題("『安檢在哪裡？』的英文是？", [
+      { label:"Where is the security check?", audio:"./audio/en/機場與搭機英語/Where is the security check.mp3" },
+      { label:"Do I need to take off my shoes?", audio:"./audio/en/機場與搭機英語/Do I need to take off my shoes.mp3" },
+      { label:"Where is the baggage carousel?", audio:"./audio/en/機場與搭機英語/Where is the baggage carousel.mp3" },
+      { label:"Where can I pick up my luggage?", audio:"./audio/en/機場與搭機英語/Where can I pick up my luggage.mp3" },
+    ], 0),
+
+    題("『需要脫鞋嗎？』的英文是？", [
+      { label:"Where is the security check?", audio:"./audio/en/機場與搭機英語/Where is the security check.mp3" },
+      { label:"Do I need to take off my shoes?", audio:"./audio/en/機場與搭機英語/Do I need to take off my shoes.mp3" },
+      { label:"Where can I pick up my luggage?", audio:"./audio/en/機場與搭機英語/Where can I pick up my luggage.mp3" },
+      { label:"Where is the baggage carousel?", audio:"./audio/en/機場與搭機英語/Where is the baggage carousel.mp3" },
+    ], 1),
+
+    題("『筆電需要拿出來嗎？』的英文是？", [
+      { label:"Can I bring liquids on the plane?", audio:"./audio/en/機場與搭機英語/Can I bring liquids on the plane.mp3" },
+      { label:"Can I take this on board?", audio:"./audio/en/機場與搭機英語/Can I take this on board.mp3" },
+      { label:"I need to declare this item.", audio:"./audio/en/機場與搭機英語/I need to declare this item.mp3" },
+      { label:"Do I need to take out my laptop?", audio:"./audio/en/機場與搭機英語/Do I need to take out my laptop.mp3" },
+    ], 3),
+
+    題("『液體可以帶上飛機嗎？』的英文是？", [
+      { label:"Can I bring liquids on the plane?", audio:"./audio/en/機場與搭機英語/Can I bring liquids on the plane.mp3" },
+      { label:"Can I take this on board?", audio:"./audio/en/機場與搭機英語/Can I take this on board.mp3" },
+      { label:"Do I need to take out my laptop?", audio:"./audio/en/機場與搭機英語/Do I need to take out my laptop.mp3" },
+      { label:"I need to declare this item.", audio:"./audio/en/機場與搭機英語/I need to declare this item.mp3" },
+    ], 0),
+
+    題("『這個可以帶上飛機嗎？』的英文是？", [
+      { label:"Can I bring liquids on the plane?", audio:"./audio/en/機場與搭機英語/Can I bring liquids on the plane.mp3" },
+      { label:"Can I take this on board?", audio:"./audio/en/機場與搭機英語/Can I take this on board.mp3" },
+      { label:"I need to declare this item.", audio:"./audio/en/機場與搭機英語/I need to declare this item.mp3" },
+      { label:"Do I need to take out my laptop?", audio:"./audio/en/機場與搭機英語/Do I need to take out my laptop.mp3" },
+    ], 1),
+
+    題("『我要申報這個物品。』的英文是？", [
+      { label:"I need to declare this item.", audio:"./audio/en/機場與搭機英語/I need to declare this item.mp3" },
+      { label:"Can I take this on board?", audio:"./audio/en/機場與搭機英語/Can I take this on board.mp3" },
+      { label:"Can I bring liquids on the plane?", audio:"./audio/en/機場與搭機英語/Can I bring liquids on the plane.mp3" },
+      { label:"Do I need to take out my laptop?", audio:"./audio/en/機場與搭機英語/Do I need to take out my laptop.mp3" },
+    ], 0),
+
+    題("『登機門在哪裡？』的英文是？", [
+      { label:"When does boarding start?", audio:"./audio/en/機場與搭機英語/When does boarding start.mp3" },
+      { label:"Can we board now?", audio:"./audio/en/機場與搭機英語/Can we board now.mp3" },
+      { label:"Where is the boarding gate?", audio:"./audio/en/機場與搭機英語/Where is the boarding gate.mp3" },
+      { label:"What time does the flight take off?", audio:"./audio/en/機場與搭機英語/What time does the flight take off.mp3" },
+    ], 2),
+
+    題("『什麼時候開始登機？』的英文是？", [
+      { label:"When does boarding start?", audio:"./audio/en/機場與搭機英語/When does boarding start.mp3" },
+      { label:"Can we board now?", audio:"./audio/en/機場與搭機英語/Can we board now.mp3" },
+      { label:"What time does the flight take off?", audio:"./audio/en/機場與搭機英語/What time does the flight take off.mp3" },
+      { label:"Where is the boarding gate?", audio:"./audio/en/機場與搭機英語/Where is the boarding gate.mp3" },
+    ], 0),
+
+    題("『現在可以登機了嗎？』的英文是？", [
+      { label:"When does boarding start?", audio:"./audio/en/機場與搭機英語/When does boarding start.mp3" },
+      { label:"Can we board now?", audio:"./audio/en/機場與搭機英語/Can we board now.mp3" },
+      { label:"Where is the boarding gate?", audio:"./audio/en/機場與搭機英語/Where is the boarding gate.mp3" },
+      { label:"What time does the flight take off?", audio:"./audio/en/機場與搭機英語/What time does the flight take off.mp3" },
+    ], 1),
+
+    題("『飛機幾點起飛？』的英文是？", [
+      { label:"When does boarding start?", audio:"./audio/en/機場與搭機英語/When does boarding start.mp3" },
+      { label:"Can we board now?", audio:"./audio/en/機場與搭機英語/Can we board now.mp3" },
+      { label:"What time does the flight take off?", audio:"./audio/en/機場與搭機英語/What time does the flight take off.mp3" },
+      { label:"Where is the boarding gate?", audio:"./audio/en/機場與搭機英語/Where is the boarding gate.mp3" },
+    ], 2),
+
+    題("『飛機延誤了嗎？』的英文是？", [
+      { label:"Is the flight canceled?", audio:"./audio/en/機場與搭機英語/Is the flight canceled.mp3" },
+      { label:"Is the flight delayed?", audio:"./audio/en/機場與搭機英語/Is the flight delayed.mp3" },
+      { label:"Is this a direct flight?", audio:"./audio/en/機場與搭機英語/Is this a direct flight.mp3" },
+      { label:"Where do I transfer?", audio:"./audio/en/機場與搭機英語/Where do I transfer.mp3" },
+    ], 1),
+
+    題("『航班取消了嗎？』的英文是？", [
+      { label:"Is the flight canceled?", audio:"./audio/en/機場與搭機英語/Is the flight canceled.mp3" },
+      { label:"Is the flight delayed?", audio:"./audio/en/機場與搭機英語/Is the flight delayed.mp3" },
+      { label:"Where do I transfer?", audio:"./audio/en/機場與搭機英語/Where do I transfer.mp3" },
+      { label:"Is this a direct flight?", audio:"./audio/en/機場與搭機英語/Is this a direct flight.mp3" },
+    ], 0),
+
+    題("『這是直飛嗎？』的英文是？", [
+      { label:"Where do I transfer?", audio:"./audio/en/機場與搭機英語/Where do I transfer.mp3" },
+      { label:"Is this a direct flight?", audio:"./audio/en/機場與搭機英語/Is this a direct flight.mp3" },
+      { label:"Is the flight delayed?", audio:"./audio/en/機場與搭機英語/Is the flight delayed.mp3" },
+      { label:"Is the flight canceled?", audio:"./audio/en/機場與搭機英語/Is the flight canceled.mp3" },
+    ], 1),
+
+    題("『我要在哪裡轉機？』的英文是？", [
+      { label:"Where do I transfer?", audio:"./audio/en/機場與搭機英語/Where do I transfer.mp3" },
+      { label:"Is this a direct flight?", audio:"./audio/en/機場與搭機英語/Is this a direct flight.mp3" },
+      { label:"Is the flight canceled?", audio:"./audio/en/機場與搭機英語/Is the flight canceled.mp3" },
+      { label:"Is the flight delayed?", audio:"./audio/en/機場與搭機英語/Is the flight delayed.mp3" },
+    ], 0),
+
+    題("『轉機時間夠嗎？』的英文是？", [
+      { label:"I missed my flight.", audio:"./audio/en/機場與搭機英語/I missed my flight.mp3" },
+      { label:"Do I have enough time to transfer?", audio:"./audio/en/機場與搭機英語/Do I have enough time to transfer.mp3" },
+      { label:"When is the next flight?", audio:"./audio/en/機場與搭機英語/When is the next flight.mp3" },
+      { label:"Can you put me on the next flight?", audio:"./audio/en/機場與搭機英語/Can you put me on the next flight.mp3" },
+    ], 1),
+
+    題("『下一班飛機是幾點？』的英文是？", [
+      { label:"When is the next flight?", audio:"./audio/en/機場與搭機英語/When is the next flight.mp3" },
+      { label:"Can you put me on the next flight?", audio:"./audio/en/機場與搭機英語/Can you put me on the next flight.mp3" },
+      { label:"Do I have enough time to transfer?", audio:"./audio/en/機場與搭機英語/Do I have enough time to transfer.mp3" },
+      { label:"I missed my flight.", audio:"./audio/en/機場與搭機英語/I missed my flight.mp3" },
+    ], 0),
+
+    題("『可以幫我改到下一班嗎？』的英文是？", [
+      { label:"When is the next flight?", audio:"./audio/en/機場與搭機英語/When is the next flight.mp3" },
+      { label:"Can you put me on the next flight?", audio:"./audio/en/機場與搭機英語/Can you put me on the next flight.mp3" },
+      { label:"I missed my flight.", audio:"./audio/en/機場與搭機英語/I missed my flight.mp3" },
+      { label:"Do I have enough time to transfer?", audio:"./audio/en/機場與搭機英語/Do I have enough time to transfer.mp3" },
+    ], 1),
+
+    題("『我錯過班機了。』的英文是？", [
+      { label:"I missed my flight.", audio:"./audio/en/機場與搭機英語/I missed my flight.mp3" },
+      { label:"Do I have enough time to transfer?", audio:"./audio/en/機場與搭機英語/Do I have enough time to transfer.mp3" },
+      { label:"When is the next flight?", audio:"./audio/en/機場與搭機英語/When is the next flight.mp3" },
+      { label:"Can you put me on the next flight?", audio:"./audio/en/機場與搭機英語/Can you put me on the next flight.mp3" },
+    ], 0),
+
+    題("『這是我的座位嗎？』的英文是？", [
+      { label:"Could you help me with my bag?", audio:"./audio/en/機場與搭機英語/Could you help me with my bag.mp3" },
+      { label:"Is this my seat?", audio:"./audio/en/機場與搭機英語/Is this my seat.mp3" },
+      { label:"Can I have a blanket?", audio:"./audio/en/機場與搭機英語/Can I have a blanket.mp3" },
+      { label:"Can I have some water?", audio:"./audio/en/機場與搭機英語/Can I have some water.mp3" },
+    ], 1),
+
+    題("『可以幫我放行李嗎？』的英文是？", [
+      { label:"Could you help me with my bag?", audio:"./audio/en/機場與搭機英語/Could you help me with my bag.mp3" },
+      { label:"Is this my seat?", audio:"./audio/en/機場與搭機英語/Is this my seat.mp3" },
+      { label:"Can I have some water?", audio:"./audio/en/機場與搭機英語/Can I have some water.mp3" },
+      { label:"Can I have a blanket?", audio:"./audio/en/機場與搭機英語/Can I have a blanket.mp3" },
+    ], 0),
+
+    題("『可以給我一條毛毯嗎？』的英文是？", [
+      { label:"Can I have a blanket?", audio:"./audio/en/機場與搭機英語/Can I have a blanket.mp3" },
+      { label:"Can I have some water?", audio:"./audio/en/機場與搭機英語/Can I have some water.mp3" },
+      { label:"Is this my seat?", audio:"./audio/en/機場與搭機英語/Is this my seat.mp3" },
+      { label:"Could you help me with my bag?", audio:"./audio/en/機場與搭機英語/Could you help me with my bag.mp3" },
+    ], 0),
+
+    題("『可以給我一些水嗎？』的英文是？", [
+      { label:"Can I have a blanket?", audio:"./audio/en/機場與搭機英語/Can I have a blanket.mp3" },
+      { label:"Can I have some water?", audio:"./audio/en/機場與搭機英語/Can I have some water.mp3" },
+      { label:"Is this my seat?", audio:"./audio/en/機場與搭機英語/Is this my seat.mp3" },
+      { label:"Could you help me with my bag?", audio:"./audio/en/機場與搭機英語/Could you help me with my bag.mp3" },
+    ], 1),
+
+    題("『洗手間在哪裡？』的英文是？", [
+      { label:"I don’t feel well.", audio:"./audio/en/機場與搭機英語/I don’t feel well.mp3" },
+      { label:"Where is the restroom?", audio:"./audio/en/機場與搭機英語/Where is the restroom.mp3" },
+      { label:"Can you speak more slowly?", audio:"./audio/en/機場與搭機英語/Can you speak more slowly.mp3" },
+      { label:"I am not very good at English.", audio:"./audio/en/機場與搭機英語/I am not very good at English.mp3" },
+    ], 1),
+
+    題("『我感覺不太舒服。』的英文是？", [
+      { label:"I don’t feel well.", audio:"./audio/en/機場與搭機英語/I don’t feel well.mp3" },
+      { label:"Where is the restroom?", audio:"./audio/en/機場與搭機英語/Where is the restroom.mp3" },
+      { label:"I am not very good at English.", audio:"./audio/en/機場與搭機英語/I am not very good at English.mp3" },
+      { label:"Can you speak more slowly?", audio:"./audio/en/機場與搭機英語/Can you speak more slowly.mp3" },
+    ], 0),
+
+    題("『我不太會英文。』的英文是？", [
+      { label:"I am not very good at English.", audio:"./audio/en/機場與搭機英語/I am not very good at English.mp3" },
+      { label:"Can you speak more slowly?", audio:"./audio/en/機場與搭機英語/Can you speak more slowly.mp3" },
+      { label:"Where is the restroom?", audio:"./audio/en/機場與搭機英語/Where is the restroom.mp3" },
+      { label:"I don’t feel well.", audio:"./audio/en/機場與搭機英語/I don’t feel well.mp3" },
+    ], 0),
+
+    題("『可以說慢一點嗎？』的英文是？", [
+      { label:"I am not very good at English.", audio:"./audio/en/機場與搭機英語/I am not very good at English.mp3" },
+      { label:"Can you speak more slowly?", audio:"./audio/en/機場與搭機英語/Can you speak more slowly.mp3" },
+      { label:"I don’t feel well.", audio:"./audio/en/機場與搭機英語/I don’t feel well.mp3" },
+      { label:"Where is the restroom?", audio:"./audio/en/機場與搭機英語/Where is the restroom.mp3" },
+    ], 1),
+
+    題("『可以再說一次嗎？』的英文是？", [
+      { label:"Can I pay by card here?", audio:"./audio/en/機場與搭機英語/Can I pay by card here.mp3" },
+      { label:"Where is the ATM?", audio:"./audio/en/機場與搭機英語/Where is the ATM.mp3" },
+      { label:"Where is the information desk?", audio:"./audio/en/機場與搭機英語/Where is the information desk.mp3" },
+      { label:"Could you say that again?", audio:"./audio/en/機場與搭機英語/Could you say that again.mp3" },
+    ], 3),
+
+    題("『這裡可以刷卡嗎？』的英文是？", [
+      { label:"Can I pay by card here?", audio:"./audio/en/機場與搭機英語/Can I pay by card here.mp3" },
+      { label:"Where is the information desk?", audio:"./audio/en/機場與搭機英語/Where is the information desk.mp3" },
+      { label:"Where is the ATM?", audio:"./audio/en/機場與搭機英語/Where is the ATM.mp3" },
+      { label:"Could you say that again?", audio:"./audio/en/機場與搭機英語/Could you say that again.mp3" },
+    ], 0),
+
+    題("『請問哪裡有提款機？』的英文是？", [
+      { label:"Can I pay by card here?", audio:"./audio/en/機場與搭機英語/Can I pay by card here.mp3" },
+      { label:"Where is the ATM?", audio:"./audio/en/機場與搭機英語/Where is the ATM.mp3" },
+      { label:"Could you say that again?", audio:"./audio/en/機場與搭機英語/Could you say that again.mp3" },
+      { label:"Where is the information desk?", audio:"./audio/en/機場與搭機英語/Where is the information desk.mp3" },
+    ], 1),
+
+    題("『服務台在哪裡？』的英文是？", [
+      { label:"Where is the information desk?", audio:"./audio/en/機場與搭機英語/Where is the information desk.mp3" },
+      { label:"Where is the ATM?", audio:"./audio/en/機場與搭機英語/Where is the ATM.mp3" },
+      { label:"Can I pay by card here?", audio:"./audio/en/機場與搭機英語/Can I pay by card here.mp3" },
+      { label:"Could you say that again?", audio:"./audio/en/機場與搭機英語/Could you say that again.mp3" },
+    ], 0)
   ];
 
   // --- 英文：心情與狀態表達 ---
