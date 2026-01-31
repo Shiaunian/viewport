@@ -18,7 +18,8 @@
     "英文": {
       "動物類單字": "語言/英文/動物類單字",
       "基礎文法": "語言/英文/基礎文法",
-      "日常會話": "語言/英文/日常會話"
+      "日常會話": "語言/英文/日常會話",
+      "心情與狀態表達": "語言/英文/心情與狀態表達"
     },
     "日文": {
       "五十音": "語言/日文/五十音",
@@ -106,14 +107,238 @@
 
   // --- 英文：基礎文法 ---
   window.QUESTION_BANK["語言/英文/基礎文法"] = [
+
     題("I ___ a student.", ["am", "is", "are", "be"], 0),
     題("She ___ coffee every day.", ["drink", "drinks", "drank", "drinking"], 1),
     題("They ___ to school yesterday.", ["go", "goes", "went", "gone"], 2),
     題("We ___ happy now.", ["is", "am", "are", "be"], 2)
   ];
 
+  // --- 英文：心情與狀態表達 ---
+  window.QUESTION_BANK["語言/英文/心情與狀態表達"] = [
+    題("『我覺得很開心。』的英文是？", [
+      { label:"I feel happy.", audio:"./audio/en/心情與狀態表達/I feel happy.mp3" },
+      { label:"I feel relaxed.", audio:"./audio/en/心情與狀態表達/I feel relaxed.mp3" },
+      { label:"I feel nervous.", audio:"./audio/en/心情與狀態表達/I feel nervous.mp3" },
+      { label:"I feel anxious.", audio:"./audio/en/心情與狀態表達/I feel anxious.mp3" },
+    ], 0),
+
+    題("『我覺得很放鬆。』的英文是？", [
+      { label:"I feel happy.", audio:"./audio/en/心情與狀態表達/I feel happy.mp3" },
+      { label:"I feel relaxed.", audio:"./audio/en/心情與狀態表達/I feel relaxed.mp3" },
+      { label:"I feel nervous.", audio:"./audio/en/心情與狀態表達/I feel nervous.mp3" },
+      { label:"I feel anxious.", audio:"./audio/en/心情與狀態表達/I feel anxious.mp3" },
+    ], 1),
+
+    題("『我覺得很緊張。』的英文是？", [
+      { label:"I feel happy.", audio:"./audio/en/心情與狀態表達/I feel happy.mp3" },
+      { label:"I feel relaxed.", audio:"./audio/en/心情與狀態表達/I feel relaxed.mp3" },
+      { label:"I feel nervous.", audio:"./audio/en/心情與狀態表達/I feel nervous.mp3" },
+      { label:"I feel anxious.", audio:"./audio/en/心情與狀態表達/I feel anxious.mp3" },
+    ], 2),
+
+    題("『我覺得很焦慮。』的英文是？", [
+      { label:"I feel happy.", audio:"./audio/en/心情與狀態表達/I feel happy.mp3" },
+      { label:"I feel relaxed.", audio:"./audio/en/心情與狀態表達/I feel relaxed.mp3" },
+      { label:"I feel nervous.", audio:"./audio/en/心情與狀態表達/I feel nervous.mp3" },
+      { label:"I feel anxious.", audio:"./audio/en/心情與狀態表達/I feel anxious.mp3" },
+    ], 3),
+
+    題("『我覺得很累。』的英文是？", [
+      { label:"I feel tired.", audio:"./audio/en/心情與狀態表達/I feel tired.mp3" },
+      { label:"I feel at ease.", audio:"./audio/en/心情與狀態表達/I feel at ease.mp3" },
+      { label:"I feel relieved.", audio:"./audio/en/心情與狀態表達/I feel relieved.mp3" },
+      { label:"I feel blessed.", audio:"./audio/en/心情與狀態表達/I feel blessed.mp3" },
+    ], 0),
+
+    題("『我覺得很安心。』的英文是？", [
+      { label:"I feel tired.", audio:"./audio/en/心情與狀態表達/I feel tired.mp3" },
+      { label:"I feel at ease.", audio:"./audio/en/心情與狀態表達/I feel at ease.mp3" },
+      { label:"I feel relieved.", audio:"./audio/en/心情與狀態表達/I feel relieved.mp3" },
+      { label:"I feel blessed.", audio:"./audio/en/心情與狀態表達/I feel blessed.mp3" },
+    ], 1),
+
+    題("『我覺得很放心。』的英文是？", [
+      { label:"I feel tired.", audio:"./audio/en/心情與狀態表達/I feel tired.mp3" },
+      { label:"I feel at ease.", audio:"./audio/en/心情與狀態表達/I feel at ease.mp3" },
+      { label:"I feel relieved.", audio:"./audio/en/心情與狀態表達/I feel relieved.mp3" },
+      { label:"I feel blessed.", audio:"./audio/en/心情與狀態表達/I feel blessed.mp3" },
+    ], 2),
+
+    題("『我覺得很幸福。』的英文是？", [
+      { label:"I feel tired.", audio:"./audio/en/心情與狀態表達/I feel tired.mp3" },
+      { label:"I feel at ease.", audio:"./audio/en/心情與狀態表達/I feel at ease.mp3" },
+      { label:"I feel relieved.", audio:"./audio/en/心情與狀態表達/I feel relieved.mp3" },
+      { label:"I feel blessed.", audio:"./audio/en/心情與狀態表達/I feel blessed.mp3" },
+    ], 3),
+
+    題("『我覺得很滿足。』的英文是？", [
+      { label:"I feel satisfied.", audio:"./audio/en/心情與狀態表達/I feel satisfied.mp3" },
+      { label:"I feel disappointed.", audio:"./audio/en/心情與狀態表達/I feel disappointed.mp3" },
+      { label:"I feel a bit sad.", audio:"./audio/en/心情與狀態表達/I feel a bit sad.mp3" },
+      { label:"I feel angry.", audio:"./audio/en/心情與狀態表達/I feel angry.mp3" },
+    ], 0),
+
+    題("『我覺得很失落。』的英文是？", [
+      { label:"I feel satisfied.", audio:"./audio/en/心情與狀態表達/I feel satisfied.mp3" },
+      { label:"I feel disappointed.", audio:"./audio/en/心情與狀態表達/I feel disappointed.mp3" },
+      { label:"I feel a bit sad.", audio:"./audio/en/心情與狀態表達/I feel a bit sad.mp3" },
+      { label:"I feel angry.", audio:"./audio/en/心情與狀態表達/I feel angry.mp3" },
+    ], 1),
+
+    題("『我覺得有點難過。』的英文是？", [
+      { label:"I feel satisfied.", audio:"./audio/en/心情與狀態表達/I feel satisfied.mp3" },
+      { label:"I feel disappointed.", audio:"./audio/en/心情與狀態表達/I feel disappointed.mp3" },
+      { label:"I feel a bit sad.", audio:"./audio/en/心情與狀態表達/I feel a bit sad.mp3" },
+      { label:"I feel angry.", audio:"./audio/en/心情與狀態表達/I feel angry.mp3" },
+    ], 2),
+
+    題("『我覺得很生氣。』的英文是？", [
+      { label:"I feel satisfied.", audio:"./audio/en/心情與狀態表達/I feel satisfied.mp3" },
+      { label:"I feel disappointed.", audio:"./audio/en/心情與狀態表達/I feel disappointed.mp3" },
+      { label:"I feel a bit sad.", audio:"./audio/en/心情與狀態表達/I feel a bit sad.mp3" },
+      { label:"I feel angry.", audio:"./audio/en/心情與狀態表達/I feel angry.mp3" },
+    ], 3),
+
+    題("『我覺得很煩。』的英文是？", [
+      { label:"I feel annoyed.", audio:"./audio/en/心情與狀態表達/I feel annoyed.mp3" },
+      { label:"I feel stressed.", audio:"./audio/en/心情與狀態表達/I feel stressed.mp3" },
+      { label:"I feel energetic.", audio:"./audio/en/心情與狀態表達/I feel energetic.mp3" },
+      { label:"I feel calm.", audio:"./audio/en/心情與狀態表達/I feel calm.mp3" },
+    ], 0),
+
+    題("『我覺得很有壓力。』的英文是？", [
+      { label:"I feel annoyed.", audio:"./audio/en/心情與狀態表達/I feel annoyed.mp3" },
+      { label:"I feel stressed.", audio:"./audio/en/心情與狀態表達/I feel stressed.mp3" },
+      { label:"I feel energetic.", audio:"./audio/en/心情與狀態表達/I feel energetic.mp3" },
+      { label:"I feel calm.", audio:"./audio/en/心情與狀態表達/I feel calm.mp3" },
+    ], 1),
+
+    題("『我覺得很有精神。』的英文是？", [
+      { label:"I feel annoyed.", audio:"./audio/en/心情與狀態表達/I feel annoyed.mp3" },
+      { label:"I feel stressed.", audio:"./audio/en/心情與狀態表達/I feel stressed.mp3" },
+      { label:"I feel energetic.", audio:"./audio/en/心情與狀態表達/I feel energetic.mp3" },
+      { label:"I feel calm.", audio:"./audio/en/心情與狀態表達/I feel calm.mp3" },
+    ], 2),
+
+    題("『我覺得很平靜。』的英文是？", [
+      { label:"I feel annoyed.", audio:"./audio/en/心情與狀態表達/I feel annoyed.mp3" },
+      { label:"I feel stressed.", audio:"./audio/en/心情與狀態表達/I feel stressed.mp3" },
+      { label:"I feel energetic.", audio:"./audio/en/心情與狀態表達/I feel energetic.mp3" },
+      { label:"I feel calm.", audio:"./audio/en/心情與狀態表達/I feel calm.mp3" },
+    ], 3),
+
+
+    題("『我覺得很迷惘。』的英文是？", [
+      { label:"I feel confused.", audio:"./audio/en/心情與狀態表達/I feel confused.mp3" },
+      { label:"I feel lonely.", audio:"./audio/en/心情與狀態表達/I feel lonely.mp3" },
+      { label:"I feel safe with you.", audio:"./audio/en/心情與狀態表達/I feel safe with you.mp3" },
+      { label:"I feel accomplished.", audio:"./audio/en/心情與狀態表達/I feel accomplished.mp3" },
+    ], 0),
+
+    題("『我覺得很孤單。』的英文是？", [
+      { label:"I feel confused.", audio:"./audio/en/心情與狀態表達/I feel confused.mp3" },
+      { label:"I feel lonely.", audio:"./audio/en/心情與狀態表達/I feel lonely.mp3" },
+      { label:"I feel safe with you.", audio:"./audio/en/心情與狀態表達/I feel safe with you.mp3" },
+      { label:"I feel accomplished.", audio:"./audio/en/心情與狀態表達/I feel accomplished.mp3" },
+    ], 1),
+
+    題("『我覺得很安心跟你在一起。』的英文是？", [
+      { label:"I feel confused.", audio:"./audio/en/心情與狀態表達/I feel confused.mp3" },
+      { label:"I feel lonely.", audio:"./audio/en/心情與狀態表達/I feel lonely.mp3" },
+      { label:"I feel safe with you.", audio:"./audio/en/心情與狀態表達/I feel safe with you.mp3" },
+      { label:"I feel accomplished.", audio:"./audio/en/心情與狀態表達/I feel accomplished.mp3" },
+    ], 2),
+
+    題("『我覺得很有成就感。』的英文是？", [
+      { label:"I feel confused.", audio:"./audio/en/心情與狀態表達/I feel confused.mp3" },
+      { label:"I feel lonely.", audio:"./audio/en/心情與狀態表達/I feel lonely.mp3" },
+      { label:"I feel safe with you.", audio:"./audio/en/心情與狀態表達/I feel safe with you.mp3" },
+      { label:"I feel accomplished.", audio:"./audio/en/心情與狀態表達/I feel accomplished.mp3" },
+    ], 3),
+
+    題("『我覺得很空虛。』的英文是？", [
+      { label:"I feel empty.", audio:"./audio/en/心情與狀態表達/I feel empty.mp3" },
+      { label:"I feel excited.", audio:"./audio/en/心情與狀態表達/I feel excited.mp3" },
+      { label:"I feel unsure.", audio:"./audio/en/心情與狀態表達/I feel unsure.mp3" },
+      { label:"I feel proud.", audio:"./audio/en/心情與狀態表達/I feel proud.mp3" },
+    ], 0),
+
+    題("『我覺得很期待。』的英文是？", [
+      { label:"I feel empty.", audio:"./audio/en/心情與狀態表達/I feel empty.mp3" },
+      { label:"I feel excited.", audio:"./audio/en/心情與狀態表達/I feel excited.mp3" },
+      { label:"I feel unsure.", audio:"./audio/en/心情與狀態表達/I feel unsure.mp3" },
+      { label:"I feel proud.", audio:"./audio/en/心情與狀態表達/I feel proud.mp3" },
+    ], 1),
+
+    題("『我覺得很猶豫。』的英文是？", [
+      { label:"I feel empty.", audio:"./audio/en/心情與狀態表達/I feel empty.mp3" },
+      { label:"I feel excited.", audio:"./audio/en/心情與狀態表達/I feel excited.mp3" },
+      { label:"I feel unsure.", audio:"./audio/en/心情與狀態表達/I feel unsure.mp3" },
+      { label:"I feel proud.", audio:"./audio/en/心情與狀態表達/I feel proud.mp3" },
+    ], 2),
+
+    題("『我覺得很自豪。』的英文是？", [
+      { label:"I feel empty.", audio:"./audio/en/心情與狀態表達/I feel empty.mp3" },
+      { label:"I feel excited.", audio:"./audio/en/心情與狀態表達/I feel excited.mp3" },
+      { label:"I feel unsure.", audio:"./audio/en/心情與狀態表達/I feel unsure.mp3" },
+      { label:"I feel proud.", audio:"./audio/en/心情與狀態表達/I feel proud.mp3" },
+    ], 3),
+
+    題("『我覺得很心累。』的英文是？", [
+      { label:"I feel emotionally drained.", audio:"./audio/en/心情與狀態表達/I feel emotionally drained.mp3" },
+      { label:"I feel comfortable.", audio:"./audio/en/心情與狀態表達/I feel comfortable.mp3" },
+      { label:"I feel supported.", audio:"./audio/en/心情與狀態表達/I feel supported.mp3" },
+      { label:"I feel understood.", audio:"./audio/en/心情與狀態表達/I feel understood.mp3" },
+    ], 0),
+
+    題("『我覺得很自在。』的英文是？", [
+      { label:"I feel emotionally drained.", audio:"./audio/en/心情與狀態表達/I feel emotionally drained.mp3" },
+      { label:"I feel comfortable.", audio:"./audio/en/心情與狀態表達/I feel comfortable.mp3" },
+      { label:"I feel supported.", audio:"./audio/en/心情與狀態表達/I feel supported.mp3" },
+      { label:"I feel understood.", audio:"./audio/en/心情與狀態表達/I feel understood.mp3" },
+    ], 1),
+
+    題("『我覺得很被支持。』的英文是？", [
+      { label:"I feel emotionally drained.", audio:"./audio/en/心情與狀態表達/I feel emotionally drained.mp3" },
+      { label:"I feel comfortable.", audio:"./audio/en/心情與狀態表達/I feel comfortable.mp3" },
+      { label:"I feel supported.", audio:"./audio/en/心情與狀態表達/I feel supported.mp3" },
+      { label:"I feel understood.", audio:"./audio/en/心情與狀態表達/I feel understood.mp3" },
+    ], 2),
+
+    題("『我覺得很被理解。』的英文是？", [
+      { label:"I feel emotionally drained.", audio:"./audio/en/心情與狀態表達/I feel emotionally drained.mp3" },
+      { label:"I feel comfortable.", audio:"./audio/en/心情與狀態表達/I feel comfortable.mp3" },
+      { label:"I feel supported.", audio:"./audio/en/心情與狀態表達/I feel supported.mp3" },
+      { label:"I feel understood.", audio:"./audio/en/心情與狀態表達/I feel understood.mp3" },
+    ], 3),
+
+
+    題("『我覺得心情怪怪的。』的英文是？", [
+      { label:"I feel off.", audio:"./audio/en/心情與狀態表達/I feel off.mp3" },
+      { label:"I feel comfortable.", audio:"./audio/en/心情與狀態表達/I feel comfortable.mp3" },
+      { label:"I feel supported.", audio:"./audio/en/心情與狀態表達/I feel supported.mp3" },
+      { label:"I feel understood.", audio:"./audio/en/心情與狀態表達/I feel understood.mp3" },
+    ], 0),
+
+    題("『我覺得狀態不太好。』的英文是？", [
+      { label:"I don’t feel great.", audio:"./audio/en/心情與狀態表達/I don’t feel great.mp3" },
+      { label:"I feel comfortable.", audio:"./audio/en/心情與狀態表達/I feel comfortable.mp3" },
+      { label:"I feel supported.", audio:"./audio/en/心情與狀態表達/I feel supported.mp3" },
+      { label:"I feel understood.", audio:"./audio/en/心情與狀態表達/I feel understood.mp3" },
+    ], 0)
+  ];
+
+
   // --- 英文：日常會話 ---
   window.QUESTION_BANK["語言/英文/日常會話"] = [
+    題("『你在做什麼？』的韓文是？", [
+      { label:"뭐 하고 있어요?", audio:"./audio/韓文/日常會話/뭐 하고 있어요.mp3" },
+      { label:"요즘 어떻게 지내요?", audio:"./audio/韓文/日常會話/요즘 어떻게 지내요.mp3" },
+      { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
+      { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
+    ], 0),
+
     題("「你好吗？」最常見英文是？", ["How are you?", "Who are you?", "Where are you?", "What are you?"], 0),
     題("「沒關係」英文是？", ["No problem.", "No money.", "No homework.", "No tomorrow."], 0),
     題("「不好意思/打擾一下」常用英文是？", ["Excuse me.", "Execute me.", "Exciting me.", "Exclusive me."], 0)
@@ -144,565 +369,565 @@
   // --- 韓文：日常會話 ---
   window.QUESTION_BANK["語言/韓文/日常會話"] = [
 
-/* =========================
-   打招呼 / 基本（陳述句）
-========================= */
-
-題("『你好』的韓文是？", [
-  { label:"안녕하세요", audio:"./audio/韓文/日常會話/안녕하세요.mp3" },
-  { label:"감사합니다", audio:"./audio/韓文/日常會話/감사합니다.mp3" },
-  { label:"죄송합니다", audio:"./audio/韓文/日常會話/죄송합니다.mp3" },
-  { label:"고마워요", audio:"./audio/韓文/日常會話/고마워요.mp3" },
-], 0),
-
-題("『謝謝（正式）』的韓文是？", [
-  { label:"감사합니다", audio:"./audio/韓文/日常會話/감사합니다.mp3" },
-  { label:"고마워요", audio:"./audio/韓文/日常會話/고마워요.mp3" },
-  { label:"미안해요", audio:"./audio/韓文/日常會話/미안해요.mp3" },
-  { label:"천만에요", audio:"./audio/韓文/日常會話/천만에요.mp3" },
-], 0),
-
-題("『謝謝（比較口語）』的韓文是？", [
-  { label:"고마워요", audio:"./audio/韓文/日常會話/고마워요.mp3" },
-  { label:"감사합니다", audio:"./audio/韓文/日常會話/감사합니다.mp3" },
-  { label:"죄송합니다", audio:"./audio/韓文/日常會話/죄송합니다.mp3" },
-  { label:"괜찮아요", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
-], 0),
-
-題("『對不起（正式）』的韓文是？", [
-  { label:"죄송합니다", audio:"./audio/韓文/日常會話/죄송합니다.mp3" },
-  { label:"미안해요", audio:"./audio/韓文/日常會話/미안해요.mp3" },
-  { label:"천만에요", audio:"./audio/韓文/日常會話/천만에요.mp3" },
-  { label:"괜찮아요", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
-], 0),
-
-題("『對不起（口語）』的韓文是？", [
-  { label:"미안해요", audio:"./audio/韓文/日常會話/미안해요.mp3" },
-  { label:"죄송합니다", audio:"./audio/韓文/日常會話/죄송합니다.mp3" },
-  { label:"고마워요", audio:"./audio/韓文/日常會話/고마워요.mp3" },
-  { label:"잘 지내요", audio:"./audio/韓文/日常會話/잘 지내요.mp3" },
-], 0),
-
-題("『不客氣』的韓文是？", [
-  { label:"천만에요", audio:"./audio/韓文/日常會話/천만에요.mp3" },
-  { label:"괜찮아요", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-  { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
-], 0),
-
-題("『沒關係』的韓文是？", [
-  { label:"괜찮아요", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
-  { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
-  { label:"피곤해요", audio:"./audio/韓文/日常會話/피곤해요.mp3" },
-  { label:"배고파요", audio:"./audio/韓文/日常會話/배고파요.mp3" },
-], 0),
-
-題("『我過得很好』的韓文是？", [
-  { label:"잘 지내요", audio:"./audio/韓文/日常會話/잘 지내요.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-  { label:"배불러요", audio:"./audio/韓文/日常會話/배불러요.mp3" },
-  { label:"피곤해요", audio:"./audio/韓文/日常會話/피곤해요.mp3" },
-], 0),
-
-題("『初次見面』的韓文是？", [
-  { label:"처음 뵙겠습니다", audio:"./audio/韓文/日常會話/처음 뵙겠습니다.mp3" },
-  { label:"만나서 반가워요", audio:"./audio/韓文/日常會話/만나서 반가워요.mp3" },
-  { label:"안녕하세요", audio:"./audio/韓文/日常會話/안녕하세요.mp3" },
-  { label:"좋은 하루 보내세요", audio:"./audio/韓文/日常會話/좋은 하루 보내세요.mp3" },
-], 0),
-
-題("『很高興認識你』的韓文是？", [
-  { label:"만나서 반가워요", audio:"./audio/韓文/日常會話/만나서 반가워요.mp3" },
-  { label:"처음 뵙겠습니다", audio:"./audio/韓文/日常會話/처음 뵙겠습니다.mp3" },
-  { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
-  { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
-], 0),
-
-/* =========================
-   問句類（選項全部問句）
-========================= */
-
-題("『你在做什麼？』的韓文是？", [
-  { label:"뭐 하고 있어요?", audio:"./audio/韓文/日常會話/뭐 하고 있어요.mp3" },
-  { label:"요즘 어떻게 지내요?", audio:"./audio/韓文/日常會話/요즘 어떻게 지내요.mp3" },
-  { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
-  { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
-], 0),
-
-題("『最近過得怎麼樣？』的韓文是？", [
-  { label:"요즘 어떻게 지내요?", audio:"./audio/韓文/日常會話/요즘 어떻게 지내요.mp3" },
-  { label:"뭐 하고 있어요?", audio:"./audio/韓文/日常會話/뭐 하고 있어요.mp3" },
-  { label:"얼마예요?", audio:"./audio/韓文/日常會話/얼마예요.mp3" },
-  { label:"괜찮아요?", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
-], 0),
-
-題("『這裡是哪裡？』的韓文是？", [
-  { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
-  { label:"화장실 어디예요?", audio:"./audio/韓文/日常會話/화장실 어디예요.mp3" },
-  { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
-  { label:"진짜요?", audio:"./audio/韓文/日常會話/진짜요.mp3" },
-], 0),
-
-題("『廁所在哪？』的韓文是？", [
-  { label:"화장실 어디예요?", audio:"./audio/韓文/日常會話/화장실 어디예요.mp3" },
-  { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
-  { label:"얼마예요?", audio:"./audio/韓文/日常會話/얼마예요.mp3" },
-  { label:"괜찮아요?", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
-], 0),
-
-題("『這裡怎麼去？』的韓文是？", [
-  { label:"여기 어떻게 가요?", audio:"./audio/韓文/日常會話/여기 어떻게 가요.mp3" },
-  { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
-  { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
-  { label:"진짜요?", audio:"./audio/韓文/日常會話/진짜요.mp3" },
-], 0),
-
-題("『很遠嗎？』的韓文是？", [
-  { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
-  { label:"괜찮아요?", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
-  { label:"얼마예요?", audio:"./audio/韓文/日常會話/얼마예요.mp3" },
-  { label:"화장실 어디예요?", audio:"./audio/韓文/日常會話/화장실 어디예요.mp3" },
-], 0),
-
-題("『真的嗎？』的韓文是？", [
-  { label:"진짜요?", audio:"./audio/韓文/日常會話/진짜요.mp3" },
-  { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
-  { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
-  { label:"얼마예요?", audio:"./audio/韓文/日常會話/얼마예요.mp3" },
-], 0),
-
-題("『可以嗎？／沒問題嗎？』的韓文是？", [
-  { label:"괜찮아요?", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
-  { label:"진짜요?", audio:"./audio/韓文/日常會話/진짜요.mp3" },
-  { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
-  { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
-], 0),
-
-題("『多少錢？』的韓文是？", [
-  { label:"얼마예요?", audio:"./audio/韓文/日常會話/얼마예요.mp3" },
-  { label:"진짜요?", audio:"./audio/韓文/日常會話/진짜요.mp3" },
-  { label:"괜찮아요?", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
-  { label:"화장실 어디예요?", audio:"./audio/韓文/日常會話/화장실 어디예요.mp3" },
-], 0),
-
-題("『可以拍照嗎？』的韓文是？", [
-  { label:"사진 찍어도 돼요?", audio:"./audio/韓文/日常會話/사진 찍어도 돼요.mp3" },
-  { label:"괜찮아요?", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
-  { label:"진짜요?", audio:"./audio/韓文/日常會話/진짜요.mp3" },
-  { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
-], 0),
-
-題("『幾位？』的韓文是？", [
-  { label:"몇 분이세요?", audio:"./audio/韓文/日常會話/몇 분이세요.mp3" },
-  { label:"이거 뭐예요?", audio:"./audio/韓文/日常會話/이거 뭐예요.mp3" },
-  { label:"채식 메뉴 있어요?", audio:"./audio/韓文/日常會話/채식 메뉴 있어요.mp3" },
-  { label:"추천 메뉴 있어요?", audio:"./audio/韓文/日常會話/추천 메뉴 있어요.mp3" },
-], 0),
-
-題("『這個是什麼？』的韓文是？", [
-  { label:"이거 뭐예요?", audio:"./audio/韓文/日常會話/이거 뭐예요.mp3" },
-  { label:"추천 메뉴 있어요?", audio:"./audio/韓文/日常會話/추천 메뉴 있어요.mp3" },
-  { label:"채식 메뉴 있어요?", audio:"./audio/韓文/日常會話/채식 메뉴 있어요.mp3" },
-  { label:"몇 분이세요?", audio:"./audio/韓文/日常會話/몇 분이세요.mp3" },
-], 0),
-
-題("『有推薦的嗎？』的韓文是？", [
-  { label:"추천 메뉴 있어요?", audio:"./audio/韓文/日常會話/추천 메뉴 있어요.mp3" },
-  { label:"채식 메뉴 있어요?", audio:"./audio/韓文/日常會話/채식 메뉴 있어요.mp3" },
-  { label:"이거 뭐예요?", audio:"./audio/韓文/日常會話/이거 뭐예요.mp3" },
-  { label:"사진 찍어도 돼요?", audio:"./audio/韓文/日常會話/사진 찍어도 돼요.mp3" },
-], 0),
-
-題("『有素食嗎？』的韓文是？", [
-  { label:"채식 메뉴 있어요?", audio:"./audio/韓文/日常會話/채식 메뉴 있어요.mp3" },
-  { label:"추천 메뉴 있어요?", audio:"./audio/韓文/日常會話/추천 메뉴 있어요.mp3" },
-  { label:"이거 뭐예요?", audio:"./audio/韓文/日常會話/이거 뭐예요.mp3" },
-  { label:"몇 분이세요?", audio:"./audio/韓文/日常會話/몇 분이세요.mp3" },
-], 0),
-
-/* =========================
-   日常狀態 / 反應（陳述句）
-========================= */
-
-題("『我餓了』的韓文是？", [
-  { label:"배고파요", audio:"./audio/韓文/日常會話/배고파요.mp3" },
-  { label:"배불러요", audio:"./audio/韓文/日常會話/배불러요.mp3" },
-  { label:"피곤해요", audio:"./audio/韓文/日常會話/피곤해요.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-], 0),
-
-題("『我吃飽了』的韓文是？", [
-  { label:"배불러요", audio:"./audio/韓文/日常會話/배불러요.mp3" },
-  { label:"배고파요", audio:"./audio/韓文/日常會話/배고파요.mp3" },
-  { label:"피곤해요", audio:"./audio/韓文/日常會話/피곤해요.mp3" },
-  { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
-], 0),
-
-題("『好累』的韓文是？", [
-  { label:"피곤해요", audio:"./audio/韓文/日常會話/피곤해요.mp3" },
-  { label:"배고파요", audio:"./audio/韓文/日常會話/배고파요.mp3" },
-  { label:"대박이에요", audio:"./audio/韓文/日常會話/대박이에요.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-], 0),
-
-題("『今天天氣很好』的韓文是？", [
-  { label:"오늘 날씨 좋아요", audio:"./audio/韓文/日常會話/오늘 날씨 좋아요.mp3" },
-  { label:"오늘 너무 추워요", audio:"./audio/韓文/日常會話/오늘 너무 추워요.mp3" },
-  { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
-  { label:"좋은 하루 보내세요", audio:"./audio/韓文/日常會話/좋은 하루 보내세요.mp3" },
-], 0),
-
-題("『今天很冷』的韓文是？", [
-  { label:"오늘 너무 추워요", audio:"./audio/韓文/日常會話/오늘 너무 추워요.mp3" },
-  { label:"오늘 날씨 좋아요", audio:"./audio/韓文/日常會話/오늘 날씨 좋아요.mp3" },
-  { label:"피곤해요", audio:"./audio/韓文/日常會話/피곤해요.mp3" },
-  { label:"배고파요", audio:"./audio/韓文/日常會話/배고파요.mp3" },
-], 0),
-
-題("『太好了』的韓文是？", [
-  { label:"잘됐다", audio:"./audio/韓文/日常會話/잘됐다.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-  { label:"아쉽다", audio:"./audio/韓文/日常會話/아쉽다.mp3" },
-  { label:"대박이에요", audio:"./audio/韓文/日常會話/대박이에요.mp3" },
-], 0),
-
-題("『太厲害了』的韓文是？", [
-  { label:"대박이에요", audio:"./audio/韓文/日常會話/대박이에요.mp3" },
-  { label:"아쉽다", audio:"./audio/韓文/日常會話/아쉽다.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-  { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
-], 0),
-
-題("『真可惜』的韓文是？", [
-  { label:"아쉽다", audio:"./audio/韓文/日常會話/아쉽다.mp3" },
-  { label:"대박이에요", audio:"./audio/韓文/日常會話/대박이에요.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-  { label:"잘됐다", audio:"./audio/韓文/日常會話/잘됐다.mp3" },
-], 0),
-
-題("『好好笑』的韓文是？", [
-  { label:"너무 웃겨요", audio:"./audio/韓文/日常會話/너무 웃겨요.mp3" },
-  { label:"너무 귀여워요", audio:"./audio/韓文/日常會話/너무 귀여워요.mp3" },
-  { label:"예뻐요", audio:"./audio/韓文/日常會話/예뻐요.mp3" },
-  { label:"잘생겼어요", audio:"./audio/韓文/日常會話/잘생겼어요.mp3" },
-], 0),
-
-題("『好可愛』的韓文是？", [
-  { label:"너무 귀여워요", audio:"./audio/韓文/日常會話/너무 귀여워요.mp3" },
-  { label:"너무 웃겨요", audio:"./audio/韓文/日常會話/너무 웃겨요.mp3" },
-  { label:"예뻐요", audio:"./audio/韓文/日常會話/예뻐요.mp3" },
-  { label:"잘생겼어요", audio:"./audio/韓文/日常會話/잘생겼어요.mp3" },
-], 0),
-
-題("『好帥』的韓文是？", [
-  { label:"잘생겼어요", audio:"./audio/韓文/日常會話/잘생겼어요.mp3" },
-  { label:"예뻐요", audio:"./audio/韓文/日常會話/예뻐요.mp3" },
-  { label:"너무 귀여워요", audio:"./audio/韓文/日常會話/너무 귀여워요.mp3" },
-  { label:"너무 웃겨요", audio:"./audio/韓文/日常會話/너무 웃겨요.mp3" },
-], 0),
-
-題("『好漂亮』的韓文是？", [
-  { label:"예뻐요", audio:"./audio/韓文/日常會話/예뻐요.mp3" },
-  { label:"잘생겼어요", audio:"./audio/韓文/日常會話/잘생겼어요.mp3" },
-  { label:"너무 귀여워요", audio:"./audio/韓文/日常會話/너무 귀여워요.mp3" },
-  { label:"너무 웃겨요", audio:"./audio/韓文/日常會話/너무 웃겨요.mp3" },
-], 0),
-
-題("『我喜歡』的韓文是？", [
-  { label:"좋아해요", audio:"./audio/韓文/日常會話/좋아해요.mp3" },
-  { label:"안 좋아해요", audio:"./audio/韓文/日常會話/안 좋아해요.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-  { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
-], 0),
-
-題("『我不喜歡』的韓文是？", [
-  { label:"안 좋아해요", audio:"./audio/韓文/日常會話/안 좋아해요.mp3" },
-  { label:"좋아해요", audio:"./audio/韓文/日常會話/좋아해요.mp3" },
-  { label:"모르겠어요", audio:"./audio/韓文/日常會話/모르겠어요.mp3" },
-  { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
-], 0),
-
-題("『我懂了』的韓文是？", [
-  { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
-  { label:"모르겠어요", audio:"./audio/韓文/日常會話/모르겠어요.mp3" },
-  { label:"잘 모르겠어요", audio:"./audio/韓文/日常會話/잘 모르겠어요.mp3" },
-  { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
-], 0),
-
-題("『不知道』的韓文是？", [
-  { label:"모르겠어요", audio:"./audio/韓文/日常會話/모르겠어요.mp3" },
-  { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
-  { label:"잘 모르겠어요", audio:"./audio/韓文/日常會話/잘 모르겠어요.mp3" },
-  { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
-], 0),
-
-題("『我聽不懂』的韓文是？", [
-  { label:"잘 모르겠어요", audio:"./audio/韓文/日常會話/잘 모르겠어요.mp3" },
-  { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
-  { label:"모르겠어요", audio:"./audio/韓文/日常會話/모르겠어요.mp3" },
-  { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
-], 0),
-
-/* =========================
-   請求 / 指令（陳述句）
-========================= */
-
-題("『請等一下』的韓文是？", [
-  { label:"잠깐만요", audio:"./audio/韓文/日常會話/잠깐만요.mp3" },
-  { label:"좀 도와주세요", audio:"./audio/韓文/日常會話/좀 도와주세요.mp3" },
-  { label:"다시 말해 주세요", audio:"./audio/韓文/日常會話/다시 말해 주세요.mp3" },
-  { label:"천천히 말해 주세요", audio:"./audio/韓文/日常會話/천천히 말해 주세요.mp3" },
-], 0),
-
-題("『請幫我一下』的韓文是？", [
-  { label:"좀 도와주세요", audio:"./audio/韓文/日常會話/좀 도와주세요.mp3" },
-  { label:"잠깐만요", audio:"./audio/韓文/日常會話/잠깐만요.mp3" },
-  { label:"다시 말해 주세요", audio:"./audio/韓文/日常會話/다시 말해 주세요.mp3" },
-  { label:"천천히 말해 주세요", audio:"./audio/韓文/日常會話/천천히 말해 주세요.mp3" },
-], 0),
-
-題("『再說一次』的韓文是？", [
-  { label:"다시 말해 주세요", audio:"./audio/韓文/日常會話/다시 말해 주세요.mp3" },
-  { label:"천천히 말해 주세요", audio:"./audio/韓文/日常會話/천천히 말해 주세요.mp3" },
-  { label:"잠깐만요", audio:"./audio/韓文/日常會話/잠깐만요.mp3" },
-  { label:"좀 도와주세요", audio:"./audio/韓文/日常會話/좀 도와주세요.mp3" },
-], 0),
-
-題("『慢一點說』的韓文是？", [
-  { label:"천천히 말해 주세요", audio:"./audio/韓文/日常會話/천천히 말해 주세요.mp3" },
-  { label:"다시 말해 주세요", audio:"./audio/韓文/日常會話/다시 말해 주세요.mp3" },
-  { label:"잠깐만요", audio:"./audio/韓文/日常會話/잠깐만요.mp3" },
-  { label:"좀 도와주세요", audio:"./audio/韓文/日常會話/좀 도와주세요.mp3" },
-], 0),
-
-題("『沒問題』的韓文是？", [
-  { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
-  { label:"괜찮아요", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
-  { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-], 0),
-
-/* =========================
-   外出 / 交通（陳述句）
-========================= */
-
-題("『我迷路了』的韓文是？", [
-  { label:"길을 잃었어요", audio:"./audio/韓文/日常會話/길을 잃었어요.mp3" },
-  { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
-  { label:"친구 찾고 있어요", audio:"./audio/韓文/日常會話/친구 찾고 있어요.mp3" },
-  { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
-], 0),
-
-題("『我要出門』的韓文是？", [
-  { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
-  { label:"지하철 탈 거예요", audio:"./audio/韓文/日常會話/지하철 탈 거예요.mp3" },
-  { label:"친구 찾고 있어요", audio:"./audio/韓文/日常會話/친구 찾고 있어요.mp3" },
-  { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
-], 0),
-
-題("『我要搭地鐵』的韓文是？", [
-  { label:"지하철 탈 거예요", audio:"./audio/韓文/日常會話/지하철 탈 거예요.mp3" },
-  { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
-  { label:"여기서 내릴게요", audio:"./audio/韓文/日常會話/여기서 내릴게요.mp3" },
-  { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
-], 0),
-
-題("『我在這裡下車』的韓文是？", [
-  { label:"여기서 내릴게요", audio:"./audio/韓文/日常會話/여기서 내릴게요.mp3" },
-  { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
-  { label:"친구 찾고 있어요", audio:"./audio/韓文/日常會話/친구 찾고 있어요.mp3" },
-  { label:"길을 잃었어요", audio:"./audio/韓文/日常會話/길을 잃었어요.mp3" },
-], 0),
-
-題("『我在找朋友』的韓文是？", [
-  { label:"친구 찾고 있어요", audio:"./audio/韓文/日常會話/친구 찾고 있어요.mp3" },
-  { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
-  { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
-  { label:"길을 잃었어요", audio:"./audio/韓文/日常會話/길을 잃었어요.mp3" },
-], 0),
-
-題("『我快到了』的韓文是？", [
-  { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
-  { label:"친구 찾고 있어요", audio:"./audio/韓文/日常會話/친구 찾고 있어요.mp3" },
-  { label:"여기서 내릴게요", audio:"./audio/韓文/日常會話/여기서 내릴게요.mp3" },
-  { label:"길을 잃었어요", audio:"./audio/韓文/日常會話/길을 잃었어요.mp3" },
-], 0),
-
-題("『左邊』的韓文是？", [
-  { label:"왼쪽", audio:"./audio/韓文/日常會話/왼쪽.mp3" },
-  { label:"오른쪽", audio:"./audio/韓文/日常會話/오른쪽.mp3" },
-  { label:"가까워요", audio:"./audio/韓文/日常會話/가까워요.mp3" },
-  { label:"직진하세요", audio:"./audio/韓文/日常會話/직진하세요.mp3" },
-], 0),
-
-題("『右邊』的韓文是？", [
-  { label:"오른쪽", audio:"./audio/韓文/日常會話/오른쪽.mp3" },
-  { label:"왼쪽", audio:"./audio/韓文/日常會話/왼쪽.mp3" },
-  { label:"직진하세요", audio:"./audio/韓文/日常會話/직진하세요.mp3" },
-  { label:"가까워요", audio:"./audio/韓文/日常會話/가까워요.mp3" },
-], 0),
-
-題("『直走』的韓文是？", [
-  { label:"직진하세요", audio:"./audio/韓文/日常會話/직진하세요.mp3" },
-  { label:"가까워요", audio:"./audio/韓文/日常會話/가까워요.mp3" },
-  { label:"왼쪽", audio:"./audio/韓文/日常會話/왼쪽.mp3" },
-  { label:"오른쪽", audio:"./audio/韓文/日常會話/오른쪽.mp3" },
-], 0),
-
-題("『很近』的韓文是？", [
-  { label:"가까워요", audio:"./audio/韓文/日常會話/가까워요.mp3" },
-  { label:"길을 잃었어요", audio:"./audio/韓文/日常會話/길을 잃었어요.mp3" },
-  { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-], 0),
-
-/* =========================
-   工作 / 日常（陳述句）
-========================= */
-
-題("『我在上班』的韓文是？", [
-  { label:"일하고 있어요", audio:"./audio/韓文/日常會話/일하고 있어요.mp3" },
-  { label:"수업 듣고 있어요", audio:"./audio/韓文/日常會話/수업 듣고 있어요.mp3" },
-  { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
-  { label:"친구 찾고 있어요", audio:"./audio/韓文/日常會話/친구 찾고 있어요.mp3" },
-], 0),
-
-題("『我在上課』的韓文是？", [
-  { label:"수업 듣고 있어요", audio:"./audio/韓文/日常會話/수업 듣고 있어요.mp3" },
-  { label:"일하고 있어요", audio:"./audio/韓文/日常會話/일하고 있어요.mp3" },
-  { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-], 0),
-
-/* =========================
-   結尾 / 禮貌（陳述句）
-========================= */
-
-題("『辛苦了』的韓文是？", [
-  { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
-  { label:"화이팅", audio:"./audio/韓文/日常會話/화이팅.mp3" },
-  { label:"좋은 하루 보내세요", audio:"./audio/韓文/日常會話/좋은 하루 보내세요.mp3" },
-  { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
-], 0),
-
-題("『加油』的韓文是？", [
-  { label:"화이팅", audio:"./audio/韓文/日常會話/화이팅.mp3" },
-  { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
-  { label:"정말 감사합니다", audio:"./audio/韓文/日常會話/정말 감사합니다.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-], 0),
-
-題("『真的謝謝你』的韓文是？", [
-  { label:"정말 감사합니다", audio:"./audio/韓文/日常會話/정말 감사합니다.mp3" },
-  { label:"감사합니다", audio:"./audio/韓文/日常會話/감사합니다.mp3" },
-  { label:"고마워요", audio:"./audio/韓文/日常會話/고마워요.mp3" },
-  { label:"천만에요", audio:"./audio/韓文/日常會話/천만에요.mp3" },
-], 0),
-
-題("『今天很開心』的韓文是？", [
-  { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
-  { label:"좋은 하루 보내세요", audio:"./audio/韓文/日常會話/좋은 하루 보내세요.mp3" },
-  { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
-  { label:"조심히 가세요", audio:"./audio/韓文/日常會話/조심히 가세요.mp3" },
-], 0),
-
-題("『祝你有美好的一天』的韓文是？", [
-  { label:"좋은 하루 보내세요", audio:"./audio/韓文/日常會話/좋은 하루 보내세요.mp3" },
-  { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
-  { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
-  { label:"정말 감사합니다", audio:"./audio/韓文/日常會話/정말 감사합니다.mp3" },
-], 0),
-
-題("『慢走』的韓文是？", [
-  { label:"조심히 가세요", audio:"./audio/韓文/日常會話/조심히 가세요.mp3" },
-  { label:"안녕히 가세요", audio:"./audio/韓文/日常會話/안녕히 가세요.mp3" },
-  { label:"안녕히 계세요", audio:"./audio/韓文/日常會話/안녕히 계세요.mp3" },
-  { label:"다음에 봐요", audio:"./audio/韓文/日常會話/다음에 봐요.mp3" },
-], 0),
-
-題("『再見（離開的人說）』的韓文是？", [
-  { label:"안녕히 계세요", audio:"./audio/韓文/日常會話/안녕히 계세요.mp3" },
-  { label:"안녕히 가세요", audio:"./audio/韓文/日常會話/안녕히 가세요.mp3" },
-  { label:"조심히 가세요", audio:"./audio/韓文/日常會話/조심히 가세요.mp3" },
-  { label:"좋은 하루 보내세요", audio:"./audio/韓文/日常會話/좋은 하루 보내세요.mp3" },
-], 0),
-
-題("『再見（留下的人說）』的韓文是？", [
-  { label:"안녕히 가세요", audio:"./audio/韓文/日常會話/안녕히 가세요.mp3" },
-  { label:"안녕히 계세요", audio:"./audio/韓文/日常會話/안녕히 계세요.mp3" },
-  { label:"조심히 가세요", audio:"./audio/韓文/日常會話/조심히 가세요.mp3" },
-  { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
-], 0),
-
-題("『明天見』的韓文是？", [
-  { label:"내일 봐요", audio:"./audio/韓文/日常會話/내일 봐요.mp3" },
-  { label:"다음에 봐요", audio:"./audio/韓文/日常會話/다음에 봐요.mp3" },
-  { label:"안녕히 주무세요", audio:"./audio/韓文/日常會話/안녕히 주무세요.mp3" },
-  { label:"조심히 가세요", audio:"./audio/韓文/日常會話/조심히 가세요.mp3" },
-], 0),
-
-題("『下次見』的韓文是？", [
-  { label:"다음에 봐요", audio:"./audio/韓文/日常會話/다음에 봐요.mp3" },
-  { label:"내일 봐요", audio:"./audio/韓文/日常會話/내일 봐요.mp3" },
-  { label:"안녕히 주무세요", audio:"./audio/韓文/日常會話/안녕히 주무세요.mp3" },
-  { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
-], 0),
-
-題("『祝你好運』的韓文是？", [
-  { label:"행운을 빌어요", audio:"./audio/韓文/日常會話/행운을 빌어요.mp3" },
-  { label:"화이팅", audio:"./audio/韓文/日常會話/화이팅.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-  { label:"잘됐다", audio:"./audio/韓文/日常會話/잘됐다.mp3" },
-], 0),
-
-題("『晚安』的韓文是？", [
-  { label:"안녕히 주무세요", audio:"./audio/韓文/日常會話/안녕히 주무세요.mp3" },
-  { label:"내일 봐요", audio:"./audio/韓文/日常會話/내일 봐요.mp3" },
-  { label:"다음에 봐요", audio:"./audio/韓文/日常會話/다음에 봐요.mp3" },
-  { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
-], 0),
-
-/* =========================
-   補題（維持規則：陳述句）
-   讓總數 ≥ 50
-========================= */
-
-題("『좋아요（좋아요）』的韓文是？（意義：好／喜歡）", [
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-  { label:"잘됐다", audio:"./audio/韓文/日常會話/잘됐다.mp3" },
-  { label:"아쉽다", audio:"./audio/韓文/日常會話/아쉽다.mp3" },
-  { label:"대박이에요", audio:"./audio/韓文/日常會話/대박이에요.mp3" },
-], 0),
-
-題("『我不太懂（我不確定）』最接近的韓文是？", [
-  { label:"잘 모르겠어요", audio:"./audio/韓文/日常會話/잘 모르겠어요.mp3" },
-  { label:"모르겠어요", audio:"./audio/韓文/日常會話/모르겠어요.mp3" },
-  { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
-  { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
-], 0),
-
-題("『我覺得沒問題』最接近的韓文是？", [
-  { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
-  { label:"괜찮아요", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
-  { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-], 0),
-
-題("『我覺得超讚（爆炸厲害）』的韓文是？", [
-  { label:"대박이에요", audio:"./audio/韓文/日常會話/대박이에요.mp3" },
-  { label:"잘됐다", audio:"./audio/韓文/日常會話/잘됐다.mp3" },
-  { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
-  { label:"아쉽다", audio:"./audio/韓文/日常會話/아쉽다.mp3" },
-], 0),
-
-題("『我準備要出門了』的韓文是？", [
-  { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
-  { label:"지하철 탈 거예요", audio:"./audio/韓文/日常會話/지하철 탈 거예요.mp3" },
-  { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
-  { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
-], 0),
-
-];
+    /* =========================
+      打招呼 / 基本（陳述句）
+    ========================= */
+
+    題("『你好』的韓文是？", [
+      { label:"안녕하세요", audio:"./audio/韓文/日常會話/안녕하세요.mp3" },
+      { label:"감사합니다", audio:"./audio/韓文/日常會話/감사합니다.mp3" },
+      { label:"죄송합니다", audio:"./audio/韓文/日常會話/죄송합니다.mp3" },
+      { label:"고마워요", audio:"./audio/韓文/日常會話/고마워요.mp3" },
+    ], 0),
+
+    題("『謝謝（正式）』的韓文是？", [
+      { label:"감사합니다", audio:"./audio/韓文/日常會話/감사합니다.mp3" },
+      { label:"고마워요", audio:"./audio/韓文/日常會話/고마워요.mp3" },
+      { label:"미안해요", audio:"./audio/韓文/日常會話/미안해요.mp3" },
+      { label:"천만에요", audio:"./audio/韓文/日常會話/천만에요.mp3" },
+    ], 0),
+
+    題("『謝謝（比較口語）』的韓文是？", [
+      { label:"고마워요", audio:"./audio/韓文/日常會話/고마워요.mp3" },
+      { label:"감사합니다", audio:"./audio/韓文/日常會話/감사합니다.mp3" },
+      { label:"죄송합니다", audio:"./audio/韓文/日常會話/죄송합니다.mp3" },
+      { label:"괜찮아요", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
+    ], 0),
+
+    題("『對不起（正式）』的韓文是？", [
+      { label:"죄송합니다", audio:"./audio/韓文/日常會話/죄송합니다.mp3" },
+      { label:"미안해요", audio:"./audio/韓文/日常會話/미안해요.mp3" },
+      { label:"천만에요", audio:"./audio/韓文/日常會話/천만에요.mp3" },
+      { label:"괜찮아요", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
+    ], 0),
+
+    題("『對不起（口語）』的韓文是？", [
+      { label:"미안해요", audio:"./audio/韓文/日常會話/미안해요.mp3" },
+      { label:"죄송합니다", audio:"./audio/韓文/日常會話/죄송합니다.mp3" },
+      { label:"고마워요", audio:"./audio/韓文/日常會話/고마워요.mp3" },
+      { label:"잘 지내요", audio:"./audio/韓文/日常會話/잘 지내요.mp3" },
+    ], 0),
+
+    題("『不客氣』的韓文是？", [
+      { label:"천만에요", audio:"./audio/韓文/日常會話/천만에요.mp3" },
+      { label:"괜찮아요", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+      { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
+    ], 0),
+
+    題("『沒關係』的韓文是？", [
+      { label:"괜찮아요", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
+      { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
+      { label:"피곤해요", audio:"./audio/韓文/日常會話/피곤해요.mp3" },
+      { label:"배고파요", audio:"./audio/韓文/日常會話/배고파요.mp3" },
+    ], 0),
+
+    題("『我過得很好』的韓文是？", [
+      { label:"잘 지내요", audio:"./audio/韓文/日常會話/잘 지내요.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+      { label:"배불러요", audio:"./audio/韓文/日常會話/배불러요.mp3" },
+      { label:"피곤해요", audio:"./audio/韓文/日常會話/피곤해요.mp3" },
+    ], 0),
+
+    題("『初次見面』的韓文是？", [
+      { label:"처음 뵙겠습니다", audio:"./audio/韓文/日常會話/처음 뵙겠습니다.mp3" },
+      { label:"만나서 반가워요", audio:"./audio/韓文/日常會話/만나서 반가워요.mp3" },
+      { label:"안녕하세요", audio:"./audio/韓文/日常會話/안녕하세요.mp3" },
+      { label:"좋은 하루 보내세요", audio:"./audio/韓文/日常會話/좋은 하루 보내세요.mp3" },
+    ], 0),
+
+    題("『很高興認識你』的韓文是？", [
+      { label:"만나서 반가워요", audio:"./audio/韓文/日常會話/만나서 반가워요.mp3" },
+      { label:"처음 뵙겠습니다", audio:"./audio/韓文/日常會話/처음 뵙겠습니다.mp3" },
+      { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
+      { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
+    ], 0),
+
+    /* =========================
+      問句類（選項全部問句）
+    ========================= */
+
+    題("『你在做什麼？』的韓文是？", [
+      { label:"뭐 하고 있어요?", audio:"./audio/韓文/日常會話/뭐 하고 있어요.mp3" },
+      { label:"요즘 어떻게 지내요?", audio:"./audio/韓文/日常會話/요즘 어떻게 지내요.mp3" },
+      { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
+      { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
+    ], 0),
+
+    題("『最近過得怎麼樣？』的韓文是？", [
+      { label:"요즘 어떻게 지내요?", audio:"./audio/韓文/日常會話/요즘 어떻게 지내요.mp3" },
+      { label:"뭐 하고 있어요?", audio:"./audio/韓文/日常會話/뭐 하고 있어요.mp3" },
+      { label:"얼마예요?", audio:"./audio/韓文/日常會話/얼마예요.mp3" },
+      { label:"괜찮아요?", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
+    ], 0),
+
+    題("『這裡是哪裡？』的韓文是？", [
+      { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
+      { label:"화장실 어디예요?", audio:"./audio/韓文/日常會話/화장실 어디예요.mp3" },
+      { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
+      { label:"진짜요?", audio:"./audio/韓文/日常會話/진짜요.mp3" },
+    ], 0),
+
+    題("『廁所在哪？』的韓文是？", [
+      { label:"화장실 어디예요?", audio:"./audio/韓文/日常會話/화장실 어디예요.mp3" },
+      { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
+      { label:"얼마예요?", audio:"./audio/韓文/日常會話/얼마예요.mp3" },
+      { label:"괜찮아요?", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
+    ], 0),
+
+    題("『這裡怎麼去？』的韓文是？", [
+      { label:"여기 어떻게 가요?", audio:"./audio/韓文/日常會話/여기 어떻게 가요.mp3" },
+      { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
+      { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
+      { label:"진짜요?", audio:"./audio/韓文/日常會話/진짜요.mp3" },
+    ], 0),
+
+    題("『很遠嗎？』的韓文是？", [
+      { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
+      { label:"괜찮아요?", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
+      { label:"얼마예요?", audio:"./audio/韓文/日常會話/얼마예요.mp3" },
+      { label:"화장실 어디예요?", audio:"./audio/韓文/日常會話/화장실 어디예요.mp3" },
+    ], 0),
+
+    題("『真的嗎？』的韓文是？", [
+      { label:"진짜요?", audio:"./audio/韓文/日常會話/진짜요.mp3" },
+      { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
+      { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
+      { label:"얼마예요?", audio:"./audio/韓文/日常會話/얼마예요.mp3" },
+    ], 0),
+
+    題("『可以嗎？／沒問題嗎？』的韓文是？", [
+      { label:"괜찮아요?", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
+      { label:"진짜요?", audio:"./audio/韓文/日常會話/진짜요.mp3" },
+      { label:"멀어요?", audio:"./audio/韓文/日常會話/멀어요.mp3" },
+      { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
+    ], 0),
+
+    題("『多少錢？』的韓文是？", [
+      { label:"얼마예요?", audio:"./audio/韓文/日常會話/얼마예요.mp3" },
+      { label:"진짜요?", audio:"./audio/韓文/日常會話/진짜요.mp3" },
+      { label:"괜찮아요?", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
+      { label:"화장실 어디예요?", audio:"./audio/韓文/日常會話/화장실 어디예요.mp3" },
+    ], 0),
+
+    題("『可以拍照嗎？』的韓文是？", [
+      { label:"사진 찍어도 돼요?", audio:"./audio/韓文/日常會話/사진 찍어도 돼요.mp3" },
+      { label:"괜찮아요?", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
+      { label:"진짜요?", audio:"./audio/韓文/日常會話/진짜요.mp3" },
+      { label:"여기 어디예요?", audio:"./audio/韓文/日常會話/여기 어디예요.mp3" },
+    ], 0),
+
+    題("『幾位？』的韓文是？", [
+      { label:"몇 분이세요?", audio:"./audio/韓文/日常會話/몇 분이세요.mp3" },
+      { label:"이거 뭐예요?", audio:"./audio/韓文/日常會話/이거 뭐예요.mp3" },
+      { label:"채식 메뉴 있어요?", audio:"./audio/韓文/日常會話/채식 메뉴 있어요.mp3" },
+      { label:"추천 메뉴 있어요?", audio:"./audio/韓文/日常會話/추천 메뉴 있어요.mp3" },
+    ], 0),
+
+    題("『這個是什麼？』的韓文是？", [
+      { label:"이거 뭐예요?", audio:"./audio/韓文/日常會話/이거 뭐예요.mp3" },
+      { label:"추천 메뉴 있어요?", audio:"./audio/韓文/日常會話/추천 메뉴 있어요.mp3" },
+      { label:"채식 메뉴 있어요?", audio:"./audio/韓文/日常會話/채식 메뉴 있어요.mp3" },
+      { label:"몇 분이세요?", audio:"./audio/韓文/日常會話/몇 분이세요.mp3" },
+    ], 0),
+
+    題("『有推薦的嗎？』的韓文是？", [
+      { label:"추천 메뉴 있어요?", audio:"./audio/韓文/日常會話/추천 메뉴 있어요.mp3" },
+      { label:"채식 메뉴 있어요?", audio:"./audio/韓文/日常會話/채식 메뉴 있어요.mp3" },
+      { label:"이거 뭐예요?", audio:"./audio/韓文/日常會話/이거 뭐예요.mp3" },
+      { label:"사진 찍어도 돼요?", audio:"./audio/韓文/日常會話/사진 찍어도 돼요.mp3" },
+    ], 0),
+
+    題("『有素食嗎？』的韓文是？", [
+      { label:"채식 메뉴 있어요?", audio:"./audio/韓文/日常會話/채식 메뉴 있어요.mp3" },
+      { label:"추천 메뉴 있어요?", audio:"./audio/韓文/日常會話/추천 메뉴 있어요.mp3" },
+      { label:"이거 뭐예요?", audio:"./audio/韓文/日常會話/이거 뭐예요.mp3" },
+      { label:"몇 분이세요?", audio:"./audio/韓文/日常會話/몇 분이세요.mp3" },
+    ], 0),
+
+    /* =========================
+      日常狀態 / 反應（陳述句）
+    ========================= */
+
+    題("『我餓了』的韓文是？", [
+      { label:"배고파요", audio:"./audio/韓文/日常會話/배고파요.mp3" },
+      { label:"배불러요", audio:"./audio/韓文/日常會話/배불러요.mp3" },
+      { label:"피곤해요", audio:"./audio/韓文/日常會話/피곤해요.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+    ], 0),
+
+    題("『我吃飽了』的韓文是？", [
+      { label:"배불러요", audio:"./audio/韓文/日常會話/배불러요.mp3" },
+      { label:"배고파요", audio:"./audio/韓文/日常會話/배고파요.mp3" },
+      { label:"피곤해요", audio:"./audio/韓文/日常會話/피곤해요.mp3" },
+      { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
+    ], 0),
+
+    題("『好累』的韓文是？", [
+      { label:"피곤해요", audio:"./audio/韓文/日常會話/피곤해요.mp3" },
+      { label:"배고파요", audio:"./audio/韓文/日常會話/배고파요.mp3" },
+      { label:"대박이에요", audio:"./audio/韓文/日常會話/대박이에요.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+    ], 0),
+
+    題("『今天天氣很好』的韓文是？", [
+      { label:"오늘 날씨 좋아요", audio:"./audio/韓文/日常會話/오늘 날씨 좋아요.mp3" },
+      { label:"오늘 너무 추워요", audio:"./audio/韓文/日常會話/오늘 너무 추워요.mp3" },
+      { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
+      { label:"좋은 하루 보내세요", audio:"./audio/韓文/日常會話/좋은 하루 보내세요.mp3" },
+    ], 0),
+
+    題("『今天很冷』的韓文是？", [
+      { label:"오늘 너무 추워요", audio:"./audio/韓文/日常會話/오늘 너무 추워요.mp3" },
+      { label:"오늘 날씨 좋아요", audio:"./audio/韓文/日常會話/오늘 날씨 좋아요.mp3" },
+      { label:"피곤해요", audio:"./audio/韓文/日常會話/피곤해요.mp3" },
+      { label:"배고파요", audio:"./audio/韓文/日常會話/배고파요.mp3" },
+    ], 0),
+
+    題("『太好了』的韓文是？", [
+      { label:"잘됐다", audio:"./audio/韓文/日常會話/잘됐다.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+      { label:"아쉽다", audio:"./audio/韓文/日常會話/아쉽다.mp3" },
+      { label:"대박이에요", audio:"./audio/韓文/日常會話/대박이에요.mp3" },
+    ], 0),
+
+    題("『太厲害了』的韓文是？", [
+      { label:"대박이에요", audio:"./audio/韓文/日常會話/대박이에요.mp3" },
+      { label:"아쉽다", audio:"./audio/韓文/日常會話/아쉽다.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+      { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
+    ], 0),
+
+    題("『真可惜』的韓文是？", [
+      { label:"아쉽다", audio:"./audio/韓文/日常會話/아쉽다.mp3" },
+      { label:"대박이에요", audio:"./audio/韓文/日常會話/대박이에요.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+      { label:"잘됐다", audio:"./audio/韓文/日常會話/잘됐다.mp3" },
+    ], 0),
+
+    題("『好好笑』的韓文是？", [
+      { label:"너무 웃겨요", audio:"./audio/韓文/日常會話/너무 웃겨요.mp3" },
+      { label:"너무 귀여워요", audio:"./audio/韓文/日常會話/너무 귀여워요.mp3" },
+      { label:"예뻐요", audio:"./audio/韓文/日常會話/예뻐요.mp3" },
+      { label:"잘생겼어요", audio:"./audio/韓文/日常會話/잘생겼어요.mp3" },
+    ], 0),
+
+    題("『好可愛』的韓文是？", [
+      { label:"너무 귀여워요", audio:"./audio/韓文/日常會話/너무 귀여워요.mp3" },
+      { label:"너무 웃겨요", audio:"./audio/韓文/日常會話/너무 웃겨요.mp3" },
+      { label:"예뻐요", audio:"./audio/韓文/日常會話/예뻐요.mp3" },
+      { label:"잘생겼어요", audio:"./audio/韓文/日常會話/잘생겼어요.mp3" },
+    ], 0),
+
+    題("『好帥』的韓文是？", [
+      { label:"잘생겼어요", audio:"./audio/韓文/日常會話/잘생겼어요.mp3" },
+      { label:"예뻐요", audio:"./audio/韓文/日常會話/예뻐요.mp3" },
+      { label:"너무 귀여워요", audio:"./audio/韓文/日常會話/너무 귀여워요.mp3" },
+      { label:"너무 웃겨요", audio:"./audio/韓文/日常會話/너무 웃겨요.mp3" },
+    ], 0),
+
+    題("『好漂亮』的韓文是？", [
+      { label:"예뻐요", audio:"./audio/韓文/日常會話/예뻐요.mp3" },
+      { label:"잘생겼어요", audio:"./audio/韓文/日常會話/잘생겼어요.mp3" },
+      { label:"너무 귀여워요", audio:"./audio/韓文/日常會話/너무 귀여워요.mp3" },
+      { label:"너무 웃겨요", audio:"./audio/韓文/日常會話/너무 웃겨요.mp3" },
+    ], 0),
+
+    題("『我喜歡』的韓文是？", [
+      { label:"좋아해요", audio:"./audio/韓文/日常會話/좋아해요.mp3" },
+      { label:"안 좋아해요", audio:"./audio/韓文/日常會話/안 좋아해요.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+      { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
+    ], 0),
+
+    題("『我不喜歡』的韓文是？", [
+      { label:"안 좋아해요", audio:"./audio/韓文/日常會話/안 좋아해요.mp3" },
+      { label:"좋아해요", audio:"./audio/韓文/日常會話/좋아해요.mp3" },
+      { label:"모르겠어요", audio:"./audio/韓文/日常會話/모르겠어요.mp3" },
+      { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
+    ], 0),
+
+    題("『我懂了』的韓文是？", [
+      { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
+      { label:"모르겠어요", audio:"./audio/韓文/日常會話/모르겠어요.mp3" },
+      { label:"잘 모르겠어요", audio:"./audio/韓文/日常會話/잘 모르겠어요.mp3" },
+      { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
+    ], 0),
+
+    題("『不知道』的韓文是？", [
+      { label:"모르겠어요", audio:"./audio/韓文/日常會話/모르겠어요.mp3" },
+      { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
+      { label:"잘 모르겠어요", audio:"./audio/韓文/日常會話/잘 모르겠어요.mp3" },
+      { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
+    ], 0),
+
+    題("『我聽不懂』的韓文是？", [
+      { label:"잘 모르겠어요", audio:"./audio/韓文/日常會話/잘 모르겠어요.mp3" },
+      { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
+      { label:"모르겠어요", audio:"./audio/韓文/日常會話/모르겠어요.mp3" },
+      { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
+    ], 0),
+
+    /* =========================
+      請求 / 指令（陳述句）
+    ========================= */
+
+    題("『請等一下』的韓文是？", [
+      { label:"잠깐만요", audio:"./audio/韓文/日常會話/잠깐만요.mp3" },
+      { label:"좀 도와주세요", audio:"./audio/韓文/日常會話/좀 도와주세요.mp3" },
+      { label:"다시 말해 주세요", audio:"./audio/韓文/日常會話/다시 말해 주세요.mp3" },
+      { label:"천천히 말해 주세요", audio:"./audio/韓文/日常會話/천천히 말해 주세요.mp3" },
+    ], 0),
+
+    題("『請幫我一下』的韓文是？", [
+      { label:"좀 도와주세요", audio:"./audio/韓文/日常會話/좀 도와주세요.mp3" },
+      { label:"잠깐만요", audio:"./audio/韓文/日常會話/잠깐만요.mp3" },
+      { label:"다시 말해 주세요", audio:"./audio/韓文/日常會話/다시 말해 주세요.mp3" },
+      { label:"천천히 말해 주세요", audio:"./audio/韓文/日常會話/천천히 말해 주세요.mp3" },
+    ], 0),
+
+    題("『再說一次』的韓文是？", [
+      { label:"다시 말해 주세요", audio:"./audio/韓文/日常會話/다시 말해 주세요.mp3" },
+      { label:"천천히 말해 주세요", audio:"./audio/韓文/日常會話/천천히 말해 주세요.mp3" },
+      { label:"잠깐만요", audio:"./audio/韓文/日常會話/잠깐만요.mp3" },
+      { label:"좀 도와주세요", audio:"./audio/韓文/日常會話/좀 도와주세요.mp3" },
+    ], 0),
+
+    題("『慢一點說』的韓文是？", [
+      { label:"천천히 말해 주세요", audio:"./audio/韓文/日常會話/천천히 말해 주세요.mp3" },
+      { label:"다시 말해 주세요", audio:"./audio/韓文/日常會話/다시 말해 주세요.mp3" },
+      { label:"잠깐만요", audio:"./audio/韓文/日常會話/잠깐만요.mp3" },
+      { label:"좀 도와주세요", audio:"./audio/韓文/日常會話/좀 도와주세요.mp3" },
+    ], 0),
+
+    題("『沒問題』的韓文是？", [
+      { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
+      { label:"괜찮아요", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
+      { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+    ], 0),
+
+    /* =========================
+      外出 / 交通（陳述句）
+    ========================= */
+
+    題("『我迷路了』的韓文是？", [
+      { label:"길을 잃었어요", audio:"./audio/韓文/日常會話/길을 잃었어요.mp3" },
+      { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
+      { label:"친구 찾고 있어요", audio:"./audio/韓文/日常會話/친구 찾고 있어요.mp3" },
+      { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
+    ], 0),
+
+    題("『我要出門』的韓文是？", [
+      { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
+      { label:"지하철 탈 거예요", audio:"./audio/韓文/日常會話/지하철 탈 거예요.mp3" },
+      { label:"친구 찾고 있어요", audio:"./audio/韓文/日常會話/친구 찾고 있어요.mp3" },
+      { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
+    ], 0),
+
+    題("『我要搭地鐵』的韓文是？", [
+      { label:"지하철 탈 거예요", audio:"./audio/韓文/日常會話/지하철 탈 거예요.mp3" },
+      { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
+      { label:"여기서 내릴게요", audio:"./audio/韓文/日常會話/여기서 내릴게요.mp3" },
+      { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
+    ], 0),
+
+    題("『我在這裡下車』的韓文是？", [
+      { label:"여기서 내릴게요", audio:"./audio/韓文/日常會話/여기서 내릴게요.mp3" },
+      { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
+      { label:"친구 찾고 있어요", audio:"./audio/韓文/日常會話/친구 찾고 있어요.mp3" },
+      { label:"길을 잃었어요", audio:"./audio/韓文/日常會話/길을 잃었어요.mp3" },
+    ], 0),
+
+    題("『我在找朋友』的韓文是？", [
+      { label:"친구 찾고 있어요", audio:"./audio/韓文/日常會話/친구 찾고 있어요.mp3" },
+      { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
+      { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
+      { label:"길을 잃었어요", audio:"./audio/韓文/日常會話/길을 잃었어요.mp3" },
+    ], 0),
+
+    題("『我快到了』的韓文是？", [
+      { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
+      { label:"친구 찾고 있어요", audio:"./audio/韓文/日常會話/친구 찾고 있어요.mp3" },
+      { label:"여기서 내릴게요", audio:"./audio/韓文/日常會話/여기서 내릴게요.mp3" },
+      { label:"길을 잃었어요", audio:"./audio/韓文/日常會話/길을 잃었어요.mp3" },
+    ], 0),
+
+    題("『左邊』的韓文是？", [
+      { label:"왼쪽", audio:"./audio/韓文/日常會話/왼쪽.mp3" },
+      { label:"오른쪽", audio:"./audio/韓文/日常會話/오른쪽.mp3" },
+      { label:"가까워요", audio:"./audio/韓文/日常會話/가까워요.mp3" },
+      { label:"직진하세요", audio:"./audio/韓文/日常會話/직진하세요.mp3" },
+    ], 0),
+
+    題("『右邊』的韓文是？", [
+      { label:"오른쪽", audio:"./audio/韓文/日常會話/오른쪽.mp3" },
+      { label:"왼쪽", audio:"./audio/韓文/日常會話/왼쪽.mp3" },
+      { label:"직진하세요", audio:"./audio/韓文/日常會話/직진하세요.mp3" },
+      { label:"가까워요", audio:"./audio/韓文/日常會話/가까워요.mp3" },
+    ], 0),
+
+    題("『直走』的韓文是？", [
+      { label:"직진하세요", audio:"./audio/韓文/日常會話/직진하세요.mp3" },
+      { label:"가까워요", audio:"./audio/韓文/日常會話/가까워요.mp3" },
+      { label:"왼쪽", audio:"./audio/韓文/日常會話/왼쪽.mp3" },
+      { label:"오른쪽", audio:"./audio/韓文/日常會話/오른쪽.mp3" },
+    ], 0),
+
+    題("『很近』的韓文是？", [
+      { label:"가까워요", audio:"./audio/韓文/日常會話/가까워요.mp3" },
+      { label:"길을 잃었어요", audio:"./audio/韓文/日常會話/길을 잃었어요.mp3" },
+      { label:"거의 다 왔어요", audio:"./audio/韓文/日常會話/거의 다 왔어요.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+    ], 0),
+
+    /* =========================
+      工作 / 日常（陳述句）
+    ========================= */
+
+    題("『我在上班』的韓文是？", [
+      { label:"일하고 있어요", audio:"./audio/韓文/日常會話/일하고 있어요.mp3" },
+      { label:"수업 듣고 있어요", audio:"./audio/韓文/日常會話/수업 듣고 있어요.mp3" },
+      { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
+      { label:"친구 찾고 있어요", audio:"./audio/韓文/日常會話/친구 찾고 있어요.mp3" },
+    ], 0),
+
+    題("『我在上課』的韓文是？", [
+      { label:"수업 듣고 있어요", audio:"./audio/韓文/日常會話/수업 듣고 있어요.mp3" },
+      { label:"일하고 있어요", audio:"./audio/韓文/日常會話/일하고 있어요.mp3" },
+      { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+    ], 0),
+
+    /* =========================
+      結尾 / 禮貌（陳述句）
+    ========================= */
+
+    題("『辛苦了』的韓文是？", [
+      { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
+      { label:"화이팅", audio:"./audio/韓文/日常會話/화이팅.mp3" },
+      { label:"좋은 하루 보내세요", audio:"./audio/韓文/日常會話/좋은 하루 보내세요.mp3" },
+      { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
+    ], 0),
+
+    題("『加油』的韓文是？", [
+      { label:"화이팅", audio:"./audio/韓文/日常會話/화이팅.mp3" },
+      { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
+      { label:"정말 감사합니다", audio:"./audio/韓文/日常會話/정말 감사합니다.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+    ], 0),
+
+    題("『真的謝謝你』的韓文是？", [
+      { label:"정말 감사합니다", audio:"./audio/韓文/日常會話/정말 감사합니다.mp3" },
+      { label:"감사합니다", audio:"./audio/韓文/日常會話/감사합니다.mp3" },
+      { label:"고마워요", audio:"./audio/韓文/日常會話/고마워요.mp3" },
+      { label:"천만에요", audio:"./audio/韓文/日常會話/천만에요.mp3" },
+    ], 0),
+
+    題("『今天很開心』的韓文是？", [
+      { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
+      { label:"좋은 하루 보내세요", audio:"./audio/韓文/日常會話/좋은 하루 보내세요.mp3" },
+      { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
+      { label:"조심히 가세요", audio:"./audio/韓文/日常會話/조심히 가세요.mp3" },
+    ], 0),
+
+    題("『祝你有美好的一天』的韓文是？", [
+      { label:"좋은 하루 보내세요", audio:"./audio/韓文/日常會話/좋은 하루 보내세요.mp3" },
+      { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
+      { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
+      { label:"정말 감사합니다", audio:"./audio/韓文/日常會話/정말 감사합니다.mp3" },
+    ], 0),
+
+    題("『慢走』的韓文是？", [
+      { label:"조심히 가세요", audio:"./audio/韓文/日常會話/조심히 가세요.mp3" },
+      { label:"안녕히 가세요", audio:"./audio/韓文/日常會話/안녕히 가세요.mp3" },
+      { label:"안녕히 계세요", audio:"./audio/韓文/日常會話/안녕히 계세요.mp3" },
+      { label:"다음에 봐요", audio:"./audio/韓文/日常會話/다음에 봐요.mp3" },
+    ], 0),
+
+    題("『再見（離開的人說）』的韓文是？", [
+      { label:"안녕히 계세요", audio:"./audio/韓文/日常會話/안녕히 계세요.mp3" },
+      { label:"안녕히 가세요", audio:"./audio/韓文/日常會話/안녕히 가세요.mp3" },
+      { label:"조심히 가세요", audio:"./audio/韓文/日常會話/조심히 가세요.mp3" },
+      { label:"좋은 하루 보내세요", audio:"./audio/韓文/日常會話/좋은 하루 보내세요.mp3" },
+    ], 0),
+
+    題("『再見（留下的人說）』的韓文是？", [
+      { label:"안녕히 가세요", audio:"./audio/韓文/日常會話/안녕히 가세요.mp3" },
+      { label:"안녕히 계세요", audio:"./audio/韓文/日常會話/안녕히 계세요.mp3" },
+      { label:"조심히 가세요", audio:"./audio/韓文/日常會話/조심히 가세요.mp3" },
+      { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
+    ], 0),
+
+    題("『明天見』的韓文是？", [
+      { label:"내일 봐요", audio:"./audio/韓文/日常會話/내일 봐요.mp3" },
+      { label:"다음에 봐요", audio:"./audio/韓文/日常會話/다음에 봐요.mp3" },
+      { label:"안녕히 주무세요", audio:"./audio/韓文/日常會話/안녕히 주무세요.mp3" },
+      { label:"조심히 가세요", audio:"./audio/韓文/日常會話/조심히 가세요.mp3" },
+    ], 0),
+
+    題("『下次見』的韓文是？", [
+      { label:"다음에 봐요", audio:"./audio/韓文/日常會話/다음에 봐요.mp3" },
+      { label:"내일 봐요", audio:"./audio/韓文/日常會話/내일 봐요.mp3" },
+      { label:"안녕히 주무세요", audio:"./audio/韓文/日常會話/안녕히 주무세요.mp3" },
+      { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
+    ], 0),
+
+    題("『祝你好運』的韓文是？", [
+      { label:"행운을 빌어요", audio:"./audio/韓文/日常會話/행운을 빌어요.mp3" },
+      { label:"화이팅", audio:"./audio/韓文/日常會話/화이팅.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+      { label:"잘됐다", audio:"./audio/韓文/日常會話/잘됐다.mp3" },
+    ], 0),
+
+    題("『晚安』的韓文是？", [
+      { label:"안녕히 주무세요", audio:"./audio/韓文/日常會話/안녕히 주무세요.mp3" },
+      { label:"내일 봐요", audio:"./audio/韓文/日常會話/내일 봐요.mp3" },
+      { label:"다음에 봐요", audio:"./audio/韓文/日常會話/다음에 봐요.mp3" },
+      { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
+    ], 0),
+
+    /* =========================
+      補題（維持規則：陳述句）
+      讓總數 ≥ 50
+    ========================= */
+
+    題("『좋아요（좋아요）』的韓文是？（意義：好／喜歡）", [
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+      { label:"잘됐다", audio:"./audio/韓文/日常會話/잘됐다.mp3" },
+      { label:"아쉽다", audio:"./audio/韓文/日常會話/아쉽다.mp3" },
+      { label:"대박이에요", audio:"./audio/韓文/日常會話/대박이에요.mp3" },
+    ], 0),
+
+    題("『我不太懂（我不確定）』最接近的韓文是？", [
+      { label:"잘 모르겠어요", audio:"./audio/韓文/日常會話/잘 모르겠어요.mp3" },
+      { label:"모르겠어요", audio:"./audio/韓文/日常會話/모르겠어요.mp3" },
+      { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
+      { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
+    ], 0),
+
+    題("『我覺得沒問題』最接近的韓文是？", [
+      { label:"문제없어요", audio:"./audio/韓文/日常會話/문제없어요.mp3" },
+      { label:"괜찮아요", audio:"./audio/韓文/日常會話/괜찮아요.mp3" },
+      { label:"알겠어요", audio:"./audio/韓文/日常會話/알겠어요.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+    ], 0),
+
+    題("『我覺得超讚（爆炸厲害）』的韓文是？", [
+      { label:"대박이에요", audio:"./audio/韓文/日常會話/대박이에요.mp3" },
+      { label:"잘됐다", audio:"./audio/韓文/日常會話/잘됐다.mp3" },
+      { label:"좋아요", audio:"./audio/韓文/日常會話/좋아요.mp3" },
+      { label:"아쉽다", audio:"./audio/韓文/日常會話/아쉽다.mp3" },
+    ], 0),
+
+    題("『我準備要出門了』的韓文是？", [
+      { label:"나갈 거예요", audio:"./audio/韓文/日常會話/나갈 거예요.mp3" },
+      { label:"지하철 탈 거예요", audio:"./audio/韓文/日常會話/지하철 탈 거예요.mp3" },
+      { label:"오늘 즐거웠어요", audio:"./audio/韓文/日常會話/오늘 즐거웠어요.mp3" },
+      { label:"수고했어요", audio:"./audio/韓文/日常會話/수고했어요.mp3" },
+    ], 0),
+
+    ];
 
 
   window.QUESTION_BANK["語言/韓文/動物類"] = [
