@@ -955,6 +955,8 @@
               uid: child.key,
               name: v.name || "匿名改造師",
               avatar: v.avatar || "",
+              level: Number(v.level || 1),
+              xpTotal: Number(v.xpTotal || 0),
               latestScore: typeof v.latestScore === "number" ? v.latestScore : Number(v.latestScore || 0),
               updatedAt: v.updatedAt || 0,
               attempts: v.attempts || 0
@@ -991,7 +993,7 @@
                   <div style="font-weight:900;">${r.latestScore} 分</div>
                 </div>
                 <div class="muted" style="font-size:12px; margin-top:4px;">
-                  嘗試次數：${r.attempts || 0}
+                  Lv.${Number(r.level || 1)}｜嘗試次數：${r.attempts || 0}
                 </div>
               </div>
             </div>
@@ -1020,8 +1022,14 @@
         const existing = snap.exists() ? (snap.val() || {}) : {};
         const attempts = Number(existing.attempts || 0) + 1;
 
+        
+        
+
         // 規則：排行榜只記錄「最新分數」（不保留最高分）
         const latestScore = Number(score || 0);
+
+        // ✅ 先同步寫入用戶經驗 / 等級（會更新 currentUser.xpTotal / currentUser.level）
+        try{ await updateUserProgress(bankKey, bankName, latestScore); }catch(e){}
 
         await update(userRef, {
           bankKey,
@@ -1031,11 +1039,11 @@
           avatar: currentUser.avatar || "",
           latestScore,
           attempts,
-          updatedAt: now
+          updatedAt: now,
+          // ✅ 排行榜額外顯示用
+          level: Number(currentUser?.level || 1),
+          xpTotal: Number(currentUser?.xpTotal || 0)
         });
-
-        // 同步寫入用戶經驗 / 等級
-        try{ await updateUserProgress(bankKey, bankName, latestScore); }catch(e){}
       }catch(e){
         console.error("saveScoreToLeaderboard failed:", e);
         if(!saveScoreToLeaderboard._warned){
